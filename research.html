@@ -3,9 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>Research | Kamrul Ahsan Shamim</title>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
 :root{
 --bg:#070707;
 --fg:#f5f1e8;
@@ -16,8 +19,11 @@
 --panel:#101010;
 --max:1180px
 }
+
 *{box-sizing:border-box}
+
 html{scroll-behavior:smooth}
+
 body{
 margin:0;
 background:var(--bg);
@@ -25,14 +31,17 @@ color:var(--fg);
 font-family:"DM Sans",sans-serif;
 line-height:1.6
 }
+
 .wrap{
 width:min(var(--max),calc(100% - 36px));
 margin:auto
 }
+
 a{
 text-decoration:none;
 color:inherit
 }
+
 nav{
 position:sticky;
 top:0;
@@ -41,27 +50,33 @@ background:#070707e8;
 backdrop-filter:blur(18px);
 border-bottom:1px solid #fff1
 }
+
 .nav{
 height:70px;
 display:flex;
 justify-content:space-between;
 align-items:center
 }
+
 .logo{
 font:700 18px "Space Grotesk";
 letter-spacing:-.05em
 }
+
 .back{
 font-size:12px;
 font-weight:700;
 color:#bbb
 }
+
 .back:hover{
 color:var(--lime)
 }
+
 .hero{
 padding:90px 0 55px
 }
+
 .eyebrow{
 color:var(--gold);
 font-size:11px;
@@ -69,113 +84,132 @@ letter-spacing:.17em;
 font-weight:700;
 text-transform:uppercase
 }
+
 .hero h1{
 font:700 clamp(48px,8vw,92px)/.9 "Space Grotesk";
 letter-spacing:-.075em;
 margin:18px 0 25px
 }
+
 .hero h1 span{
 color:var(--gold)
 }
+
 .hero p{
 color:var(--muted);
 font-size:17px;
 max-width:800px;
 line-height:1.7
 }
+
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:16px;
 margin-bottom:16px
 }
+
 .card{
 border:1px solid var(--line);
 background:var(--panel);
 border-radius:22px;
 padding:30px
 }
+
 .card h2{
 font:600 30px "Space Grotesk";
 margin:0 0 15px;
 letter-spacing:-.04em
 }
+
 .card h3{
 font:600 22px "Space Grotesk";
 margin:0 0 10px
 }
+
 .card p{
 color:var(--muted);
 margin:8px 0
 }
+
 .full{
 margin:16px 0
 }
-.question{
-font:600 clamp(27px,4vw,42px)/1.1 "Space Grotesk";
-letter-spacing:-.04em
-}
+
 .stats{
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:10px;
 margin-top:20px
 }
+
 .stat{
 border:1px solid var(--line);
 border-radius:16px;
 padding:20px;
 background:#0b0b0b
 }
+
 .stat strong{
 display:block;
 font:700 28px "Space Grotesk";
 color:var(--gold)
 }
+
 .stat span{
 font-size:11px;
 color:#999
 }
+
 .hypotheses{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:12px
 }
+
 .hypothesis{
 border:1px solid var(--line);
 border-radius:16px;
 padding:22px;
 background:#0b0b0b
 }
+
 .hypothesis b{
 color:var(--lime);
 font-size:13px
 }
+
 .hypothesis p{
 margin-top:8px
 }
+
 .findings{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:12px
 }
+
 .finding{
 border:1px solid var(--line);
 border-radius:16px;
 padding:22px;
 background:#0b0b0b
 }
+
 .finding strong{
 display:block;
 font:600 20px "Space Grotesk";
 margin-bottom:8px
 }
+
 .significant{
 color:var(--lime)
 }
+
 .not-significant{
 color:var(--gold)
 }
+
 .visual{
 margin-top:16px;
 border:1px solid var(--line);
@@ -184,25 +218,35 @@ padding:30px;
 background:var(--panel);
 text-align:center
 }
+
 .visual h2{
 font:600 30px "Space Grotesk";
 margin:0 0 10px
 }
+
 .visual p{
 color:var(--muted)
 }
-.image-placeholder{
-margin-top:22px;
-min-height:300px;
-border:1px dashed #444;
-border-radius:18px;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:30px;
-color:#777;
-background:#0b0b0b
+
+.visual img{
+width:100%;
+max-height:700px;
+object-fit:contain;
+display:block;
+margin:22px auto 0;
+border-radius:15px;
+background:#080808
 }
+
+.poster-frame{
+width:100%;
+height:700px;
+border:0;
+border-radius:15px;
+background:white;
+margin-top:22px
+}
+
 .button{
 display:inline-block;
 margin-top:20px;
@@ -211,8 +255,16 @@ border-radius:100px;
 background:var(--lime);
 color:#080808;
 font-size:12px;
-font-weight:700
+font-weight:700;
+margin-right:8px
 }
+
+.button.secondary{
+background:transparent;
+color:var(--fg);
+border:1px solid var(--line)
+}
+
 footer{
 padding:35px 0 55px;
 margin-top:80px;
@@ -222,283 +274,485 @@ font-size:12px;
 display:flex;
 justify-content:space-between
 }
+
 @media(max-width:800px){
+
 .grid,
 .findings,
 .hypotheses{
 grid-template-columns:1fr
 }
+
 .stats{
 grid-template-columns:1fr 1fr
 }
+
 .hero{
 padding-top:65px
 }
+
+.poster-frame{
+height:550px
 }
+
+}
+
 @media(max-width:500px){
+
 .stats{
 grid-template-columns:1fr
 }
+
+.poster-frame{
+height:450px
+}
+
 footer{
 display:block
 }
+
 footer span{
 display:block;
 margin:5px 0
 }
+
 }
 </style>
 </head>
+
 <body>
+
 <nav>
 <div class="wrap nav">
+
 <a class="logo" href="index.html">KAS</a>
+
 <a class="back" href="index.html#research">
 ← BACK TO PORTFOLIO
 </a>
+
 </div>
 </nav>
+
 <main>
+
 <section class="hero wrap">
+
 <div class="eyebrow">
 RESEARCH / CONSUMER BEHAVIOUR
 </div>
+
 <h1>
 THE CREDIBILITY OF<br>
 <span>INFLUENCER MARKETING.</span>
 </h1>
+
 <p>
 The credibility of influencer marketing and its impact on consumer purchase decisions. An exploratory quantitative research project examining how influencer-related factors can influence consumer purchase behaviour.
 </p>
+
 <div class="stats">
+
 <div class="stat">
 <strong>103</strong>
 <span>RESPONDENTS</span>
 </div>
+
 <div class="stat">
 <strong>0.676</strong>
 <span>CRONBACH'S ALPHA</span>
 </div>
+
 <div class="stat">
 <strong>0.432</strong>
 <span>R² MODEL</span>
 </div>
+
 <div class="stat">
 <strong>2025</strong>
 <span>NORTH SOUTH UNIVERSITY</span>
 </div>
+
 </div>
+
 </section>
+
+
 <section class="wrap full">
+
 <div class="card">
+
 <div class="eyebrow">
 01 / RESEARCH QUESTION
 </div>
-<h2>What are the factors of influencer marketing credibility that impact consumers' purchase decisions?</h2>
+
+<h2>
+What are the factors of influencer marketing credibility that impact consumers' purchase decisions?
+</h2>
+
 <p>
 The study investigates how consumers evaluate influencers and whether factors associated with influencer credibility are related to purchase behaviour.
 </p>
+
 </div>
+
 </section>
+
+
 <section class="wrap">
+
 <div class="grid">
+
 <div class="card">
+
 <div class="eyebrow">
 02 / RESEARCH DESIGN
 </div>
+
 <h2>Methodology</h2>
+
 <p><strong>Nature:</strong> Exploratory quantitative research</p>
 <p><strong>Sample:</strong> 103 respondents</p>
 <p><strong>Sampling:</strong> Non-probability sampling</p>
 <p><strong>Time horizon:</strong> Cross-sectional</p>
 <p><strong>Target context:</strong> Consumers, with focus on Gen Z</p>
+
 </div>
+
+
 <div class="card">
+
 <div class="eyebrow">
 03 / ANALYTICAL PROCESS
 </div>
+
 <h2>From questionnaire to evidence</h2>
+
 <p>1. Questionnaire development and refinement</p>
 <p>2. Data collection from 103 respondents</p>
 <p>3. Reliability testing</p>
 <p>4. Pearson correlation analysis</p>
 <p>5. Multiple regression analysis</p>
 <p>6. Hypothesis testing and interpretation</p>
+
 </div>
+
 </div>
+
 </section>
+
+
 <section class="wrap full">
+
 <div class="card">
+
 <div class="eyebrow">
 04 / CONCEPTUAL MODEL
 </div>
+
 <h2>Hypotheses</h2>
+
 <p>
 The research examined four influencer-related factors in relation to consumer purchase behaviour.
 </p>
+
 <div class="hypotheses">
+
 <div class="hypothesis">
 <b>H1</b>
 <p>Influencer experience has a positive effect on consumer purchase behaviour.</p>
 </div>
+
 <div class="hypothesis">
 <b>H2</b>
 <p>Perceived influencer credibility has a positive effect on consumer purchase behaviour.</p>
 </div>
+
 <div class="hypothesis">
 <b>H3</b>
 <p>Influencer attractiveness has a positive effect on consumer purchase behaviour.</p>
 </div>
+
 <div class="hypothesis">
 <b>H4</b>
 <p>Influencer trustworthiness has a positive effect on consumer purchase behaviour.</p>
 </div>
+
 </div>
+
 </div>
+
 </section>
+
+
 <section class="wrap full">
+
 <div class="card">
+
 <div class="eyebrow">
 05 / VARIABLES
 </div>
+
 <h2>What was measured?</h2>
+
 <div class="grid">
+
 <div>
+
 <h3>Independent Variables</h3>
+
 <p>Experience</p>
 <p>Perceived Credibility</p>
 <p>Attractiveness</p>
 <p>Influencer Trustworthiness</p>
+
 </div>
+
 <div>
+
 <h3>Dependent Variable</h3>
+
 <p>Purchase Behaviour</p>
-<h3 style="margin-top:25px">Research Context</h3>
-<p>Influencer marketing and consumer decision-making</p>
+
+<h3 style="margin-top:25px">
+Research Context
+</h3>
+
+<p>
+Influencer marketing and consumer decision-making
+</p>
+
 </div>
+
 </div>
+
 </div>
+
 </section>
+
+
 <section class="wrap full">
+
 <div class="card">
+
 <div class="eyebrow">
 06 / KEY FINDINGS
 </div>
+
 <h2>What did the data show?</h2>
+
 <div class="findings">
+
 <div class="finding">
+
 <strong>Experience</strong>
+
 <p class="significant">
 Significant positive effect
 </p>
+
 <p>p = 0.047</p>
+
 </div>
+
+
 <div class="finding">
+
 <strong>Influencer Trustworthiness</strong>
+
 <p class="significant">
 Significant positive effect
 </p>
+
 <p>p = 0.001</p>
+
 </div>
+
+
 <div class="finding">
+
 <strong>Perceived Credibility</strong>
+
 <p class="not-significant">
 Not statistically significant
 </p>
+
 <p>p = 0.512</p>
+
 </div>
+
+
 <div class="finding">
+
 <strong>Attractiveness</strong>
+
 <p class="not-significant">
 Not statistically significant
 </p>
+
 <p>p = 0.499</p>
+
 </div>
+
 </div>
+
 </div>
+
 </section>
+
+
 <section class="wrap full">
+
 <div class="card">
+
 <div class="eyebrow">
 07 / MODEL PERFORMANCE
 </div>
-<h2>43.2% of the variance explained</h2>
+
+<h2>
+43.2% of the variance explained
+</h2>
+
 <p>
 The regression model produced an R² value of 0.432, meaning the variables included in the model explained 43.2% of the variance in purchase behaviour.
 </p>
+
 <p>
 The result suggests that influencer-related characteristics can provide meaningful explanatory power when studying consumer purchase behaviour, while also indicating that other factors outside the model contribute to the decision.
 </p>
+
 </div>
+
 </section>
+
+
 <section class="wrap full">
+
 <div class="card">
+
 <div class="eyebrow">
 08 / BUSINESS TAKEAWAY
 </div>
+
 <h2>Reach is not the whole story.</h2>
+
 <p>
 The findings suggest that influencer selection should consider relevant experience and trustworthiness rather than relying only on audience size, appearance or general popularity.
 </p>
+
 <p>
 For marketers, the practical implication is to evaluate whether an influencer is perceived as knowledgeable, experienced and trustworthy within the relevant product or category context.
 </p>
+
 </div>
+
 </section>
+
+
+<!-- HYPOTHESIS IMAGE -->
+
 <section class="wrap">
+
 <div class="visual">
+
 <div class="eyebrow">
 09 / RESEARCH VISUAL
 </div>
-<h2>Hypothesis / Conceptual Model</h2>
+
+<h2>
+Hypothesis / Conceptual Model
+</h2>
+
 <p>
-Your original hypothesis or conceptual-model image can be displayed here.
+The original hypothesis and conceptual-model visual used in the research.
 </p>
-<div class="image-placeholder">
-Add your hypothesis/model image here.
-<br><br>
-Recommended filename:
-<strong>research-hypothesis.png</strong>
+
+<img
+src="hypothesis.jpg.png"
+alt="Research hypothesis and conceptual model">
+
 </div>
-</div>
+
+
+<!-- RESEARCH POSTER -->
+
 <div class="visual">
+
 <div class="eyebrow">
 10 / RESEARCH POSTER
 </div>
-<h2>Full Research Poster</h2>
+
+<h2>
+Full Research Poster
+</h2>
+
 <p>
-The original research poster can be displayed here as the visual summary of the study.
+The original research poster summarizing the study.
 </p>
-<div class="image-placeholder">
-Add your research poster image here.
-<br><br>
-Recommended filename:
-<strong>research-poster.png</strong>
+
+<iframe
+class="poster-frame"
+src="research-poster.pdf.PNG"
+title="Research Poster">
+</iframe>
+
+<a
+class="button"
+href="research-poster.pdf.PNG"
+target="_blank">
+OPEN FULL POSTER ↗
+</a>
+
+<a
+class="button secondary"
+href="research-poster.pdf.PNG"
+download>
+DOWNLOAD POSTER ↓
+</a>
+
 </div>
-</div>
+
 </section>
+
+
 <section class="wrap full">
+
 <div class="card">
+
 <div class="eyebrow">
 11 / ACADEMIC CONTEXT
 </div>
-<h2>North South University · Summer 2025</h2>
+
+<h2>
+North South University · Summer 2025
+</h2>
+
 <p>
 Research project focused on influencer marketing credibility and consumer purchase decisions.
 </p>
+
 <a class="button" href="index.html#research">
 ← BACK TO RESEARCH & INSIGHTS
 </a>
+
 </div>
+
 </section>
+
 </main>
+
+
 <footer class="wrap">
+
 <span>
 © 2026 Kamrul Ahsan Shamim · KAS
 </span>
+
 <span>
 Marketing · Consumer Behaviour · Research
 </span>
+
 </footer>
+
 </body>
 </html>
