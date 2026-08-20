@@ -13,17 +13,23 @@ Kamrul Ahsan Shamim | Marketing Professional | Branding & Digital Marketing
 
 <meta
 name="description"
-content="Kamrul Ahsan Shamim is a marketing professional focused on branding, digital marketing, consumer behavior, creative strategy and marketing research."
+content="Kamrul Ahsan Shamim is a marketing professional focused on branding, digital marketing, consumer behavior, creative strategy, advertising and marketing research."
 >
 
 <meta
 name="keywords"
-content="Kamrul Ahsan Shamim, Kamrul Shamim, marketing professional Bangladesh, marketing, branding, digital marketing, consumer behavior, marketing research, creative strategy"
+content="Kamrul Ahsan Shamim, Kamrul Shamim, marketing professional Bangladesh, marketing, branding, digital marketing, consumer behavior, marketing research, creative strategy, advertising"
 >
 
-<meta name="author" content="Kamrul Ahsan Shamim">
+<meta
+name="author"
+content="Kamrul Ahsan Shamim"
+>
 
-<meta name="robots" content="index, follow">
+<meta
+name="robots"
+content="index, follow"
+>
 
 <link
 rel="canonical"
@@ -40,7 +46,7 @@ content="Kamrul Ahsan Shamim | Marketing Professional"
 
 <meta
 property="og:description"
-content="Marketing portfolio covering branding, digital marketing, consumer behavior, research and creative campaigns."
+content="Marketing portfolio covering branding, digital marketing, consumer behavior, research, advertising and creative strategy."
 >
 
 <meta
@@ -59,7 +65,7 @@ content="Kamrul Ahsan Shamim"
 >
 
 
-<!-- TWITTER / SOCIAL SHARING -->
+<!-- SOCIAL SHARING -->
 
 <meta
 name="twitter:card"
@@ -73,7 +79,7 @@ content="Kamrul Ahsan Shamim | Marketing Professional"
 
 <meta
 name="twitter:description"
-content="Marketing, branding, digital marketing, consumer behavior and research portfolio."
+content="Marketing, branding, digital marketing, consumer behavior, research and creative portfolio."
 >
 
 
@@ -86,7 +92,7 @@ content="Marketing, branding, digital marketing, consumer behavior and research 
   "name": "Kamrul Ahsan Shamim",
   "url": "https://ahsanshamim3162-art.github.io/kamrul-ahsan-shamim-portfolio/",
   "jobTitle": "Marketing Professional",
-  "description": "Marketing professional focused on branding, digital marketing, consumer behavior, creative strategy and marketing research.",
+  "description": "Marketing professional focused on branding, digital marketing, consumer behavior, creative strategy, advertising and marketing research.",
   "email": "mailto:kamrul.shamim@northsouth.edu",
   "sameAs": [
     "https://www.linkedin.com/in/kamrul-ahsan-shamim-a7841737a"
@@ -98,7 +104,8 @@ content="Marketing, branding, digital marketing, consumer behavior and research 
     "Consumer Behavior",
     "Marketing Research",
     "Creative Strategy",
-    "Advertising"
+    "Advertising",
+    "Content Marketing"
   ]
 }
 </script>
@@ -131,7 +138,8 @@ body{
 margin:0;
 background:var(--bg);
 color:var(--fg);
-font-family:"DM Sans",sans-serif
+font-family:"DM Sans",sans-serif;
+line-height:1.6
 }
 
 .wrap{
@@ -174,8 +182,17 @@ font-size:12px;
 color:#bbb
 }
 
+.links a{
+transition:.2s
+}
+
 .links a:hover{
 color:var(--lime)
+}
+
+.links .shop{
+color:var(--lime);
+font-weight:700
 }
 
 .hero{
@@ -233,7 +250,8 @@ aspect-ratio:4/5;
 object-fit:cover;
 border-radius:24px;
 border:1px solid var(--line);
-filter:saturate(.85)
+filter:saturate(.85);
+display:block
 }
 
 .btn{
@@ -243,7 +261,12 @@ padding:12px 17px;
 border-radius:100px;
 font-size:12px;
 font-weight:700;
-margin:10px 7px 0 0
+margin:10px 7px 0 0;
+transition:.2s
+}
+
+.btn:hover{
+transform:translateY(-2px)
 }
 
 .primary{
@@ -291,6 +314,9 @@ letter-spacing:-.05em
 color:var(--lime)
 }
 
+
+/* SELECTED WORK */
+
 .work-grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
@@ -301,7 +327,13 @@ gap:16px
 border:1px solid var(--line);
 background:var(--panel);
 border-radius:22px;
-overflow:hidden
+overflow:hidden;
+transition:.25s
+}
+
+.card:hover{
+transform:translateY(-4px);
+border-color:#444
 }
 
 .project-img{
@@ -310,6 +342,13 @@ height:300px;
 object-fit:cover;
 background:linear-gradient(135deg,#1b241d,#111);
 display:block
+}
+
+.project-img.placeholder{
+display:grid;
+place-items:center;
+font:600 42px "Space Grotesk";
+color:#777
 }
 
 .body{
@@ -332,6 +371,18 @@ color:#aaa;
 font-size:10px;
 letter-spacing:.08em
 }
+
+.open-project{
+display:inline-block;
+margin-top:14px;
+color:var(--lime);
+font-size:10px;
+font-weight:700;
+letter-spacing:.1em
+}
+
+
+/* STRATEGY */
 
 .framework{
 display:grid;
@@ -360,6 +411,9 @@ color:var(--muted);
 font-size:13px;
 line-height:1.6
 }
+
+
+/* RESEARCH */
 
 .research{
 background:var(--panel);
@@ -392,8 +446,16 @@ border-radius:100px;
 background:var(--lime);
 color:#080808;
 font-size:12px;
-font-weight:700
+font-weight:700;
+transition:.2s
 }
+
+.research-link:hover{
+transform:translateY(-2px)
+}
+
+
+/* PUBLICATIONS */
 
 .articles{
 display:grid;
@@ -406,7 +468,13 @@ padding:24px;
 border:1px solid var(--line);
 border-radius:18px;
 background:var(--panel);
-min-height:210px
+min-height:210px;
+transition:.2s
+}
+
+.article:hover{
+border-color:var(--gold);
+transform:translateY(-3px)
 }
 
 .article small{
@@ -416,10 +484,6 @@ color:var(--gold)
 .article h3{
 font:600 19px/1.05 "Space Grotesk";
 margin:18px 0 10px
-}
-
-.article:hover{
-border-color:var(--gold)
 }
 
 
@@ -459,6 +523,8 @@ letter-spacing:.08em
 }
 
 
+/* SHOP */
+
 .shop-banner{
 background:linear-gradient(135deg,#151515,#0d0d0d);
 border:1px solid var(--line);
@@ -473,6 +539,9 @@ gap:30px
 .shop-banner h2{
 margin:0
 }
+
+
+/* CONTACT */
 
 .contact{
 background:var(--lime);
@@ -495,6 +564,9 @@ color:white;
 border-color:#080808
 }
 
+
+/* FOOTER */
+
 footer{
 padding:30px 0 50px;
 color:#777;
@@ -502,6 +574,9 @@ font-size:12px;
 display:flex;
 justify-content:space-between
 }
+
+
+/* MOBILE */
 
 @media(max-width:800px){
 
@@ -583,11 +658,13 @@ margin:6px 0
 <div class="wrap nav">
 
 <a href="index.html">
+
 <img
 class="logo"
-src="assets/kas-logo.png"
+src="logo.png.PNG"
 alt="KAS logo - Kamrul Ahsan Shamim"
 >
+
 </a>
 
 <div class="links">
@@ -599,6 +676,8 @@ alt="KAS logo - Kamrul Ahsan Shamim"
 <a href="#research">Research</a>
 
 <a href="#articles">Publications</a>
+
+<a href="shop.html" class="shop">SHOP</a>
 
 <a href="#contact">Contact</a>
 
@@ -637,8 +716,8 @@ EXPLORE MY WORK ↓
 
 <a
 class="btn"
-href="#contact">
-LET'S CONNECT ↗
+href="shop.html">
+VISIT SHOP ↗
 </a>
 
 </div>
@@ -647,7 +726,7 @@ LET'S CONNECT ↗
 <img
 id="profile"
 class="profile"
-src="assets/profile.jpg"
+src="profile.jpg.PNG"
 alt="Kamrul Ahsan Shamim - Marketing Professional"
 >
 
@@ -695,7 +774,7 @@ I’m a marketing graduate interested in branding, digital marketing, advertisin
 <div>
 
 <div class="eyebrow">
-02 / Selected work
+02 / Selected Work
 </div>
 
 <h2>
@@ -711,7 +790,10 @@ Creative work connected to marketing thinking, advertising, branding and visual 
 </div>
 
 
-<div id="workGrid" class="work-grid"></div>
+<div
+id="workGrid"
+class="work-grid">
+</div>
 
 </div>
 
@@ -796,7 +878,7 @@ Design, content, advertising and campaign assets.
 <div class="wrap">
 
 <div class="eyebrow">
-04 / Research & insights
+04 / Research & Insights
 </div>
 
 <div class="research">
@@ -839,7 +921,7 @@ VIEW FULL RESEARCH ↗
 <div>
 
 <div class="eyebrow">
-05 / Published thinking
+05 / Published Thinking
 </div>
 
 <h2>
@@ -855,7 +937,10 @@ Published work from The Financial Express covering branding, entrepreneurship, d
 </div>
 
 
-<div id="articlesGrid" class="articles"></div>
+<div
+id="articlesGrid"
+class="articles">
+</div>
 
 </div>
 
@@ -871,7 +956,7 @@ Published work from The Financial Express covering branding, entrepreneurship, d
 <div>
 
 <div class="eyebrow">
-06 / Beyond marketing
+06 / Beyond Marketing
 </div>
 
 <h2>
@@ -890,7 +975,8 @@ Travel, observation and visual storytelling that shape a broader creative perspe
 <a
 class="travel-link"
 href="travel.html"
-aria-label="Open Travel Visual Stories">
+aria-label="Open Travel Visual Stories"
+>
 
 <div class="eyebrow">
 TRAVEL / VISUAL STORYTELLING
@@ -909,6 +995,41 @@ EXPLORE TRAVEL STORIES ↗
 </span>
 
 </a>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="wrap">
+
+<div class="shop-banner">
+
+<div>
+
+<div class="eyebrow">
+06 / Shop
+</div>
+
+<h2>
+Products, ideas and useful things.
+</h2>
+
+<p class="muted">
+Explore the dedicated shop page.
+</p>
+
+</div>
+
+<a
+class="btn primary"
+href="shop.html">
+OPEN SHOP ↗
+</a>
+
+</div>
 
 </div>
 
@@ -980,74 +1101,137 @@ const KEY = "KAS_PORTFOLIO_DATA_V1";
 
 const fallback = {
 
-"name":"Kamrul Ahsan Shamim",
+name:
+"Kamrul Ahsan Shamim",
 
-"tagline":"Marketing × Branding × Creative Technology",
+tagline:
+"Marketing × Branding × Creative Technology",
 
-"hero":"I turn marketing ideas into stories, campaigns and visual experiences that people remember.",
+hero:
+"I turn marketing ideas into stories, campaigns and visual experiences that people remember.",
 
-"about":"I’m a marketing graduate interested in branding, digital marketing, advertising, creative strategy and AI-assisted content creation. I enjoy taking a business objective and turning it into a clear message, campaign idea or visual experience.",
+about:
+"I’m a marketing graduate interested in branding, digital marketing, advertising, creative strategy and AI-assisted content creation. I enjoy taking a business objective and turning it into a clear message, campaign idea or visual experience.",
 
-"email":"kamrul.shamim@northsouth.edu",
+email:
+"kamrul.shamim@northsouth.edu",
 
-"phone":"01400961461",
+phone:
+"01400961461",
 
-"linkedin":"https://www.linkedin.com/in/kamrul-ahsan-shamim-a7841737a",
+linkedin:
+"https://www.linkedin.com/in/kamrul-ahsan-shamim-a7841737a",
 
-"profile":"assets/profile.jpg",
+profile:
+"profile.jpg.PNG",
 
 
-"projects":[
+projects:[
 
 {
-"title":"Adventure Backpack Campaign",
-"category":"PRODUCT ADVERTISING",
-"desc":"65+10L trekking backpack campaign combining cinematic product visuals, UGC thinking, feature communication and short-form advertising.",
-"image":"",
-"tags":"AI-assisted visual · UGC · Ad strategy"
+title:
+"Adventure Backpack Campaign",
+
+category:
+"PRODUCT ADVERTISING",
+
+desc:
+"65+10L trekking backpack campaign combining cinematic product visuals, UGC thinking, feature communication and short-form advertising.",
+
+image:
+"",
+
+tags:
+"AI-assisted visual · UGC · Ad strategy",
+
+link:
+""
 },
 
-{
-"title":"A/B Testing Visual Concept",
-"category":"DIGITAL MARKETING",
-"desc":"A LinkedIn marketing analysis and visual concept demonstrating test, compare, learn and scale thinking.",
-"image":"",
-"tags":"A/B testing · Content · Measurement"
-},
 
 {
-"title":"Gen Z & Rebranding",
-"category":"BRAND STRATEGY",
-"desc":"Brand strategy and consumer behavior thinking around authenticity, values, speed, creator-led trust and relevance.",
-"image":"",
-"tags":"Gen Z · Branding · Consumer behavior"
+title:
+"A/B Testing Visual Concept",
+
+category:
+"DIGITAL MARKETING",
+
+desc:
+"A LinkedIn marketing analysis and visual concept demonstrating test, compare, learn and scale thinking.",
+
+image:
+"",
+
+tags:
+"A/B testing · Content · Measurement",
+
+link:
+""
 },
 
+
 {
-"title":"Travel Visual Storytelling",
-"category":"VISUAL STORY",
-"desc":"Cinematic travel concepts using landscapes, people and journeys to build authentic visual narratives.",
-"image":"",
-"tags":"Storytelling · Photography · Content"
+title:
+"Gen Z & Rebranding",
+
+category:
+"BRAND STRATEGY",
+
+desc:
+"Brand strategy and consumer behavior thinking around authenticity, values, speed, creator-led trust and relevance.",
+
+image:
+"",
+
+tags:
+"Gen Z · Branding · Consumer behavior",
+
+link:
+""
+},
+
+
+{
+title:
+"Travel Visual Storytelling",
+
+category:
+"VISUAL STORY",
+
+desc:
+"Cinematic travel concepts using landscapes, people and journeys to build authentic visual narratives.",
+
+image:
+"",
+
+tags:
+"Storytelling · Photography · Content",
+
+link:
+"travel.html"
 }
 
 ],
 
 
-"research":{
+research:{
 
-"title":"The Credibility of Influencer Marketing and Its Impact on Consumer Purchase Decisions",
+title:
+"The Credibility of Influencer Marketing and Its Impact on Consumer Purchase Decisions",
 
-"desc":"Exploratory quantitative research examining how influencer credibility factors can affect consumer purchase behavior.",
+desc:
+"Exploratory quantitative research examining how influencer credibility factors can affect consumer purchase behavior.",
 
-"stats":"n = 103 · Cronbach’s Alpha = 0.676 · R² = 0.432",
+stats:
+"n = 103 · Cronbach’s Alpha = 0.676 · R² = 0.432",
 
-"finding":"Experience and influencer trustworthiness showed significant positive effects on purchase behavior, while perceived credibility and attractiveness were not statistically significant in the regression model."
+finding:
+"Experience and influencer trustworthiness showed significant positive effects on purchase behavior, while perceived credibility and attractiveness were not statistically significant in the regression model."
 
 },
 
 
-"articles":[
+articles:[
 
 [
 "Economic Shifts and Branding",
@@ -1082,7 +1266,9 @@ function data(){
 
 try{
 
-return JSON.parse(localStorage.getItem(KEY)) || fallback;
+return JSON.parse(
+localStorage.getItem(KEY)
+) || fallback;
 
 }catch(e){
 
@@ -1098,40 +1284,76 @@ function render(){
 const d = data();
 
 
-document.getElementById("heroText").textContent = d.hero;
+/* PROFILE */
 
-document.getElementById("aboutText").textContent = d.about;
+document.getElementById(
+"heroText"
+).textContent =
+d.hero;
 
-document.getElementById("profile").src =
-d.profile || "assets/profile.jpg";
+
+document.getElementById(
+"aboutText"
+).textContent =
+d.about;
 
 
-document.getElementById("email").href =
+document.getElementById(
+"profile"
+).src =
+d.profile || "profile.jpg.PNG";
+
+
+/* CONTACT */
+
+document.getElementById(
+"email"
+).href =
 "mailto:" + d.email;
 
 
-document.getElementById("linkedin").href =
+document.getElementById(
+"linkedin"
+).href =
 d.linkedin;
 
 
-document.getElementById("phone").textContent =
+document.getElementById(
+"phone"
+).textContent =
 d.phone;
 
 
+/* SELECTED WORK */
+
 const workGrid =
-document.getElementById("workGrid");
+document.getElementById(
+"workGrid"
+);
 
 
 workGrid.innerHTML =
-d.projects.map((p,i)=>`
+d.projects.map((p)=>{
 
-<article class="card">
+const cardContent = `
 
-<img
+<div>
+
+${p.image
+?
+`<img
 class="project-img"
-src="${p.image || 'assets/profile.jpg'}"
+src="${p.image}"
 alt="${p.title} - Kamrul Ahsan Shamim portfolio project"
->
+>`
+:
+`<div class="project-img placeholder">
+${p.title === "Travel Visual Storytelling" ? "TRAVEL" :
+p.title === "A/B Testing Visual Concept" ? "A/B" :
+p.title === "Gen Z & Rebranding" ? "GEN Z" :
+"AD"}
+</div>`
+}
 
 <div class="body">
 
@@ -1151,31 +1373,70 @@ ${p.desc}
 ${p.tags}
 </div>
 
+${
+p.link
+?
+`<span class="open-project">
+OPEN PROJECT ↗
+</span>`
+:
+""
+}
+
 </div>
 
-</article>
+</div>
+`;
 
-`).join("");
+return p.link
+?
+`<a
+href="${p.link}"
+class="card"
+aria-label="Open ${p.title}"
+>
+${cardContent}
+</a>`
+:
+`<article class="card">
+${cardContent}
+</article>`;
+
+}).join("");
 
 
-document.getElementById("researchTitle").textContent =
+/* RESEARCH */
+
+document.getElementById(
+"researchTitle"
+).textContent =
 d.research.title;
 
 
-document.getElementById("researchDesc").textContent =
+document.getElementById(
+"researchDesc"
+).textContent =
 d.research.desc;
 
 
-document.getElementById("researchStats").textContent =
+document.getElementById(
+"researchStats"
+).textContent =
 d.research.stats;
 
 
-document.getElementById("researchFinding").textContent =
+document.getElementById(
+"researchFinding"
+).textContent =
 d.research.finding;
 
 
+/* PUBLICATIONS */
+
 const articlesGrid =
-document.getElementById("articlesGrid");
+document.getElementById(
+"articlesGrid"
+);
 
 
 articlesGrid.innerHTML =
@@ -1208,4 +1469,5 @@ render();
 
 
 </body>
+
 </html>
