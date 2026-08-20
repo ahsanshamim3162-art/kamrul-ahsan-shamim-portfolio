@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Travel Visual Stories | Kamrul Ahsan Shamim</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root{
+--bg:#070707;
+--fg:#f5f1e8;
+--muted:#9a978f;
+--gold:#d7b56d;
+--lime:#d9ff55;
+--line:#262626;
+--panel:#101010;
+--max:1180px
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+margin:0;
+background:var(--bg);
+color:var(--fg);
+font-family:"DM Sans",sans-serif
+}
+
+.wrap{
+width:min(var(--max),calc(100% - 36px));
+margin:auto
+}
+
+a{
+text-decoration:none;
+color:inherit
+}
+
+nav{
+position:sticky;
+top:0;
+z-index:20;
+background:#070707e8;
+backdrop-filter:blur(18px);
+border-bottom:1px solid #fff1
+}
+
+.nav{
+height:70px;
+display:flex;
+justify-content:space-between;
+align-items:center
+}
+
+.logo{
+font:700 18px "Space Grotesk";
+letter-spacing:-.05em
+}
+
+.back{
+font-size:12px;
+font-weight:700;
+color:#bbb
+}
+
+.back:hover{
+color:var(--lime)
+}
+
+.hero{
+padding:90px 0 55px
+}
+
+.eyebrow{
+color:var(--gold);
+font-size:11px;
+letter-spacing:.17em;
+font-weight:700;
+text-transform:uppercase
+}
+
+.hero h1{
+font:700 clamp(52px,9vw,105px)/.86 "Space Grotesk";
+letter-spacing:-.075em;
+margin:18px 0
+}
+
+.hero h1 span{
+color:var(--gold)
+}
+
+.hero p{
+color:var(--muted);
+font-size:17px;
+max-width:720px;
+line-height:1.7
+}
+
+.stories{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+padding-bottom:90px
+}
+
+.story{
+border:1px solid var(--line);
+background:var(--panel);
+border-radius:22px;
+overflow:hidden
+}
+
+.media{
+height:360px;
+background:linear-gradient(135deg,#1b241d,#111);
+display:grid;
+place-items:center;
+color:#777;
+font:600 38px "Space Grotesk"
+}
+
+.media img,
+.media video{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block
+}
+
+.story-body{
+padding:24px
+}
+
+.story-body h2{
+font:600 28px "Space Grotesk";
+margin:7px 0 10px
+}
+
+.story-body p{
+color:var(--muted);
+line-height:1.6;
+margin:0
+}
+
+.tag{
+margin-top:18px;
+color:#aaa;
+font-size:10px;
+letter-spacing:.1em
+}
+
+.empty{
+grid-column:1/-1;
+border:1px dashed #3a3a3a;
+border-radius:22px;
+padding:55px 25px;
+text-align:center;
+color:var(--muted)
+}
+
+.empty strong{
+display:block;
+color:var(--fg);
+font:600 25px "Space Grotesk";
+margin-bottom:10px
+}
+
+footer{
+padding:30px 0 50px;
+color:#777;
+font-size:12px;
+display:flex;
+justify-content:space-between;
+border-top:1px solid var(--line)
+}
+
+@media(max-width:700px){
+.stories{
+grid-template-columns:1fr
+}
+
+.hero{
+padding-top:65px
+}
+
+.media{
+height:280px
+}
+
+footer{
+display:block
+}
+
+footer span{
+display:block;
+margin:5px 0
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="wrap nav">
+<a class="logo" href="index.html">KAS</a>
+<a class="back" href="index.html#work">← BACK TO WORK</a>
+</div>
+</nav>
+
+<main>
+
+<section class="hero wrap">
+
+<div class="eyebrow">TRAVEL / VISUAL STORIES</div>
+
+<h1>
+JOURNEYS<br>
+<span>THROUGH MY LENS.</span>
+</h1>
+
+<p>
+A collection of travel photographs, videos and visual stories.
+Each journey can become its own story with landscapes, moments,
+people and observations.
+</p>
+
+</section>
+
+<section class="stories wrap">
+
+<div class="empty">
+
+<strong>Your first travel story goes here.</strong>
+
+Add your travel photos and videos here as you build your visual story collection.
+
+</div>
+
+</section>
+
+</main>
+
+<footer class="wrap">
+
+<span>© 2026 Kamrul Ahsan Shamim · KAS</span>
+
+<span>Travel · Photography · Visual Storytelling</span>
+
+</footer>
+
+</body>
+</html>
