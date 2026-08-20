@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kamrul Ahsan Shamim | Marketing × Branding × Creative</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+:root{--bg:#070707;--fg:#f5f1e8;--muted:#9a978f;--gold:#d7b56d;--lime:#d9ff55;--line:#262626;--panel:#101010;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:"DM Sans",sans-serif}.wrap{width:min(var(--max),calc(100% - 36px));margin:auto}a{text-decoration:none;color:inherit}
+nav{position:fixed;top:0;z-index:20;width:100%;background:#070707e8;backdrop-filter:blur(18px);border-bottom:1px solid #fff1}.nav{height:70px;display:flex;justify-content:space-between;align-items:center}.logo{font:700 18px "Space Grotesk";letter-spacing:-.05em}.links{display:flex;gap:22px;font-size:12px;color:#bbb}.links a:hover{color:var(--lime)}.links .shop{color:var(--lime);font-weight:700}
+.hero{min-height:94vh;padding:120px 0 70px;display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:50px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:500px;height:500px;right:-200px;top:80px;border-radius:50%;background:var(--gold);filter:blur(160px);opacity:.09}.eyebrow{color:var(--gold);font-size:11px;letter-spacing:.17em;font-weight:700;text-transform:uppercase}.hero h1{font:700 clamp(55px,9vw,115px)/.84 "Space Grotesk";letter-spacing:-.075em;margin:18px 0}.hero h1 span{color:var(--gold)}.hero p{color:var(--muted);font-size:18px;max-width:650px}.profile{width:min(100%,390px);aspect-ratio:4/5;border-radius:24px;border:1px solid var(--line);background:radial-gradient(circle at 50% 35%,#4b463a,#151515 48%,#0b0b0b);display:grid;place-items:center;font:700 70px "Space Grotesk";color:#ddd}
+.btn{display:inline-block;border:1px solid #fff2;padding:12px 17px;border-radius:100px;font-size:12px;font-weight:700;margin:10px 7px 0 0}.primary{background:var(--lime);color:#090909;border-color:var(--lime)}
+section{padding:95px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:38px}h2{font:600 clamp(38px,5vw,68px)/.95 "Space Grotesk";letter-spacing:-.06em;margin:10px 0}.head p,.muted{color:var(--muted);max-width:430px}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:70px}.statement{font:600 clamp(32px,4vw,56px)/1 "Space Grotesk";letter-spacing:-.05em}.statement span{color:var(--lime)}
+.work{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.card{border:1px solid var(--line);background:var(--panel);border-radius:22px;overflow:hidden}.project-img{width:100%;height:300px;background:linear-gradient(135deg,#1b241d,#111);display:grid;place-items:center;font:600 42px "Space Grotesk";color:#777}.body{padding:22px}.body h3{font:600 25px "Space Grotesk";margin:0 0 8px}.body p{color:var(--muted);font-size:14px}.tags{color:#aaa;font-size:10px;letter-spacing:.08em}
+.framework{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:20px;overflow:hidden}.step{padding:27px;background:var(--panel);border-right:1px solid var(--line)}.step:last-child{border:0}.step b{font:600 19px "Space Grotesk"}.step p{color:var(--muted);font-size:13px}
+.research{background:var(--panel);border:1px solid var(--line);padding:32px;border-radius:22px}.research h3{font:600 31px "Space Grotesk";max-width:850px}.research p{color:var(--muted);max-width:850px}.stats{color:var(--gold);font-weight:700}
+.articles{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.article{padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--panel);min-height:210px}.article small{color:var(--gold)}.article h3{font:600 19px/1.05 "Space Grotesk"}
+.shop-banner{background:linear-gradient(135deg,#151515,#0d0d0d);border:1px solid var(--line);border-radius:25px;padding:40px;display:flex;justify-content:space-between;align-items:center;gap:30px}.shop-banner h2{margin:0}.contact{background:var(--lime);color:#080808;border-radius:25px;padding:55px}.contact h2{max-width:800px}.contact p{max-width:620px}.contact .btn{background:#080808;color:white;border-color:#080808}
+footer{padding:30px 0 50px;color:#777;font-size:12px;display:flex;justify-content:space-between}
+@media(max-width:800px){.hero,.intro{grid-template-columns:1fr}.hero{min-height:auto}.profile{max-width:310px}.links{gap:10px;font-size:10px}.work{grid-template-columns:1fr}.framework{grid-template-columns:1fr 1fr}.step{border-bottom:1px solid var(--line)}.articles{grid-template-columns:1fr 1fr}.shop-banner{display:block}}
+@media(max-width:520px){.framework,.articles{grid-template-columns:1fr}.head{display:block}.profile{width:100%}.links a:nth-child(1),.links a:nth-child(2),.links a:nth-child(3),.links a:nth-child(4){display:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav"><a class="logo" href="index.html">KAS</a><div class="links"><a href="#work">Work</a><a href="#strategy">Strategy</a><a href="#research">Research</a><a href="#articles">Publications</a><a class="shop" href="shop.html">SHOP</a><a href="#contact">Contact</a><a href="admin.html">EDIT</a></div></div></nav>
+
+<header class="hero wrap"><div><div class="eyebrow">Marketing × Branding × Creative Technology</div><h1>KAMRUL<br><span>AHSAN</span><br>SHAMIM</h1><p>I turn marketing ideas into stories, campaigns and visual experiences that people remember.</p><a class="btn primary" href="#work">EXPLORE MY WORK ↓</a><a class="btn" href="shop.html">VISIT SHOP ↗</a></div><div class="profile">KAS</div></header>
+
+<section><div class="wrap intro"><div><div class="eyebrow">01 / Positioning</div><div class="statement">More than a marketer.<br>More than a creator.<br><span>Strategy + Creativity + Technology.</span></div></div><div><p class="muted">I’m a marketing graduate interested in branding, digital marketing, advertising, creative strategy and AI-assisted content creation. I enjoy taking a business objective and turning it into a clear message, campaign idea or visual experience.</p></div></div></section>
+
+<section id="work"><div class="wrap"><div class="head"><div><div class="eyebrow">02 / Selected work</div><h2>Ideas → visuals → impact.</h2></div><p>Creative work connected to marketing thinking, advertising, branding and visual storytelling.</p></div><div class="work">
+<article class="card"><div class="project-img">AD</div><div class="body"><div class="eyebrow">PRODUCT ADVERTISING</div><h3>Adventure Backpack Campaign</h3><p>65+10L trekking backpack campaign combining cinematic product visuals, UGC thinking, feature communication and short-form advertising.</p><div class="tags">AI-assisted visual · UGC · Ad strategy</div></div></article>
+<article class="card"><div class="project-img">A/B</div><div class="body"><div class="eyebrow">DIGITAL MARKETING</div><h3>A/B Testing Visual Concept</h3><p>A LinkedIn marketing analysis and visual concept demonstrating test, compare, learn and scale thinking.</p><div class="tags">A/B testing · Content · Measurement</div></div></article>
+<article class="card"><div class="project-img">GEN Z</div><div class="body"><div class="eyebrow">BRAND STRATEGY</div><h3>Gen Z & Rebranding</h3><p>Brand strategy and consumer behavior thinking around authenticity, values, speed, creator-led trust and relevance.</p><div class="tags">Gen Z · Branding · Consumer behavior</div></div></article>
+<article class="card"><div class="project-img">TRAVEL</div><div class="body"><div class="eyebrow">VISUAL STORY</div><h3>Travel Visual Storytelling</h3><p>Cinematic travel concepts using landscapes, observation and journeys to build authentic visual narratives.</p><div class="tags">Storytelling · Photography · Content</div></div></article>
+</div></div></section>
+
+<section id="strategy"><div class="wrap"><div class="head"><div><div class="eyebrow">03 / Strategy</div><h2>Think before you create.</h2></div></div><div class="framework"><div class="step"><b>01 / INSIGHT</b><p>Audience, problem, context and consumer tension.</p></div><div class="step"><b>02 / STRATEGY</b><p>Positioning, message and communication direction.</p></div><div class="step"><b>03 / CREATIVE</b><p>Concept, visual language, copy and storytelling.</p></div><div class="step"><b>04 / EXECUTION</b><p>Design, content, advertising and campaign assets.</p></div></div></div></section>
+
+<section id="research"><div class="wrap"><div class="eyebrow">04 / Research & insights</div><div class="research"><h3>The Credibility of Influencer Marketing and Its Impact on Consumer Purchase Decisions</h3><p>Exploratory quantitative research examining how influencer credibility factors can affect consumer purchase behavior.</p><div class="stats">n = 103 · Cronbach’s Alpha = 0.676 · R² = 0.432</div><p>Experience and influencer trustworthiness showed significant positive effects on purchase behavior, while perceived credibility and attractiveness were not statistically significant in the regression model.</p></div></div></section>
+
+<section id="articles"><div class="wrap"><div class="head"><div><div class="eyebrow">05 / Published thinking</div><h2>Writing that shows the thinking.</h2></div><p>Published work from The Financial Express.</p></div><div class="articles">
+<article class="article"><small>January 27/28, 2026</small><h3>Future of digital marketing</h3><p class="muted">The Financial Express</p></article>
+<article class="article"><small>November 30, 2025</small><h3>Economic shifts and branding</h3><p class="muted">The Financial Express</p></article>
+<article class="article"><small>October 6, 2025</small><h3>Power of branding in driving growth</h3><p class="muted">The Financial Express</p></article>
+<article class="article"><small>September 16, 2025</small><h3>Unlocking demographic dividend</h3><p class="muted">The Financial Express</p></article>
+<article class="article"><small>September 15, 2025</small><h3>Can Bangladesh become a startup hub?</h3><p class="muted">The Financial Express</p></article>
+</div></div></section>
+
+<section><div class="wrap"><div class="shop-banner"><div><div class="eyebrow">06 / Shop</div><h2>Products, ideas and useful things.</h2><p class="muted">A dedicated storefront is now part of the site. Add products from the Shop manager when we connect the store backend.</p></div><a class="btn primary" href="shop.html">OPEN SHOP ↗</a></div></div></section>
+
+<section id="contact"><div class="wrap"><div class="contact"><div class="eyebrow">07 / Contact</div><h2>LET'S CREATE SOMETHING WORTH REMEMBERING.</h2><p>Open to opportunities, collaborations, marketing projects, creative work and interesting ideas.</p><a class="btn" href="mailto:kamrul.shamim@northsouth.edu">EMAIL ME ↗</a><a class="btn" href="https://www.linkedin.com/in/kamrul-ahsan-shamim-a7841737a" target="_blank">LINKEDIN ↗</a><span>01400961461</span></div></div></section>
+<footer class="wrap"><span>© 2026 Kamrul Ahsan Shamim · KAS</span><span>Marketing · Branding · Creative</span></footer>
+</body></html>
