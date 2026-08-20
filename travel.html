@@ -73,7 +73,7 @@ color:var(--lime)
 }
 
 .hero{
-padding:90px 0 55px
+padding:90px 0 45px
 }
 
 .eyebrow{
@@ -101,73 +101,75 @@ max-width:720px;
 line-height:1.7
 }
 
-.stories{
+.categories{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:18px;
-padding-bottom:90px
+gap:16px;
+padding:15px 0 90px
 }
 
-.story{
+.category{
+min-height:250px;
+border:1px solid var(--line);
+border-radius:24px;
+background:linear-gradient(135deg,#151515,#0d0d0d);
+padding:30px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+position:relative;
+overflow:hidden;
+transition:.25s
+}
+
+.category:hover{
+transform:translateY(-4px);
+border-color:#555
+}
+
+.number{
+font:600 13px "Space Grotesk";
+color:#777
+}
+
+.category h2{
+font:600 clamp(28px,4vw,45px)/1 "Space Grotesk";
+letter-spacing:-.05em;
+margin:30px 0 10px
+}
+
+.category p{
+color:var(--muted);
+max-width:480px;
+margin:0;
+line-height:1.6
+}
+
+.open{
+margin-top:25px;
+color:var(--lime);
+font-size:11px;
+font-weight:700;
+letter-spacing:.12em
+}
+
+.info{
 border:1px solid var(--line);
 background:var(--panel);
 border-radius:22px;
-overflow:hidden
+padding:28px;
+margin-bottom:90px
 }
 
-.media{
-height:360px;
-background:linear-gradient(135deg,#1b241d,#111);
-display:grid;
-place-items:center;
-color:#777;
-font:600 38px "Space Grotesk"
+.info h3{
+font:600 24px "Space Grotesk";
+margin:0 0 8px
 }
 
-.media img,
-.media video{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block
-}
-
-.story-body{
-padding:24px
-}
-
-.story-body h2{
-font:600 28px "Space Grotesk";
-margin:7px 0 10px
-}
-
-.story-body p{
+.info p{
 color:var(--muted);
-line-height:1.6;
-margin:0
-}
-
-.tag{
-margin-top:18px;
-color:#aaa;
-font-size:10px;
-letter-spacing:.1em
-}
-
-.empty{
-grid-column:1/-1;
-border:1px dashed #3a3a3a;
-border-radius:22px;
-padding:55px 25px;
-text-align:center;
-color:var(--muted)
-}
-
-.empty strong{
-display:block;
-color:var(--fg);
-font:600 25px "Space Grotesk";
-margin-bottom:10px
+margin:0;
+line-height:1.6
 }
 
 footer{
@@ -180,7 +182,8 @@ border-top:1px solid var(--line)
 }
 
 @media(max-width:700px){
-.stories{
+
+.categories{
 grid-template-columns:1fr
 }
 
@@ -188,8 +191,8 @@ grid-template-columns:1fr
 padding-top:65px
 }
 
-.media{
-height:280px
+.category{
+min-height:220px
 }
 
 footer{
@@ -200,6 +203,7 @@ footer span{
 display:block;
 margin:5px 0
 }
+
 }
 </style>
 </head>
@@ -208,8 +212,13 @@ margin:5px 0
 
 <nav>
 <div class="wrap nav">
+
 <a class="logo" href="index.html">KAS</a>
-<a class="back" href="index.html#work">← BACK TO WORK</a>
+
+<a class="back" href="index.html#work">
+← BACK TO WORK
+</a>
+
 </div>
 </nav>
 
@@ -217,7 +226,9 @@ margin:5px 0
 
 <section class="hero wrap">
 
-<div class="eyebrow">TRAVEL / VISUAL STORIES</div>
+<div class="eyebrow">
+TRAVEL / VISUAL STORIES
+</div>
 
 <h1>
 JOURNEYS<br>
@@ -226,19 +237,151 @@ JOURNEYS<br>
 
 <p>
 A collection of travel photographs, videos and visual stories.
-Each journey can become its own story with landscapes, moments,
-people and observations.
+Choose a category to explore the stories behind each journey.
 </p>
 
 </section>
 
-<section class="stories wrap">
+<section class="categories wrap">
 
-<div class="empty">
+<a class="category" href="travel-photos.html">
 
-<strong>Your first travel story goes here.</strong>
+<div>
 
-Add your travel photos and videos here as you build your visual story collection.
+<div class="number">
+01 / PHOTOGRAPHY
+</div>
+
+<h2>
+Photo Stories
+</h2>
+
+<p>
+Travel photography, landscapes, moments and visual observations from the road.
+</p>
+
+</div>
+
+<div class="open">
+OPEN PHOTO STORIES ↗
+</div>
+
+</a>
+
+
+<a class="category" href="travel-videos.html">
+
+<div>
+
+<div class="number">
+02 / VIDEO
+</div>
+
+<h2>
+Video Stories
+</h2>
+
+<p>
+Travel reels, cinematic clips and moving visual stories from different journeys.
+</p>
+
+</div>
+
+<div class="open">
+OPEN VIDEO STORIES ↗
+</div>
+
+</a>
+
+
+<a class="category" href="travel-journeys.html">
+
+<div>
+
+<div class="number">
+03 / JOURNEYS
+</div>
+
+<h2>
+Travel Journeys
+</h2>
+
+<p>
+Complete trips organized by destination, route and experience.
+</p>
+
+</div>
+
+<div class="open">
+EXPLORE JOURNEYS ↗
+</div>
+
+</a>
+
+
+<a class="category" href="travel-diaries.html">
+
+<div>
+
+<div class="number">
+04 / STORIES
+</div>
+
+<h2>
+Travel Diaries
+</h2>
+
+<p>
+Personal travel notes, observations and stories behind the photographs.
+</p>
+
+</div>
+
+<div class="open">
+READ TRAVEL DIARIES ↗
+</div>
+
+</a>
+
+
+<a class="category" href="cinematic-stories.html">
+
+<div>
+
+<div class="number">
+05 / CINEMATIC
+</div>
+
+<h2>
+Cinematic Stories
+</h2>
+
+<p>
+Cinematic concepts and creative visual experiments inspired by travel.
+</p>
+
+</div>
+
+<div class="open">
+OPEN CINEMATIC STORIES ↗
+</div>
+
+</a>
+
+</section>
+
+
+<section class="wrap">
+
+<div class="info">
+
+<h3>
+Building the collection
+</h3>
+
+<p>
+New photos, videos and journeys can be added to the relevant category as the portfolio grows.
+</p>
 
 </div>
 
@@ -246,11 +389,16 @@ Add your travel photos and videos here as you build your visual story collection
 
 </main>
 
+
 <footer class="wrap">
 
-<span>© 2026 Kamrul Ahsan Shamim · KAS</span>
+<span>
+© 2026 Kamrul Ahsan Shamim · KAS
+</span>
 
-<span>Travel · Photography · Visual Storytelling</span>
+<span>
+Travel · Photography · Visual Storytelling
+</span>
 
 </footer>
 
