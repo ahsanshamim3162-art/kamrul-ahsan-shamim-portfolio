@@ -1,1024 +1,876 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="utf-8">
-
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Product Advertising | Kamrul Ahsan Shamim</title>
 
-<meta
-name="description"
-content="Product advertising portfolio by Kamrul Ahsan Shamim featuring product campaigns, promotional visuals, creative strategy, UGC concepts, social advertising and visual communication."
->
-
-<meta
-name="author"
-content="Kamrul Ahsan Shamim"
->
-
-<meta
-name="robots"
-content="index, follow"
->
-
-<link
-rel="canonical"
-href="https://ahsanshamim3162-art.github.io/kamrul-ahsan-shamim-portfolio/product-advertising.html"
->
+<meta name="description" content="Product advertising portfolio by Kamrul Ahsan Shamim featuring advertising campaigns, UGC, creative concepts, posters, commercial visuals and AI-assisted advertising.">
 
 <style>
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
-
-:root{
---bg:#070707;
---fg:#f5f1e8;
---muted:#9a978f;
---gold:#d7b56d;
---lime:#d9ff55;
---line:#262626;
---panel:#101010;
---max:1180px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-*{
-box-sizing:border-box;
+html {
+    scroll-behavior: smooth;
 }
 
-html{
-scroll-behavior:smooth;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: #f5f5f5;
+    line-height: 1.6;
 }
 
-body{
-margin:0;
-background:var(--bg);
-color:var(--fg);
-font-family:"DM Sans",sans-serif;
-line-height:1.6;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-.wrap{
-width:min(var(--max),calc(100% - 36px));
-margin:auto;
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
 }
 
-a{
-text-decoration:none;
-color:inherit;
+/* NAVIGATION */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(8,8,8,0.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #222;
 }
 
-nav{
-position:sticky;
-top:0;
-z-index:20;
-background:#070707e8;
-backdrop-filter:blur(18px);
-border-bottom:1px solid #fff1;
+.nav-inner {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
 }
 
-.nav{
-height:70px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+.logo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
-.logo{
-font:700 18px "Space Grotesk";
-letter-spacing:-.05em;
+.logo span {
+    color: #d7a85c;
 }
 
-.back{
-font-size:12px;
-font-weight:700;
-color:#bbb;
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    font-size: 14px;
 }
 
-.back:hover{
-color:var(--lime);
+.nav-links a {
+    color: #aaa;
+    transition: 0.3s;
 }
 
+.nav-links a:hover {
+    color: #d7a85c;
+}
 
 /* HERO */
 
-.hero{
-padding:90px 0 55px;
+.hero {
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 80% 20%, rgba(215,168,92,0.12), transparent 35%),
+        radial-gradient(circle at 10% 80%, rgba(255,255,255,0.04), transparent 30%);
 }
 
-.eyebrow{
-color:var(--gold);
-font-size:11px;
-letter-spacing:.17em;
-font-weight:700;
-text-transform:uppercase;
+.hero-content {
+    max-width: 900px;
+    padding: 90px 0;
 }
 
-.hero h1{
-font:700 clamp(50px,8vw,100px)/.88 "Space Grotesk";
-letter-spacing:-.075em;
-margin:18px 0 24px;
+.eyebrow {
+    color: #d7a85c;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 22px;
 }
 
-.hero h1 span{
-color:var(--gold);
+.hero h1 {
+    font-size: clamp(48px, 9vw, 110px);
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -4px;
+    margin-bottom: 30px;
 }
 
-.hero p{
-color:var(--muted);
-font-size:17px;
-max-width:780px;
-line-height:1.75;
+.hero h1 span {
+    color: #d7a85c;
 }
 
+.hero p {
+    max-width: 700px;
+    color: #aaa;
+    font-size: 18px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 22px;
+    border: 1px solid #444;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.btn.primary {
+    background: #d7a85c;
+    color: #080808;
+    border-color: #d7a85c;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
 
 /* INTRO */
 
-.intro{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:16px;
-margin-bottom:16px;
+.section {
+    padding: 100px 0;
 }
 
-.card{
-border:1px solid var(--line);
-background:var(--panel);
-border-radius:22px;
-padding:30px;
+.section-label {
+    color: #d7a85c;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 12px;
 }
 
-.card h2{
-font:600 30px "Space Grotesk";
-letter-spacing:-.04em;
-margin:8px 0 15px;
+.section-title {
+    font-size: clamp(34px, 5vw, 62px);
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
-.card p{
-color:var(--muted);
-margin:8px 0;
+.section-description {
+    max-width: 700px;
+    color: #999;
+    font-size: 16px;
 }
 
+.intro-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 45px;
+}
+
+.info-card {
+    border: 1px solid #252525;
+    background: #101010;
+    padding: 35px;
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    border-color: #d7a85c;
+    transform: translateY(-5px);
+}
+
+.info-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.info-card p {
+    color: #999;
+}
 
 /* CATEGORIES */
 
-.categories{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:10px;
-margin:16px 0;
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 45px;
 }
 
-.category{
-border:1px solid var(--line);
-background:#0b0b0b;
-border-radius:16px;
-padding:20px;
-transition:.25s;
+.category {
+    min-height: 190px;
+    padding: 25px;
+    border: 1px solid #282828;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(145deg, #111, #090909);
+    transition: 0.3s;
 }
 
-.category:hover{
-border-color:var(--gold);
-transform:translateY(-3px);
+.category:hover {
+    border-color: #d7a85c;
+    transform: translateY(-6px);
 }
 
-.category strong{
-display:block;
-font:600 19px "Space Grotesk";
-margin-bottom:7px;
+.category-number {
+    color: #d7a85c;
+    font-size: 12px;
+    margin-bottom: auto;
 }
 
-.category span{
-font-size:12px;
-color:var(--muted);
+.category h3 {
+    font-size: 19px;
+    text-transform: uppercase;
 }
 
-
-/* SECTION */
-
-.section{
-margin-top:70px;
+.category p {
+    color: #888;
+    font-size: 13px;
+    margin-top: 8px;
 }
 
-.section-head{
-display:flex;
-justify-content:space-between;
-align-items:end;
-gap:30px;
-margin-bottom:25px;
+/* FEATURED WORK */
+
+.featured {
+    background: #0d0d0d;
 }
 
-.section-head h2{
-font:600 clamp(35px,5vw,60px)/.95 "Space Grotesk";
-letter-spacing:-.06em;
-margin:10px 0;
+.featured-image {
+    margin-top: 50px;
+    border: 1px solid #292929;
+    overflow: hidden;
+    background: #000;
 }
 
-.section-head p{
-color:var(--muted);
-max-width:430px;
+.featured-image img {
+    width: 100%;
+    display: block;
+    height: auto;
 }
 
-
-/* FEATURED PROJECT */
-
-.feature{
-border:1px solid var(--line);
-background:var(--panel);
-border-radius:22px;
-padding:35px;
+.featured-caption {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+    padding-top: 35px;
 }
 
-.feature-grid{
-display:grid;
-grid-template-columns:1.15fr .85fr;
-gap:40px;
-align-items:center;
+.featured-caption h3 {
+    font-size: 32px;
+    text-transform: uppercase;
 }
 
-
-/* PRODUCT DISPLAY IMAGE */
-
-.visual-box{
-min-height:420px;
-border:1px solid var(--line);
-border-radius:18px;
-background:#090909;
-overflow:hidden;
-display:flex;
-align-items:center;
-justify-content:center;
+.featured-caption p {
+    color: #999;
 }
-
-.visual-box img{
-width:100%;
-height:100%;
-min-height:420px;
-display:block;
-object-fit:cover;
-object-position:center;
-transition:transform .4s ease;
-}
-
-.visual-box:hover img{
-transform:scale(1.02);
-}
-
-
-.feature h2{
-font:600 38px "Space Grotesk";
-letter-spacing:-.05em;
-margin:10px 0 15px;
-}
-
-.feature p{
-color:var(--muted);
-line-height:1.75;
-}
-
-.feature-list{
-margin-top:20px;
-padding:0;
-list-style:none;
-}
-
-.feature-list li{
-border-top:1px solid var(--line);
-padding:12px 0;
-font-size:13px;
-}
-
-.feature-list li:last-child{
-border-bottom:1px solid var(--line);
-}
-
 
 /* WORK TYPES */
 
-.work-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:16px;
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 45px;
 }
 
-.work-card{
-border:1px solid var(--line);
-background:var(--panel);
-border-radius:22px;
-padding:28px;
-min-height:250px;
-transition:.25s;
+.work-card {
+    min-height: 220px;
+    padding: 30px;
+    border: 1px solid #282828;
+    background: #101010;
+    transition: 0.3s;
 }
 
-.work-card:hover{
-transform:translateY(-4px);
-border-color:#555;
+.work-card:hover {
+    transform: translateY(-5px);
+    border-color: #d7a85c;
 }
 
-.work-number{
-font:600 13px "Space Grotesk";
-color:#777;
+.work-icon {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #d7a85c;
+    color: #d7a85c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    font-weight: bold;
 }
 
-.work-card h3{
-font:600 28px "Space Grotesk";
-letter-spacing:-.04em;
-margin:28px 0 10px;
+.work-card h3 {
+    font-size: 19px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
-.work-card p{
-color:var(--muted);
-font-size:14px;
-line-height:1.7;
+.work-card p {
+    color: #888;
+    font-size: 14px;
 }
-
-.tags{
-margin-top:20px;
-color:#aaa;
-font-size:10px;
-letter-spacing:.08em;
-text-transform:uppercase;
-}
-
 
 /* PROCESS */
 
-.approach{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-border:1px solid var(--line);
-border-radius:20px;
-overflow:hidden;
+.process {
+    border-top: 1px solid #202020;
+    border-bottom: 1px solid #202020;
 }
 
-.approach-item{
-padding:27px;
-background:var(--panel);
-border-right:1px solid var(--line);
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 50px;
 }
 
-.approach-item:last-child{
-border-right:0;
+.process-step {
+    padding: 30px;
+    border-left: 1px solid #292929;
 }
 
-.approach-item b{
-font:600 18px "Space Grotesk";
+.process-step:first-child {
+    border-left: none;
 }
 
-.approach-item p{
-font-size:13px;
-color:var(--muted);
-line-height:1.6;
+.process-number {
+    color: #d7a85c;
+    font-size: 12px;
+    letter-spacing: 2px;
 }
 
-
-/* FUTURE */
-
-.future{
-border:1px dashed #383838;
-border-radius:20px;
-padding:45px;
-text-align:center;
-background:#0b0b0b;
+.process-step h3 {
+    margin: 18px 0 10px;
+    text-transform: uppercase;
+    font-size: 18px;
 }
 
-.future h3{
-font:600 27px "Space Grotesk";
-margin:0 0 10px;
+.process-step p {
+    color: #888;
+    font-size: 14px;
 }
 
-.future p{
-color:var(--muted);
-max-width:650px;
-margin:auto;
+/* COLLECTION */
+
+.collection {
+    text-align: center;
+    padding: 120px 0;
+    background:
+        radial-gradient(circle at center, rgba(215,168,92,0.09), transparent 45%);
 }
 
-
-/* BUTTON */
-
-.button{
-display:inline-block;
-margin-top:20px;
-padding:12px 18px;
-border-radius:100px;
-background:var(--lime);
-color:#080808;
-font-size:12px;
-font-weight:700;
+.collection h2 {
+    font-size: clamp(38px, 6vw, 72px);
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 20px;
 }
 
+.collection p {
+    max-width: 650px;
+    margin: auto;
+    color: #999;
+}
 
 /* FOOTER */
 
-footer{
-padding:35px 0 55px;
-margin-top:90px;
-border-top:1px solid var(--line);
-color:#777;
-font-size:12px;
-display:flex;
-justify-content:space-between;
+footer {
+    border-top: 1px solid #242424;
+    padding: 35px 0;
 }
 
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-inner p {
+    color: #777;
+    font-size: 13px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.footer-links a:hover {
+    color: #d7a85c;
+}
 
 /* MOBILE */
 
-@media(max-width:850px){
+@media (max-width: 850px) {
 
-.intro,
-.feature-grid{
-grid-template-columns:1fr;
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: 78vh;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .intro-grid,
+    .featured-caption {
+        grid-template-columns: 1fr;
+    }
+
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .work-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-step:nth-child(3) {
+        border-left: none;
+    }
 }
 
-.categories{
-grid-template-columns:1fr 1fr;
+@media (max-width: 560px) {
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .hero-content {
+        padding: 70px 0;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .categories,
+    .work-grid,
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-step {
+        border-left: none;
+        border-top: 1px solid #292929;
+    }
+
+    .process-step:first-child {
+        border-top: none;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
-
-.work-grid{
-grid-template-columns:1fr;
-}
-
-.approach{
-grid-template-columns:1fr 1fr;
-}
-
-.approach-item{
-border-bottom:1px solid var(--line);
-}
-
-}
-
-@media(max-width:520px){
-
-.hero{
-padding-top:65px;
-}
-
-.categories,
-.approach{
-grid-template-columns:1fr;
-}
-
-.approach-item{
-border-right:0;
-}
-
-.visual-box{
-min-height:300px;
-}
-
-.visual-box img{
-min-height:300px;
-}
-
-footer{
-display:block;
-}
-
-footer span{
-display:block;
-margin:6px 0;
-}
-
-}
-
 </style>
-
 </head>
-
 
 <body>
 
-
 <nav>
+    <div class="container nav-inner">
+        <a href="index.html" class="logo">
+            KAMRUL <span>AHsan</span>
+        </a>
 
-<div class="wrap nav">
-
-<a
-class="logo"
-href="index.html">
-KAS
-</a>
-
-<a
-class="back"
-href="index.html#work">
-← BACK TO WORK
-</a>
-
-</div>
-
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="travel.html">Travel</a></li>
+            <li><a href="shop.html">Shop</a></li>
+        </ul>
+    </div>
 </nav>
-
-
-<main>
-
 
 <!-- HERO -->
 
-<section class="hero wrap">
+<header class="hero">
+    <div class="container">
+        <div class="hero-content">
 
-<div class="eyebrow">
-PRODUCT ADVERTISING / CREATIVE PORTFOLIO
-</div>
+            <div class="eyebrow">
+                Portfolio Hub / Product Advertising
+            </div>
 
-<h1>
-PRODUCTS<br>
-<span>WORTH NOTICING.</span>
-</h1>
+            <h1>
+                Products<br>
+                Worth <span>Noticing.</span>
+            </h1>
 
-<p>
-A collection of product advertising concepts, campaign ideas,
-UGC directions, promotional visuals and creative communication.
-The collection can grow as new advertising work is created.
-</p>
+            <p>
+                A collection of product advertising concepts, commercial visuals,
+                UGC campaigns, posters, creative strategy and AI-assisted
+                advertising work designed to make products impossible to ignore.
+            </p>
 
-</section>
+            <div class="hero-buttons">
+                <a href="#featured" class="btn primary">
+                    Explore Work
+                </a>
 
+                <a href="index.html" class="btn">
+                    Main Portfolio
+                </a>
+            </div>
+
+        </div>
+    </div>
+</header>
 
 <!-- INTRO -->
 
-<section class="wrap intro">
+<section class="section">
+    <div class="container">
 
-<div class="card">
+        <div class="section-label">
+            01 / Creative Direction
+        </div>
 
-<div class="eyebrow">
-01 / THE APPROACH
-</div>
+        <h2 class="section-title">
+            Advertising is more<br>
+            than showing a product.
+        </h2>
 
-<h2>
-Product first. Advertising second.
-</h2>
+        <p class="section-description">
+            The goal is to connect the product with an idea, emotion or
+            reason to believe. Every visual starts with the audience,
+            the positioning and the message before moving into execution.
+        </p>
 
-<p>
-Good product advertising starts by understanding what makes
-the product valuable, who it is for and why the audience
-should care.
-</p>
+        <div class="intro-grid">
 
-</div>
+            <div class="info-card">
+                <h3>Strategy First</h3>
+                <p>
+                    Audience insight, positioning, communication objective
+                    and the core selling idea shape the creative direction.
+                </p>
+            </div>
 
+            <div class="info-card">
+                <h3>Creative Execution</h3>
+                <p>
+                    Visual concepts, product photography, UGC, posters,
+                    social content and AI-assisted visuals turn the strategy
+                    into communication.
+                </p>
+            </div>
 
-<div class="card">
+        </div>
 
-<div class="eyebrow">
-02 / THE COLLECTION
-</div>
-
-<h2>
-A growing creative library.
-</h2>
-
-<p>
-This page is designed as a hub for product posters,
-campaign concepts, UGC advertising, social creatives,
-billboards and other product-focused work.
-</p>
-
-</div>
-
+    </div>
 </section>
-
 
 <!-- CATEGORIES -->
 
-<section class="wrap">
+<section class="section">
+    <div class="container">
 
-<div class="eyebrow">
-03 / CREATIVE CATEGORIES
-</div>
+        <div class="section-label">
+            02 / Creative Categories
+        </div>
 
-<div class="categories">
+        <h2 class="section-title">
+            Different formats.<br>
+            One objective.
+        </h2>
 
-<div class="category">
+        <div class="categories">
 
-<strong>Product Campaigns</strong>
+            <div class="category">
+                <div class="category-number">01</div>
+                <h3>Product Campaigns</h3>
+                <p>Concept-led commercial advertising.</p>
+            </div>
 
-<span>
-Complete advertising ideas built around a product.
-</span>
+            <div class="category">
+                <div class="category-number">02</div>
+                <h3>UGC Advertising</h3>
+                <p>Human, social-first product storytelling.</p>
+            </div>
 
-</div>
+            <div class="category">
+                <div class="category-number">03</div>
+                <h3>Poster Design</h3>
+                <p>High-impact promotional communication.</p>
+            </div>
 
+            <div class="category">
+                <div class="category-number">04</div>
+                <h3>Outdoor Advertising</h3>
+                <p>Billboards, city visuals and OOH concepts.</p>
+            </div>
 
-<div class="category">
+        </div>
 
-<strong>UGC Advertising</strong>
-
-<span>
-Creator-style advertising and short-form concepts.
-</span>
-
-</div>
-
-
-<div class="category">
-
-<strong>Poster Design</strong>
-
-<span>
-Product posters and promotional campaign visuals.
-</span>
-
-</div>
-
-
-<div class="category">
-
-<strong>Outdoor Advertising</strong>
-
-<span>
-Billboards and large-format product campaigns.
-</span>
-
-</div>
-
-</div>
-
+    </div>
 </section>
-
 
 <!-- FEATURED -->
 
-<section class="wrap section">
+<section class="section featured" id="featured">
+    <div class="container">
 
-<div class="section-head">
+        <div class="section-label">
+            03 / Featured Work
+        </div>
 
-<div>
+        <h2 class="section-title">
+            Product Advertising
+        </h2>
 
-<div class="eyebrow">
-04 / FEATURED WORK
-</div>
+        <p class="section-description">
+            A visual advertising showcase exploring premium product
+            presentation, commercial photography, creative concepts
+            and brand-focused communication.
+        </p>
 
-<h2>
-Product Advertising
-</h2>
+        <div class="featured-image">
+            <img
+                src="product-advertising-display.PNG"
+                alt="Product Advertising Portfolio Showcase"
+            >
+        </div>
 
-</div>
+        <div class="featured-caption">
 
-<p>
-A selection of product-focused advertising work,
-creative concepts and visual communication.
-</p>
+            <div>
+                <h3>
+                    Strategy.<br>
+                    Concept.<br>
+                    Execution.
+                </h3>
+            </div>
 
-</div>
+            <div>
+                <p>
+                    From the first creative idea to the final advertising
+                    visual, the focus is on creating communication that
+                    feels commercially relevant, visually strong and
+                    connected to the brand.
+                </p>
+            </div>
 
+        </div>
 
-<div class="feature">
-
-<div class="feature-grid">
-
-
-<!-- DISPLAY IMAGE -->
-
-<div class="visual-box">
-
-<img
-src="product-advertising-display.PNG"
-alt="Product Advertising Portfolio Hub featuring product advertising visuals"
-loading="lazy"
->
-
-</div>
-
-
-<div>
-
-<div class="eyebrow">
-PRODUCT ADVERTISING
-</div>
-
-<h2>
-From product to story.
-</h2>
-
-<p>
-A collection of advertising work created around products,
-brands and consumer attention. The work combines creative
-thinking, visual communication and advertising strategy.
-</p>
-
-<ul class="feature-list">
-
-<li>
-<strong>CAMPAIGN THINKING</strong><br>
-Concept development · Positioning · Messaging
-</li>
-
-<li>
-<strong>VISUAL COMMUNICATION</strong><br>
-Product posters · Promotional visuals · Art direction
-</li>
-
-<li>
-<strong>CONTENT FORMATS</strong><br>
-UGC · Social advertising · Short-form content
-</li>
-
-<li>
-<strong>ADVERTISING THINKING</strong><br>
-Product benefit · Audience context · Storytelling
-</li>
-
-</ul>
-
-</div>
-
-
-</div>
-
-</div>
-
+    </div>
 </section>
-
 
 <!-- WORK TYPES -->
 
-<section class="wrap section">
+<section class="section">
+    <div class="container">
 
-<div class="section-head">
+        <div class="section-label">
+            04 / Selected Work Types
+        </div>
 
-<div>
+        <h2 class="section-title">
+            What I create.
+        </h2>
 
-<div class="eyebrow">
-05 / WHAT I CREATE
-</div>
+        <div class="work-grid">
 
-<h2>
-Different formats.<br>
-One product story.
-</h2>
+            <div class="work-card">
+                <div class="work-icon">01</div>
+                <h3>Campaign Concepts</h3>
+                <p>
+                    Big ideas and campaign directions built around
+                    a product's communication objective.
+                </p>
+            </div>
 
-</div>
+            <div class="work-card">
+                <div class="work-icon">02</div>
+                <h3>UGC Ads</h3>
+                <p>
+                    Social-first advertising concepts designed to feel
+                    natural while communicating product benefits.
+                </p>
+            </div>
 
-<p>
-Future advertising work can be added to these categories
-without changing the overall structure of the portfolio.
-</p>
+            <div class="work-card">
+                <div class="work-icon">03</div>
+                <h3>Commercial Visuals</h3>
+                <p>
+                    Premium product-focused visuals for advertising
+                    and promotional communication.
+                </p>
+            </div>
 
-</div>
+            <div class="work-card">
+                <div class="work-icon">04</div>
+                <h3>Advertising Posters</h3>
+                <p>
+                    Promotional layouts designed to communicate
+                    a product message quickly and clearly.
+                </p>
+            </div>
 
+            <div class="work-card">
+                <div class="work-icon">05</div>
+                <h3>Outdoor / OOH</h3>
+                <p>
+                    Billboard and outdoor advertising concepts
+                    adapted to real-world environments.
+                </p>
+            </div>
 
-<div class="work-grid">
+            <div class="work-card">
+                <div class="work-icon">06</div>
+                <h3>AI-Assisted Creative</h3>
+                <p>
+                    AI-assisted visual exploration combined with
+                    marketing thinking and creative direction.
+                </p>
+            </div>
 
+        </div>
 
-<article class="work-card">
-
-<div class="work-number">
-01 / CAMPAIGN
-</div>
-
-<h3>
-Product Campaigns
-</h3>
-
-<p>
-Complete advertising concepts combining positioning,
-creative direction, messaging and visual execution.
-</p>
-
-<div class="tags">
-Strategy · Campaign · Creative Direction
-</div>
-
-</article>
-
-
-<article class="work-card">
-
-<div class="work-number">
-02 / UGC
-</div>
-
-<h3>
-UGC Advertising
-</h3>
-
-<p>
-Creator-led advertising concepts designed for Reels,
-TikTok-style short-form content and social media campaigns.
-</p>
-
-<div class="tags">
-UGC · Social · Short-form
-</div>
-
-</article>
-
-
-<article class="work-card">
-
-<div class="work-number">
-03 / VISUAL
-</div>
-
-<h3>
-Product Posters
-</h3>
-
-<p>
-Promotional posters designed to communicate product
-features, benefits and positioning through visual storytelling.
-</p>
-
-<div class="tags">
-Poster · Product · Advertising
-</div>
-
-</article>
-
-
-<article class="work-card">
-
-<div class="work-number">
-04 / OUTDOOR
-</div>
-
-<h3>
-Billboards & OOH
-</h3>
-
-<p>
-Large-format advertising concepts created to communicate
-a product quickly in real-world environments.
-</p>
-
-<div class="tags">
-OOH · Billboard · Brand Communication
-</div>
-
-</article>
-
-
-<article class="work-card">
-
-<div class="work-number">
-05 / DIGITAL
-</div>
-
-<h3>
-Social Advertising
-</h3>
-
-<p>
-Digital-first advertising concepts for social feeds,
-promotional campaigns and performance-oriented creative.
-</p>
-
-<div class="tags">
-Digital · Social Media · Performance Creative
-</div>
-
-</article>
-
-
-<article class="work-card">
-
-<div class="work-number">
-06 / EXPERIMENTS
-</div>
-
-<h3>
-Creative Experiments
-</h3>
-
-<p>
-Visual experiments exploring AI-assisted production,
-new formats, concepts and alternative ways to communicate products.
-</p>
-
-<div class="tags">
-AI · Creative Technology · Experiments
-</div>
-
-</article>
-
-
-</div>
-
+    </div>
 </section>
-
 
 <!-- PROCESS -->
 
-<section class="wrap section">
+<section class="section process">
+    <div class="container">
 
-<div class="section-head">
+        <div class="section-label">
+            05 / Creative Process
+        </div>
 
-<div>
+        <h2 class="section-title">
+            From product<br>
+            to perception.
+        </h2>
 
-<div class="eyebrow">
-06 / CREATIVE PROCESS
-</div>
+        <div class="process-grid">
 
-<h2>
-Think. Position. Create. Adapt.
-</h2>
+            <div class="process-step">
+                <div class="process-number">STEP 01</div>
+                <h3>Understand</h3>
+                <p>
+                    Understand the product, audience, market and
+                    communication objective.
+                </p>
+            </div>
 
-</div>
+            <div class="process-step">
+                <div class="process-number">STEP 02</div>
+                <h3>Concept</h3>
+                <p>
+                    Develop a central creative idea and decide
+                    how the product should be perceived.
+                </p>
+            </div>
 
-</div>
+            <div class="process-step">
+                <div class="process-number">STEP 03</div>
+                <h3>Create</h3>
+                <p>
+                    Translate the idea into visuals, copy,
+                    UGC, posters or commercial content.
+                </p>
+            </div>
 
+            <div class="process-step">
+                <div class="process-number">STEP 04</div>
+                <h3>Communicate</h3>
+                <p>
+                    Deliver advertising that attracts attention,
+                    communicates value and supports the brand.
+                </p>
+            </div>
 
-<div class="approach">
+        </div>
 
-<div class="approach-item">
-
-<b>01 / PRODUCT</b>
-
-<p>
-Understand the product, features, benefits and category.
-</p>
-
-</div>
-
-
-<div class="approach-item">
-
-<b>02 / AUDIENCE</b>
-
-<p>
-Identify the consumer, need, context and attention trigger.
-</p>
-
-</div>
-
-
-<div class="approach-item">
-
-<b>03 / IDEA</b>
-
-<p>
-Build the message and visual concept around the product's value.
-</p>
-
-</div>
-
-
-<div class="approach-item">
-
-<b>04 / EXECUTION</b>
-
-<p>
-Adapt the idea into posters, UGC, social content and campaigns.
-</p>
-
-</div>
-
-</div>
-
+    </div>
 </section>
-
 
 <!-- COLLECTION -->
 
-<section class="wrap section">
+<section class="collection">
+    <div class="container">
 
-<div class="eyebrow">
-07 / COLLECTION
-</div>
+        <div class="section-label">
+            06 / Creative Collection
+        </div>
 
-<div class="future">
+        <h2>
+            More ideas.<br>
+            More products.<br>
+            More stories.
+        </h2>
 
-<h3>
-More product advertising coming.
-</h3>
+        <p>
+            This portfolio hub will continue to grow with new campaign
+            concepts, product advertising experiments, UGC work,
+            commercial visuals and creative projects.
+        </p>
 
-<p>
-This space can grow with every new poster, product campaign,
-restaurant advertisement, consumer-brand concept, UGC idea,
-billboard or creative experiment you create.
-</p>
+        <div class="hero-buttons" style="justify-content:center;">
+            <a href="index.html" class="btn primary">
+                Back to Portfolio
+            </a>
+        </div>
 
-<a
-class="button"
-href="index.html#work">
-← BACK TO PORTFOLIO
-</a>
-
-</div>
-
+    </div>
 </section>
 
+<!-- FOOTER -->
 
-</main>
+<footer>
+    <div class="container footer-inner">
 
+        <p>
+            © 2026 Kamrul Ahsan Shamim. All rights reserved.
+        </p>
 
-<footer class="wrap">
+        <div class="footer-links">
+            <a href="index.html">Portfolio</a>
+            <a href="research.html">Research</a>
+            <a href="travel.html">Travel</a>
+        </div>
 
-<span>
-© 2026 Kamrul Ahsan Shamim · KAS
-</span>
-
-<span>
-Product Advertising · Creative Strategy · Visual Communication
-</span>
-
+    </div>
 </footer>
 
-
 </body>
-
 </html>
