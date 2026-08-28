@@ -1,1 +1,623 @@
+<!doctype html>
+<html lang="en">
 
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Edit Portfolio | KAS</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+background:#070707;
+color:#f5f1e8;
+font-family:Arial,sans-serif;
+line-height:1.5;
+}
+
+.wrap{
+width:min(900px,calc(100% - 30px));
+margin:auto;
+}
+
+header{
+padding:30px 0;
+border-bottom:1px solid #292929;
+margin-bottom:30px;
+}
+
+h1{
+margin:0 0 8px;
+font-size:32px;
+}
+
+p{
+color:#999;
+}
+
+label{
+display:block;
+margin:22px 0 8px;
+font-weight:bold;
+font-size:14px;
+}
+
+input,
+textarea{
+width:100%;
+padding:14px;
+background:#111;
+color:#fff;
+border:1px solid #333;
+border-radius:8px;
+font:inherit;
+}
+
+textarea{
+min-height:120px;
+resize:vertical;
+}
+
+input:focus,
+textarea:focus{
+outline:none;
+border-color:#d7b56d;
+}
+
+.section{
+background:#101010;
+border:1px solid #292929;
+border-radius:14px;
+padding:25px;
+margin-bottom:20px;
+}
+
+.section h2{
+margin-top:0;
+font-size:21px;
+}
+
+.project{
+border:1px solid #292929;
+border-radius:10px;
+padding:18px;
+margin-top:15px;
+}
+
+.project h3{
+margin-top:0;
+color:#d7b56d;
+}
+
+button,
+.back{
+display:inline-block;
+border:0;
+padding:13px 20px;
+border-radius:100px;
+font-weight:bold;
+cursor:pointer;
+text-decoration:none;
+margin:5px 5px 5px 0;
+}
+
+.save{
+background:#d9ff55;
+color:#080808;
+}
+
+.reset{
+background:#222;
+color:#fff;
+border:1px solid #444;
+}
+
+.back{
+background:#222;
+color:#fff;
+border:1px solid #444;
+}
+
+#message{
+display:none;
+padding:15px;
+margin-bottom:20px;
+border:1px solid #53611f;
+border-radius:8px;
+background:#151a0b;
+color:#d9ff55;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="wrap">
+
+<header>
+
+<h1>Edit Portfolio</h1>
+
+<p>
+Update your portfolio information below and save the changes.
+</p>
+
+<a href="index.html" class="back">
+← BACK TO PORTFOLIO
+</a>
+
+</header>
+
+
+<div id="message">
+Changes saved successfully. Open the portfolio to see the updates.
+</div>
+
+
+<!-- BASIC INFORMATION -->
+
+<div class="section">
+
+<h2>01 / Basic Information</h2>
+
+<label>Name</label>
+<input id="name">
+
+<label>Tagline</label>
+<input id="tagline">
+
+<label>Hero Text</label>
+<textarea id="hero"></textarea>
+
+<label>About Text</label>
+<textarea id="about"></textarea>
+
+<label>Email</label>
+<input id="email" type="email">
+
+<label>Phone</label>
+<input id="phone">
+
+<label>LinkedIn URL</label>
+<input id="linkedin">
+
+<label>Profile Image Filename</label>
+<input id="profile">
+
+</div>
+
+
+<!-- PROJECT 1 -->
+
+<div class="section">
+
+<h2>02 / Selected Work</h2>
+
+<div class="project">
+
+<h3>Project 1</h3>
+
+<label>Title</label>
+<input id="p1title">
+
+<label>Category</label>
+<input id="p1category">
+
+<label>Description</label>
+<textarea id="p1desc"></textarea>
+
+<label>Image Filename</label>
+<input id="p1image">
+
+<label>Tags</label>
+<input id="p1tags">
+
+<label>Project Link</label>
+<input id="p1link">
+
+</div>
+
+
+<div class="project">
+
+<h3>Project 2</h3>
+
+<label>Title</label>
+<input id="p2title">
+
+<label>Category</label>
+<input id="p2category">
+
+<label>Description</label>
+<textarea id="p2desc"></textarea>
+
+<label>Image Filename</label>
+<input id="p2image">
+
+<label>Tags</label>
+<input id="p2tags">
+
+<label>Project Link</label>
+<input id="p2link">
+
+</div>
+
+
+<div class="project">
+
+<h3>Project 3</h3>
+
+<label>Title</label>
+<input id="p3title">
+
+<label>Category</label>
+<input id="p3category">
+
+<label>Description</label>
+<textarea id="p3desc"></textarea>
+
+<label>Image Filename</label>
+<input id="p3image">
+
+<label>Tags</label>
+<input id="p3tags">
+
+<label>Project Link</label>
+<input id="p3link">
+
+</div>
+
+
+<div class="project">
+
+<h3>Project 4</h3>
+
+<label>Title</label>
+<input id="p4title">
+
+<label>Category</label>
+<input id="p4category">
+
+<label>Description</label>
+<textarea id="p4desc"></textarea>
+
+<label>Image Filename</label>
+<input id="p4image">
+
+<label>Tags</label>
+<input id="p4tags">
+
+<label>Project Link</label>
+<input id="p4link">
+
+</div>
+
+</div>
+
+
+<!-- RESEARCH -->
+
+<div class="section">
+
+<h2>03 / Research</h2>
+
+<label>Research Title</label>
+<textarea id="researchTitle"></textarea>
+
+<label>Research Description</label>
+<textarea id="researchDesc"></textarea>
+
+<label>Research Statistics</label>
+<input id="researchStats">
+
+<label>Research Finding</label>
+<textarea id="researchFinding"></textarea>
+
+</div>
+
+
+<!-- SAVE -->
+
+<div class="section">
+
+<button class="save" onclick="savePortfolio()">
+SAVE CHANGES
+</button>
+
+<button class="reset" onclick="resetPortfolio()">
+RESET TO ORIGINAL
+</button>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+const KEY = "KAS_PORTFOLIO_DATA_V1";
+
+
+const originalData = {
+
+name:"Kamrul Ahsan Shamim",
+
+tagline:"Marketing × Branding × Creative Technology",
+
+hero:"I turn marketing ideas into stories, campaigns and visual experiences that people remember.",
+
+about:"I’m a marketing graduate interested in branding, digital marketing, advertising, creative strategy and AI-assisted content creation. I enjoy taking a business objective and turning it into a clear message, campaign idea or visual experience.",
+
+email:"kamrul.shamim@northsouth.edu",
+
+phone:"01400961461",
+
+linkedin:"https://www.linkedin.com/in/kamrul-ahsan-shamim-a7841737a",
+
+profile:"profile.jpg.PNG",
+
+projects:[
+
+{
+title:"Product Advertising Portfolio",
+category:"ADVERTISING · UGC · CREATIVE",
+desc:"A collection of product advertising concepts, UGC campaigns, advertising posters, AI-assisted visuals and creative campaign executions.",
+image:"product-advertising-display.PNG",
+tags:"AI-assisted visual · UGC · Ad strategy",
+link:"product-advertising.html"
+},
+
+{
+title:"A/B Testing Visual Concept",
+category:"DIGITAL MARKETING",
+desc:"A LinkedIn marketing analysis and visual concept demonstrating test, compare, learn and scale thinking.",
+image:"",
+tags:"A/B testing · Content · Measurement",
+link:""
+},
+
+{
+title:"Gen Z & Rebranding",
+category:"BRAND STRATEGY",
+desc:"Brand strategy and consumer behavior thinking around authenticity, values, speed, creator-led trust and relevance.",
+image:"",
+tags:"Gen Z · Branding · Consumer behavior",
+link:""
+},
+
+{
+title:"Travel Visual Storytelling",
+category:"VISUAL STORY",
+desc:"Cinematic travel concepts using landscapes, people and journeys to build authentic visual narratives.",
+image:"",
+tags:"Storytelling · Photography · Content",
+link:"travel.html"
+}
+
+],
+
+research:{
+
+title:"The Credibility of Influencer Marketing and Its Impact on Consumer Purchase Decisions",
+
+desc:"Exploratory quantitative research examining how influencer credibility factors can affect consumer purchase behavior.",
+
+stats:"n = 103 · Cronbach’s Alpha = 0.676 · R² = 0.432",
+
+finding:"Experience and influencer trustworthiness showed significant positive effects on purchase behavior, while perceived credibility and attractiveness were not statistically significant in the regression model."
+
+}
+
+};
+
+
+function getData(){
+
+try{
+
+return JSON.parse(
+localStorage.getItem(KEY)
+) || originalData;
+
+}catch(e){
+
+return originalData;
+
+}
+
+}
+
+
+function setValue(id,value){
+
+const el=document.getElementById(id);
+
+if(el){
+
+el.value=value || "";
+
+}
+
+}
+
+
+function loadPortfolio(){
+
+const d=getData();
+
+
+setValue("name",d.name);
+setValue("tagline",d.tagline);
+setValue("hero",d.hero);
+setValue("about",d.about);
+setValue("email",d.email);
+setValue("phone",d.phone);
+setValue("linkedin",d.linkedin);
+setValue("profile",d.profile);
+
+
+d.projects=d.projects || [];
+
+
+for(let i=0;i<4;i++){
+
+const p=d.projects[i] || {};
+
+const n=i+1;
+
+setValue("p"+n+"title",p.title);
+setValue("p"+n+"category",p.category);
+setValue("p"+n+"desc",p.desc);
+setValue("p"+n+"image",p.image);
+setValue("p"+n+"tags",p.tags);
+setValue("p"+n+"link",p.link);
+
+}
+
+
+const r=d.research || {};
+
+setValue("researchTitle",r.title);
+setValue("researchDesc",r.desc);
+setValue("researchStats",r.stats);
+setValue("researchFinding",r.finding);
+
+}
+
+
+function value(id){
+
+return document.getElementById(id).value;
+
+}
+
+
+function savePortfolio(){
+
+const projects=[];
+
+
+for(let i=1;i<=4;i++){
+
+projects.push({
+
+title:value("p"+i+"title"),
+
+category:value("p"+i+"category"),
+
+desc:value("p"+i+"desc"),
+
+image:value("p"+i+"image"),
+
+tags:value("p"+i+"tags"),
+
+link:value("p"+i+"link")
+
+});
+
+}
+
+
+const data={
+
+name:value("name"),
+
+tagline:value("tagline"),
+
+hero:value("hero"),
+
+about:value("about"),
+
+email:value("email"),
+
+phone:value("phone"),
+
+linkedin:value("linkedin"),
+
+profile:value("profile"),
+
+projects:projects,
+
+research:{
+
+title:value("researchTitle"),
+
+desc:value("researchDesc"),
+
+stats:value("researchStats"),
+
+finding:value("researchFinding")
+
+}
+
+};
+
+
+localStorage.setItem(
+KEY,
+JSON.stringify(data)
+);
+
+
+const message=document.getElementById("message");
+
+message.style.display="block";
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+function resetPortfolio(){
+
+if(
+!confirm(
+"Reset all portfolio information to the original content?"
+)
+){
+
+return;
+
+}
+
+localStorage.setItem(
+KEY,
+JSON.stringify(originalData)
+);
+
+loadPortfolio();
+
+const message=document.getElementById("message");
+
+message.textContent=
+"Portfolio has been reset to the original information.";
+
+message.style.display="block";
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+loadPortfolio();
+
+</script>
+
+</body>
+
+</html>
