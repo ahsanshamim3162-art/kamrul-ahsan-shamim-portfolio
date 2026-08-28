@@ -36,9 +36,6 @@ rel="canonical"
 href="https://ahsanshamim3162-art.github.io/kamrul-ahsan-shamim-portfolio/"
 >
 
-
-<!-- OPEN GRAPH -->
-
 <meta
 property="og:title"
 content="Kamrul Ahsan Shamim | Marketing Professional"
@@ -64,9 +61,6 @@ property="og:site_name"
 content="Kamrul Ahsan Shamim"
 >
 
-
-<!-- SOCIAL SHARING -->
-
 <meta
 name="twitter:card"
 content="summary"
@@ -82,22 +76,19 @@ name="twitter:description"
 content="Marketing, branding, digital marketing, consumer behavior, research and creative portfolio."
 >
 
-
-<!-- STRUCTURED DATA -->
-
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Kamrul Ahsan Shamim",
-  "url": "https://ahsanshamim3162-art.github.io/kamrul-ahsan-shamim-portfolio/",
-  "jobTitle": "Marketing Professional",
-  "description": "Marketing professional focused on branding, digital marketing, consumer behavior, creative strategy, advertising and marketing research.",
-  "email": "mailto:kamrul.shamim@northsouth.edu",
-  "sameAs": [
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Kamrul Ahsan Shamim",
+  "url":"https://ahsanshamim3162-art.github.io/kamrul-ahsan-shamim-portfolio/",
+  "jobTitle":"Marketing Professional",
+  "description":"Marketing professional focused on branding, digital marketing, consumer behavior, creative strategy, advertising and marketing research.",
+  "email":"mailto:kamrul.shamim@northsouth.edu",
+  "sameAs":[
     "https://www.linkedin.com/in/kamrul-ahsan-shamim-a7841737a"
   ],
-  "knowsAbout": [
+  "knowsAbout":[
     "Marketing",
     "Branding",
     "Digital Marketing",
@@ -113,6 +104,10 @@ content="Marketing, branding, digital marketing, consumer behavior, research and
 
 <style>
 
+/* =========================================================
+   CORE
+========================================================= */
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root{
@@ -120,18 +115,20 @@ content="Marketing, branding, digital marketing, consumer behavior, research and
 --fg:#f5f1e8;
 --muted:#9a978f;
 --gold:#d7b56d;
+--gold-light:#f0d28c;
 --lime:#d9ff55;
 --line:#262626;
 --panel:#101010;
---max:1180px
+--panel-2:#141414;
+--max:1180px;
 }
 
 *{
-box-sizing:border-box
+box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth
+scroll-behavior:smooth;
 }
 
 body{
@@ -139,64 +136,71 @@ margin:0;
 background:var(--bg);
 color:var(--fg);
 font-family:"DM Sans",sans-serif;
-line-height:1.6
+line-height:1.6;
+}
+
+body.modal-open{
+overflow:hidden;
 }
 
 .wrap{
 width:min(var(--max),calc(100% - 36px));
-margin:auto
+margin:auto;
 }
 
 a{
 text-decoration:none;
-color:inherit
+color:inherit;
+}
+
+button{
+font-family:inherit;
 }
 
 nav{
 position:fixed;
 top:0;
-z-index:20;
+left:0;
+z-index:50;
 width:100%;
 background:#070707e8;
 backdrop-filter:blur(18px);
-border-bottom:1px solid #fff1
+border-bottom:1px solid #fff1;
 }
 
 .nav{
 height:70px;
 display:flex;
 justify-content:space-between;
-align-items:center
+align-items:center;
 }
 
 .logo{
-width:46px;
-height:46px;
-object-fit:contain
+width:82px;
+height:52px;
+object-fit:contain;
 }
 
 .links{
 display:flex;
-gap:22px;
+gap:28px;
 font-size:12px;
-color:#bbb
+color:#bbb;
+align-items:center;
 }
 
 .links a{
-transition:.2s
+transition:.2s;
 }
 
 .links a:hover{
-color:var(--lime)
+color:var(--lime);
 }
 
 .links .shop{
 color:var(--lime);
-font-weight:700
+font-weight:700;
 }
-
-
-/* HERO */
 
 .hero{
 min-height:94vh;
@@ -206,7 +210,7 @@ grid-template-columns:1.25fr .75fr;
 align-items:center;
 gap:50px;
 position:relative;
-overflow:hidden
+overflow:hidden;
 }
 
 .hero:before{
@@ -219,7 +223,7 @@ top:80px;
 border-radius:50%;
 background:var(--gold);
 filter:blur(160px);
-opacity:.09
+opacity:.09;
 }
 
 .eyebrow{
@@ -227,24 +231,24 @@ color:var(--gold);
 font-size:11px;
 letter-spacing:.17em;
 font-weight:700;
-text-transform:uppercase
+text-transform:uppercase;
 }
 
 .hero h1{
 font:700 clamp(55px,9vw,115px)/.84 "Space Grotesk";
 letter-spacing:-.075em;
-margin:18px 0
+margin:18px 0;
 }
 
 .hero h1 span{
-color:var(--gold)
+color:var(--gold);
 }
 
 .hero p{
 color:var(--muted);
 font-size:18px;
 max-width:650px;
-line-height:1.7
+line-height:1.7;
 }
 
 .profile{
@@ -254,7 +258,7 @@ object-fit:cover;
 border-radius:24px;
 border:1px solid var(--line);
 filter:saturate(.85);
-display:block
+display:block;
 }
 
 .btn{
@@ -265,21 +269,21 @@ border-radius:100px;
 font-size:12px;
 font-weight:700;
 margin:10px 7px 0 0;
-transition:.2s
+transition:.2s;
 }
 
 .btn:hover{
-transform:translateY(-2px)
+transform:translateY(-2px);
 }
 
 .primary{
 background:var(--lime);
 color:#090909;
-border-color:var(--lime)
+border-color:var(--lime);
 }
 
 section{
-padding:95px 0
+padding:95px 0;
 }
 
 .head{
@@ -287,43 +291,45 @@ display:flex;
 justify-content:space-between;
 align-items:end;
 gap:35px;
-margin-bottom:38px
+margin-bottom:38px;
 }
 
 h2{
 font:600 clamp(38px,5vw,68px)/.95 "Space Grotesk";
 letter-spacing:-.06em;
-margin:10px 0
+margin:10px 0;
 }
 
 .head p,
 .muted{
 color:var(--muted);
-max-width:430px
+max-width:430px;
 }
 
 .intro{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:70px
+gap:70px;
 }
 
 .statement{
 font:600 clamp(32px,4vw,56px)/1 "Space Grotesk";
-letter-spacing:-.05em
+letter-spacing:-.05em;
 }
 
 .statement span{
-color:var(--lime)
+color:var(--lime);
 }
 
 
-/* SELECTED WORK */
+/* =========================================================
+   WORK
+========================================================= */
 
 .work-grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:16px
+gap:16px;
 }
 
 .card{
@@ -331,12 +337,12 @@ border:1px solid var(--line);
 background:var(--panel);
 border-radius:22px;
 overflow:hidden;
-transition:.25s
+transition:.25s;
 }
 
 .card:hover{
 transform:translateY(-4px);
-border-color:#444
+border-color:#444;
 }
 
 .project-img{
@@ -344,35 +350,35 @@ width:100%;
 height:300px;
 object-fit:cover;
 background:linear-gradient(135deg,#1b241d,#111);
-display:block
+display:block;
 }
 
 .project-img.placeholder{
 display:grid;
 place-items:center;
 font:600 42px "Space Grotesk";
-color:#777
+color:#777;
 }
 
 .body{
-padding:22px
+padding:22px;
 }
 
 .body h3{
 font:600 25px "Space Grotesk";
-margin:0 0 8px
+margin:0 0 8px;
 }
 
 .body p{
 color:var(--muted);
 font-size:14px;
-line-height:1.7
+line-height:1.7;
 }
 
 .tags{
 color:#aaa;
 font-size:10px;
-letter-spacing:.08em
+letter-spacing:.08em;
 }
 
 .open-project{
@@ -381,64 +387,68 @@ margin-top:14px;
 color:var(--lime);
 font-size:10px;
 font-weight:700;
-letter-spacing:.1em
+letter-spacing:.1em;
 }
 
 
-/* STRATEGY */
+/* =========================================================
+   STRATEGY
+========================================================= */
 
 .framework{
 display:grid;
 grid-template-columns:repeat(4,1fr);
 border:1px solid var(--line);
 border-radius:20px;
-overflow:hidden
+overflow:hidden;
 }
 
 .step{
 padding:27px;
 background:var(--panel);
-border-right:1px solid var(--line)
+border-right:1px solid var(--line);
 }
 
 .step:last-child{
-border:0
+border:0;
 }
 
 .step b{
-font:600 19px "Space Grotesk"
+font:600 19px "Space Grotesk";
 }
 
 .step p{
 color:var(--muted);
 font-size:13px;
-line-height:1.6
+line-height:1.6;
 }
 
 
-/* RESEARCH */
+/* =========================================================
+   RESEARCH
+========================================================= */
 
 .research{
 background:var(--panel);
 border:1px solid var(--line);
 padding:32px;
-border-radius:22px
+border-radius:22px;
 }
 
 .research h3{
 font:600 31px "Space Grotesk";
-max-width:850px
+max-width:850px;
 }
 
 .research p{
 color:var(--muted);
 max-width:850px;
-line-height:1.7
+line-height:1.7;
 }
 
 .stats{
 color:var(--gold);
-font-weight:700
+font-weight:700;
 }
 
 .research-link{
@@ -450,144 +460,348 @@ background:var(--lime);
 color:#080808;
 font-size:12px;
 font-weight:700;
-transition:.2s
+transition:.2s;
 }
 
 .research-link:hover{
-transform:translateY(-2px)
+transform:translateY(-2px);
 }
 
 
-/* PREMIUM PUBLICATIONS */
+/* =========================================================
+   PUBLISHED THINKING
+========================================================= */
 
-.publications-box{
-border:1px solid var(--line);
-border-radius:24px;
-background:
-radial-gradient(
-circle at 85% 15%,
-rgba(215,181,109,.10),
-transparent 30%
-),
-linear-gradient(
-135deg,
-#141414,
-#090909
-);
-overflow:hidden;
-box-shadow:
-0 20px 60px rgba(0,0,0,.35);
+.published-section{
+position:relative;
 }
 
-.publications-toggle{
-width:100%;
-border:0;
-background:transparent;
-color:var(--fg);
-padding:30px 32px;
+.published-layout{
 display:grid;
-grid-template-columns:1fr auto auto;
+grid-template-columns:.72fr 1.28fr;
+gap:70px;
 align-items:center;
-gap:25px;
-text-align:left;
-cursor:pointer;
-font-family:"DM Sans",sans-serif;
 }
 
-.pub-brand{
-font-size:11px;
-font-weight:700;
-letter-spacing:.16em;
-color:var(--gold)
+.published-copy h2{
+font-size:clamp(48px,5.5vw,76px);
+max-width:620px;
+margin:18px 0 22px;
 }
 
-.pub-count{
-font:600 22px "Space Grotesk";
-white-space:nowrap
+.published-copy p{
+font-size:16px;
+line-height:1.8;
+color:var(--muted);
+max-width:540px;
 }
 
-.pub-arrow{
-width:42px;
-height:42px;
-border:1px solid #ffffff22;
-border-radius:50%;
+
+/* ACTION CARD */
+
+.published-trigger{
+margin-top:38px;
+width:100%;
+max-width:430px;
+min-height:118px;
+padding:22px;
 display:grid;
-place-items:center;
-font-size:24px;
-color:var(--lime);
-transition:.3s
-}
-
-.publications-toggle:hover .pub-arrow{
-border-color:var(--lime)
-}
-
-.publications-toggle[aria-expanded="true"] .pub-arrow{
-transform:rotate(45deg);
-border-color:var(--lime)
-}
-
-.published-list{
-display:grid;
-grid-template-columns:1fr 1fr;
-border-top:1px solid var(--line);
-}
-
-.publication-item{
-display:grid;
-grid-template-columns:55px 1fr 30px;
+grid-template-columns:68px 1fr 32px;
 align-items:center;
 gap:20px;
-padding:28px 30px;
-border-bottom:1px solid var(--line);
-transition:.25s;
-min-height:130px;
-}
-
-.publication-item:nth-child(odd){
-border-right:1px solid var(--line);
-}
-
-.publication-item:hover{
-background:#181818;
-padding-left:36px;
-}
-
-.pub-number{
-font:600 12px "Space Grotesk";
-color:#666;
-}
-
-.pub-info{
-display:flex;
-flex-direction:column;
-gap:8px;
-}
-
-.pub-info strong{
-font:600 21px/1.15 "Space Grotesk";
+background:
+linear-gradient(135deg,#121212,#0c0c0c);
+border:1px solid #765f2f;
+border-radius:12px;
 color:var(--fg);
+cursor:pointer;
+text-align:left;
+transition:.3s;
+position:relative;
+overflow:hidden;
 }
 
-.pub-info small{
-font-size:10px;
-letter-spacing:.12em;
+.published-trigger:before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(215,181,109,.07),
+transparent
+);
+transform:translateX(-100%);
+transition:.7s;
+}
+
+.published-trigger:hover:before{
+transform:translateX(100%);
+}
+
+.published-trigger:hover{
+border-color:var(--gold);
+transform:translateY(-3px);
+box-shadow:0 15px 50px rgba(0,0,0,.4);
+}
+
+.pub-icon{
+width:60px;
+height:60px;
+border-radius:50%;
+border:1px solid #765f2f;
+background:#191610;
+display:grid;
+place-items:center;
+font-size:25px;
 color:var(--gold);
-font-weight:700;
+position:relative;
+z-index:1;
+}
+
+.pub-trigger-copy{
+position:relative;
+z-index:1;
+}
+
+.pub-trigger-title{
+display:block;
+font:600 19px "Space Grotesk";
+margin-bottom:5px;
+}
+
+.pub-trigger-sub{
+display:block;
+font-size:12px;
+color:var(--gold-light);
+}
+
+.pub-trigger-arrow{
+font-size:27px;
+color:var(--gold);
+transition:.3s;
+position:relative;
+z-index:1;
+}
+
+.published-trigger:hover .pub-trigger-arrow{
+transform:translateX(5px);
+}
+
+
+/* SMALL HANDWRITTEN-STYLE CALLOUT */
+
+.pub-callout{
+display:flex;
+justify-content:flex-end;
+max-width:430px;
+margin-top:12px;
+padding-right:38px;
+}
+
+.pub-callout span{
+color:var(--gold);
+font-family:"Space Grotesk",sans-serif;
+font-size:14px;
+transform:rotate(-3deg);
+position:relative;
+}
+
+.pub-callout span:before{
+content:"↗";
+position:absolute;
+left:-28px;
+top:-16px;
+font-size:22px;
+}
+
+
+/* =========================================================
+   PUBLISHED MODAL
+========================================================= */
+
+.pub-modal{
+position:fixed;
+inset:0;
+z-index:100;
+background:rgba(0,0,0,.76);
+backdrop-filter:blur(16px);
+display:flex;
+align-items:center;
+justify-content:center;
+padding:25px;
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+transition:.3s ease;
+}
+
+.pub-modal.active{
+opacity:1;
+visibility:visible;
+pointer-events:auto;
+}
+
+.pub-modal-box{
+width:min(820px,100%);
+max-height:min(760px,90vh);
+background:
+radial-gradient(
+circle at 85% 0%,
+rgba(215,181,109,.08),
+transparent 30%
+),
+linear-gradient(145deg,#171717,#0c0c0c);
+border:1px solid #343434;
+border-radius:14px;
+overflow:hidden;
+box-shadow:0 30px 100px rgba(0,0,0,.7);
+transform:translateY(20px) scale(.98);
+transition:.3s ease;
+}
+
+.pub-modal.active .pub-modal-box{
+transform:translateY(0) scale(1);
+}
+
+.pub-modal-header{
+height:70px;
+padding:0 26px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+border-bottom:1px solid #2a2a2a;
+}
+
+.pub-modal-title{
+font:600 20px "Space Grotesk";
+}
+
+.pub-modal-close{
+width:38px;
+height:38px;
+border:0;
+background:transparent;
+color:#eee;
+font-size:27px;
+cursor:pointer;
+display:grid;
+place-items:center;
+border-radius:50%;
+transition:.2s;
+}
+
+.pub-modal-close:hover{
+background:#222;
+color:var(--gold);
+}
+
+.pub-list{
+padding:0 26px 12px;
+max-height:calc(min(760px,90vh) - 70px);
+overflow-y:auto;
+}
+
+.pub-item{
+display:grid;
+grid-template-columns:124px 1fr 42px;
+gap:18px;
+align-items:center;
+min-height:108px;
+padding:15px 0;
+border-bottom:1px solid #292929;
+transition:.25s;
+}
+
+.pub-item:last-child{
+border-bottom:0;
+}
+
+.pub-item:hover{
+padding-left:6px;
+}
+
+.pub-thumb{
+width:124px;
+height:78px;
+border-radius:8px;
+overflow:hidden;
+border:1px solid #333;
+background:#151515;
+}
+
+.pub-thumb img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:.35s;
+}
+
+.pub-item:hover .pub-thumb img{
+transform:scale(1.05);
+}
+
+.pub-item-info{
+min-width:0;
+}
+
+.pub-item-info h3{
+font:600 18px/1.2 "Space Grotesk";
+margin:0 0 8px;
+color:#f4f0e8;
+}
+
+.pub-meta{
+display:flex;
+align-items:center;
+gap:10px;
+flex-wrap:wrap;
+color:#aaa;
+font-size:12px;
+}
+
+.pub-source{
+color:#b8b3aa;
+}
+
+.pub-date{
+color:#999;
+}
+
+.pub-date:before{
+content:"";
+display:inline-block;
+width:1px;
+height:11px;
+background:#555;
+margin-right:10px;
+vertical-align:-1px;
 }
 
 .pub-open{
-font-size:20px;
-color:var(--lime);
-transition:.25s
+width:38px;
+height:38px;
+border:1px solid #4a402c;
+border-radius:50%;
+display:grid;
+place-items:center;
+color:var(--gold);
+font-size:19px;
+transition:.25s;
 }
 
-.publication-item:hover .pub-open{
-transform:translate(4px,-4px)
+.pub-open:hover{
+background:var(--gold);
+color:#090909;
+border-color:var(--gold);
+transform:translate(2px,-2px);
 }
 
 
-/* TRAVEL */
+/* =========================================================
+   TRAVEL
+========================================================= */
 
 .travel-link{
 display:block;
@@ -595,22 +809,22 @@ border:1px solid var(--line);
 border-radius:25px;
 background:linear-gradient(135deg,#151515,#0d0d0d);
 padding:40px;
-transition:.25s
+transition:.25s;
 }
 
 .travel-link:hover{
 transform:translateY(-4px);
-border-color:var(--gold)
+border-color:var(--gold);
 }
 
 .travel-link h2{
-margin:0 0 15px
+margin:0 0 15px;
 }
 
 .travel-link p{
 color:var(--muted);
 max-width:620px;
-line-height:1.7
+line-height:1.7;
 }
 
 .travel-open{
@@ -619,11 +833,13 @@ margin-top:15px;
 color:var(--lime);
 font-size:12px;
 font-weight:700;
-letter-spacing:.08em
+letter-spacing:.08em;
 }
 
 
-/* SHOP */
+/* =========================================================
+   SHOP
+========================================================= */
 
 .shop-banner{
 background:linear-gradient(135deg,#151515,#0d0d0d);
@@ -633,118 +849,200 @@ padding:40px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-gap:30px
+gap:30px;
 }
 
 .shop-banner h2{
-margin:0
+margin:0;
 }
 
 
-/* CONTACT */
+/* =========================================================
+   CONTACT
+========================================================= */
 
 .contact{
 background:var(--lime);
 color:#080808;
 border-radius:25px;
-padding:55px
+padding:55px;
 }
 
 .contact h2{
-max-width:800px
+max-width:800px;
 }
 
 .contact p{
-max-width:620px
+max-width:620px;
 }
 
 .contact .btn{
 background:#080808;
 color:white;
-border-color:#080808
+border-color:#080808;
+}
+
+#phone{
+display:inline-block;
+margin-left:12px;
+font-size:13px;
+font-weight:700;
 }
 
 
-/* FOOTER */
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
 padding:30px 0 50px;
 color:#777;
 font-size:12px;
 display:flex;
-justify-content:space-between
+justify-content:space-between;
 }
 
 
-/* MOBILE */
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:900px){
+
+.links{
+gap:15px;
+}
+
+.published-layout{
+grid-template-columns:1fr;
+gap:45px;
+}
+
+.published-copy h2{
+max-width:700px;
+}
+
+.pub-callout{
+justify-content:flex-start;
+}
+
+}
+
 
 @media(max-width:800px){
 
 .hero,
 .intro{
-grid-template-columns:1fr
-}
-
-.hero{
-min-height:auto
-}
-
-.profile{
-max-width:310px
-}
-
-.links{
-display:none
-}
-
-.work-grid{
-grid-template-columns:1fr
-}
-
-.framework{
-grid-template-columns:1fr 1fr
-}
-
-.step{
-border-bottom:1px solid var(--line)
-}
-
-.shop-banner{
-display:block
-}
-
-.publications-toggle{
-grid-template-columns:1fr auto;
-padding:24px;
-}
-
-.pub-count{
-grid-column:1;
-font-size:19px;
-}
-
-.pub-arrow{
-grid-column:2;
-grid-row:1 / span 2;
-}
-
-.published-list{
 grid-template-columns:1fr;
 }
 
-.publication-item,
-.publication-item:nth-child(odd){
-grid-template-columns:40px 1fr 25px;
-border-right:0;
-padding:22px;
+.hero{
+min-height:auto;
 }
 
-.publication-item:hover{
-padding-left:27px;
+.profile{
+max-width:310px;
 }
 
-.pub-info strong{
-font-size:18px;
+.links{
+display:none;
+}
+
+.work-grid{
+grid-template-columns:1fr;
+}
+
+.framework{
+grid-template-columns:1fr 1fr;
+}
+
+.step{
+border-bottom:1px solid var(--line);
+}
+
+.shop-banner{
+display:block;
+}
+
+}
+
+
+@media(max-width:600px){
+
+.pub-modal{
+padding:12px;
+}
+
+.pub-modal-box{
+max-height:94vh;
+border-radius:12px;
+}
+
+.pub-modal-header{
+height:64px;
+padding:0 18px;
+}
+
+.pub-list{
+padding:0 18px 8px;
+max-height:calc(94vh - 64px);
+}
+
+.pub-item{
+grid-template-columns:78px 1fr 32px;
+gap:12px;
+min-height:92px;
+padding:13px 0;
+}
+
+.pub-thumb{
+width:78px;
+height:62px;
+}
+
+.pub-item-info h3{
+font-size:15px;
+margin-bottom:6px;
+}
+
+.pub-meta{
+font-size:10px;
+gap:5px;
+}
+
+.pub-date:before{
+margin-right:5px;
+}
+
+.pub-open{
+width:32px;
+height:32px;
+font-size:16px;
+}
+
+.published-trigger{
+max-width:none;
+grid-template-columns:55px 1fr 25px;
+gap:14px;
+padding:17px;
+}
+
+.pub-icon{
+width:52px;
+height:52px;
+font-size:21px;
+}
+
+.pub-trigger-title{
+font-size:17px;
+}
+
+.pub-trigger-sub{
+font-size:11px;
+}
+
+.pub-callout{
+padding-right:0;
 }
 
 }
@@ -753,48 +1051,33 @@ font-size:18px;
 @media(max-width:520px){
 
 .framework{
-grid-template-columns:1fr
+grid-template-columns:1fr;
 }
 
 .head{
-display:block
+display:block;
 }
 
 .profile{
-width:100%
+width:100%;
 }
 
 footer{
-display:block
+display:block;
 }
 
 footer span{
 display:block;
-margin:6px 0
+margin:6px 0;
 }
 
-.publications-toggle{
-padding:22px 18px;
+.contact{
+padding:35px 25px;
 }
 
-.pub-brand{
-font-size:9px;
-}
-
-.pub-count{
-font-size:17px;
-}
-
-.publication-item{
-gap:12px;
-}
-
-.pub-info strong{
-font-size:17px;
-}
-
-.pub-info small{
-font-size:8px;
+#phone{
+display:block;
+margin:15px 0 0;
 }
 
 }
@@ -807,7 +1090,9 @@ font-size:8px;
 <body>
 
 
-<!-- NAVIGATION -->
+<!-- =======================================================
+     NAVIGATION
+======================================================= -->
 
 <nav>
 
@@ -831,13 +1116,13 @@ alt="KAS logo - Kamrul Ahsan Shamim"
 
 <a href="#research">Research</a>
 
-<a href="#articles">Publications</a>
+<a href="#articles">Published</a>
+
+<a href="#travel">Creative</a>
 
 <a href="shop.html" class="shop">SHOP</a>
 
 <a href="#contact">Contact</a>
-
-<a href="admin.html">EDIT</a>
 
 </div>
 
@@ -846,7 +1131,9 @@ alt="KAS logo - Kamrul Ahsan Shamim"
 </nav>
 
 
-<!-- HERO -->
+<!-- =======================================================
+     HERO
+======================================================= -->
 
 <header class="hero wrap">
 
@@ -891,7 +1178,9 @@ alt="Kamrul Ahsan Shamim - Marketing Professional"
 </header>
 
 
-<!-- POSITIONING -->
+<!-- =======================================================
+     POSITIONING
+======================================================= -->
 
 <section>
 
@@ -925,7 +1214,9 @@ I’m a marketing graduate interested in branding, digital marketing, advertisin
 </section>
 
 
-<!-- SELECTED WORK -->
+<!-- =======================================================
+     SELECTED WORK
+======================================================= -->
 
 <section id="work">
 
@@ -962,7 +1253,9 @@ class="work-grid">
 </section>
 
 
-<!-- STRATEGY -->
+<!-- =======================================================
+     STRATEGY
+======================================================= -->
 
 <section id="strategy">
 
@@ -1037,7 +1330,9 @@ Design, content, advertising and campaign assets.
 </section>
 
 
-<!-- RESEARCH -->
+<!-- =======================================================
+     RESEARCH
+======================================================= -->
 
 <section id="research">
 
@@ -1078,15 +1373,22 @@ VIEW FULL RESEARCH ↗
 </section>
 
 
-<!-- PUBLICATIONS -->
+<!-- =======================================================
+     PUBLISHED THINKING
+======================================================= -->
 
-<section id="articles">
+<section
+id="articles"
+class="published-section">
 
 <div class="wrap">
 
-<div class="head">
+<div class="published-layout">
 
-<div>
+
+<!-- LEFT -->
+
+<div class="published-copy">
 
 <div class="eyebrow">
 05 / Published Thinking
@@ -1096,51 +1398,112 @@ VIEW FULL RESEARCH ↗
 Writing that shows the thinking.
 </h2>
 
-</div>
-
 <p>
 Published work from The Financial Express covering branding, entrepreneurship, demographic development and business thinking.
 </p>
 
-</div>
-
-
-<!-- PREMIUM PUBLICATION BOX -->
-
-<div class="publications-box">
 
 <button
-id="publicationsToggle"
-class="publications-toggle"
+id="openPublications"
+class="published-trigger"
 type="button"
-aria-expanded="false"
-aria-controls="publishedList"
+aria-label="View all published articles"
 >
 
-<span class="pub-brand">
-THE FINANCIAL EXPRESS
+<span class="pub-icon">
+▤
 </span>
 
-<span class="pub-count">
-06 PUBLISHED ARTICLES
+<span class="pub-trigger-copy">
+
+<span class="pub-trigger-title">
+Published Things
 </span>
 
-<span
-id="pubArrow"
-class="pub-arrow">
-+
+<span class="pub-trigger-sub">
+6 articles published
+</span>
+
+</span>
+
+<span class="pub-trigger-arrow">
+›
 </span>
 
 </button>
 
 
-<div
-id="publishedList"
-class="published-list"
-hidden
->
+<div class="pub-callout">
+<span>Tap to view all articles</span>
 </div>
 
+</div>
+
+
+<!-- RIGHT: subtle visual panel -->
+
+<div>
+
+<div
+style="
+height:100%;
+min-height:420px;
+border:1px solid #242424;
+border-radius:14px;
+background:
+radial-gradient(circle at 70% 20%,rgba(215,181,109,.12),transparent 25%),
+linear-gradient(145deg,#141414,#0a0a0a);
+padding:34px;
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+position:relative;
+overflow:hidden;
+"
+>
+
+<div
+style="
+position:absolute;
+top:32px;
+right:32px;
+font:600 110px/1 'Space Grotesk';
+color:#242424;
+letter-spacing:-.08em;
+"
+>
+06
+</div>
+
+<div class="eyebrow">
+THE FINANCIAL EXPRESS
+</div>
+
+<h3
+style="
+font:600 clamp(30px,4vw,48px)/1 'Space Grotesk';
+letter-spacing:-.05em;
+margin:12px 0;
+max-width:470px;
+"
+>
+Ideas published beyond the portfolio.
+</h3>
+
+<p
+style="
+color:var(--muted);
+max-width:480px;
+font-size:14px;
+line-height:1.8;
+"
+>
+A collection of published perspectives on branding, digital marketing, entrepreneurship, demographics and changing consumer markets.
+</p>
+
+</div>
+
+</div>
 
 </div>
 
@@ -1149,9 +1512,331 @@ hidden
 </section>
 
 
-<!-- TRAVEL -->
+<!-- =======================================================
+     PUBLICATION MODAL
+======================================================= -->
 
-<section>
+<div
+id="publicationModal"
+class="pub-modal"
+role="dialog"
+aria-modal="true"
+aria-labelledby="publicationModalTitle"
+>
+
+<div class="pub-modal-box">
+
+
+<div class="pub-modal-header">
+
+<div
+id="publicationModalTitle"
+class="pub-modal-title">
+Published Things
+</div>
+
+<button
+id="closePublications"
+class="pub-modal-close"
+type="button"
+aria-label="Close published articles">
+×
+</button>
+
+</div>
+
+
+<div class="pub-list">
+
+
+<!-- ARTICLE 01 -->
+
+<div class="pub-item">
+
+<div class="pub-thumb">
+
+<img
+src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=500&q=80"
+alt="Economic planning and financial analysis"
+loading="lazy"
+>
+
+</div>
+
+<div class="pub-item-info">
+
+<h3>
+Economic Shifts and Branding
+</h3>
+
+<div class="pub-meta">
+
+<span class="pub-source">
+The Financial Express
+</span>
+
+<span class="pub-date">
+Nov 30, 2025
+</span>
+
+</div>
+
+</div>
+
+<a
+class="pub-open"
+href="https://today.thefinancialexpress.com.bd/print/economic-shifts-and-branding-1764426219"
+target="_blank"
+rel="noopener"
+aria-label="Read Economic Shifts and Branding">
+↗
+</a>
+
+</div>
+
+
+<!-- ARTICLE 02 -->
+
+<div class="pub-item">
+
+<div class="pub-thumb">
+
+<img
+src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=80"
+alt="Business and city growth"
+loading="lazy"
+>
+
+</div>
+
+<div class="pub-item-info">
+
+<h3>
+Power of Branding in Driving Growth
+</h3>
+
+<div class="pub-meta">
+
+<span class="pub-source">
+The Financial Express
+</span>
+
+<span class="pub-date">
+Oct 6, 2025
+</span>
+
+</div>
+
+</div>
+
+<a
+class="pub-open"
+href="https://today.thefinancialexpress.com.bd/editorial/power-of-branding-in-driving-growth-1759675701?amp=true"
+target="_blank"
+rel="noopener"
+aria-label="Read Power of Branding in Driving Growth">
+↗
+</a>
+
+</div>
+
+
+<!-- ARTICLE 03 -->
+
+<div class="pub-item">
+
+<div class="pub-thumb">
+
+<img
+src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=500&q=80"
+alt="Digital marketing strategy"
+loading="lazy"
+>
+
+</div>
+
+<div class="pub-item-info">
+
+<h3>
+Future of Digital Marketing
+</h3>
+
+<div class="pub-meta">
+
+<span class="pub-source">
+The Financial Express
+</span>
+
+<span class="pub-date">
+Published article
+</span>
+
+</div>
+
+</div>
+
+<a
+class="pub-open"
+href="https://today.thefinancialexpress.com.bd/editorial/future-of-digital-marketing-1769523175?amp=true"
+target="_blank"
+rel="noopener"
+aria-label="Read Future of Digital Marketing">
+↗
+</a>
+
+</div>
+
+
+<!-- ARTICLE 04 -->
+
+<div class="pub-item">
+
+<div class="pub-thumb">
+
+<img
+src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=500&q=80"
+alt="Young consumers and changing markets"
+loading="lazy"
+>
+
+</div>
+
+<div class="pub-item-info">
+
+<h3>
+Gen Z Consumers and Changing Market
+</h3>
+
+<div class="pub-meta">
+
+<span class="pub-source">
+The Financial Express
+</span>
+
+<span class="pub-date">
+Published article
+</span>
+
+</div>
+
+</div>
+
+<a
+class="pub-open"
+href="https://today.thefinancialexpress.com.bd/public/print/gen-z-consumers-and-changing-market-1786804317"
+target="_blank"
+rel="noopener"
+aria-label="Read Gen Z Consumers and Changing Market">
+↗
+</a>
+
+</div>
+
+
+<!-- ARTICLE 05 -->
+
+<div class="pub-item">
+
+<div class="pub-thumb">
+
+<img
+src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=500&q=80"
+alt="People and demographic development"
+loading="lazy"
+>
+
+</div>
+
+<div class="pub-item-info">
+
+<h3>
+Unlocking Demographic Dividend
+</h3>
+
+<div class="pub-meta">
+
+<span class="pub-source">
+The Financial Express
+</span>
+
+<span class="pub-date">
+Sep 16, 2025
+</span>
+
+</div>
+
+</div>
+
+<a
+class="pub-open"
+href="https://today.thefinancialexpress.com.bd/editorial/unlocking-demographic-dividend-1757948162?amp=true"
+target="_blank"
+rel="noopener"
+aria-label="Read Unlocking Demographic Dividend">
+↗
+</a>
+
+</div>
+
+
+<!-- ARTICLE 06 -->
+
+<div class="pub-item">
+
+<div class="pub-thumb">
+
+<img
+src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=500&q=80"
+alt="Bangladesh startup and city business environment"
+loading="lazy"
+>
+
+</div>
+
+<div class="pub-item-info">
+
+<h3>
+Can Bangladesh Become a Startup Hub?
+</h3>
+
+<div class="pub-meta">
+
+<span class="pub-source">
+The Financial Express
+</span>
+
+<span class="pub-date">
+Sep 14, 2025
+</span>
+
+</div>
+
+</div>
+
+<a
+class="pub-open"
+href="https://today.thefinancialexpress.com.bd/editorial/can-bangladesh-become-a-startup-hub-1757861239?amp=true"
+target="_blank"
+rel="noopener"
+aria-label="Read Can Bangladesh Become a Startup Hub">
+↗
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =======================================================
+     TRAVEL
+======================================================= -->
+
+<section id="travel">
 
 <div class="wrap">
 
@@ -1205,7 +1890,9 @@ EXPLORE TRAVEL STORIES ↗
 </section>
 
 
-<!-- SHOP -->
+<!-- =======================================================
+     SHOP
+======================================================= -->
 
 <section>
 
@@ -1216,7 +1903,7 @@ EXPLORE TRAVEL STORIES ↗
 <div>
 
 <div class="eyebrow">
-06 / Shop
+07 / Shop
 </div>
 
 <h2>
@@ -1242,7 +1929,9 @@ OPEN SHOP ↗
 </section>
 
 
-<!-- CONTACT -->
+<!-- =======================================================
+     CONTACT
+======================================================= -->
 
 <section id="contact">
 
@@ -1251,7 +1940,7 @@ OPEN SHOP ↗
 <div class="contact">
 
 <div class="eyebrow">
-07 / Contact
+08 / Contact
 </div>
 
 <h2>
@@ -1289,7 +1978,9 @@ LINKEDIN ↗
 </section>
 
 
-<!-- FOOTER -->
+<!-- =======================================================
+     FOOTER
+======================================================= -->
 
 <footer class="wrap">
 
@@ -1304,12 +1995,14 @@ Marketing · Branding · Digital Marketing · Research
 </footer>
 
 
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
+
 <script>
 
 const KEY = "KAS_PORTFOLIO_DATA_V1";
 
-
-/* DEFAULT PORTFOLIO DATA */
 
 const fallback = {
 
@@ -1337,9 +2030,6 @@ linkedin:
 profile:
 "profile.jpg.PNG",
 
-
-/* SELECTED WORK */
-
 projects:[
 
 {
@@ -1362,7 +2052,6 @@ link:
 "product-advertising.html"
 },
 
-
 {
 title:
 "A/B Testing Visual Concept",
@@ -1383,7 +2072,6 @@ link:
 ""
 },
 
-
 {
 title:
 "Gen Z & Rebranding",
@@ -1403,7 +2091,6 @@ tags:
 link:
 ""
 },
-
 
 {
 title:
@@ -1428,8 +2115,6 @@ link:
 ],
 
 
-/* RESEARCH */
-
 research:{
 
 title:
@@ -1444,61 +2129,10 @@ stats:
 finding:
 "Experience and influencer trustworthiness showed significant positive effects on purchase behavior, while perceived credibility and attractiveness were not statistically significant in the regression model."
 
-},
-
-
-/* ALL 6 FINANCIAL EXPRESS ARTICLES */
-
-articles:[
-
-[
-"Power of Branding in Driving Growth",
-"The Financial Express",
-"October 6, 2025",
-"https://today.thefinancialexpress.com.bd/editorial/power-of-branding-in-driving-growth-1759675701?amp=true"
-],
-
-[
-"Future of Digital Marketing",
-"The Financial Express",
-"January 27, 2026",
-"https://today.thefinancialexpress.com.bd/editorial/future-of-digital-marketing-1769523175?amp=true"
-],
-
-[
-"Economic Shifts and Branding",
-"The Financial Express",
-"November 30, 2025",
-"https://today.thefinancialexpress.com.bd/print/economic-shifts-and-branding-1764426219"
-],
-
-[
-"Gen Z Consumers and Changing Market",
-"The Financial Express",
-"May 2026",
-"https://today.thefinancialexpress.com.bd/public/print/gen-z-consumers-and-changing-market-1786804317"
-],
-
-[
-"Unlocking Demographic Dividend",
-"The Financial Express",
-"September 16, 2025",
-"https://today.thefinancialexpress.com.bd/editorial/unlocking-demographic-dividend-1757948162?amp=true"
-],
-
-[
-"Can Bangladesh Become a Startup Hub?",
-"The Financial Express",
-"September 14, 2025",
-"https://today.thefinancialexpress.com.bd/editorial/can-bangladesh-become-a-startup-hub-1757861239?amp=true"
-]
-
-]
+}
 
 };
 
-
-/* LOAD DATA */
 
 function data(){
 
@@ -1517,7 +2151,9 @@ return fallback;
 }
 
 
-/* RENDER PORTFOLIO */
+/* =========================================================
+   RENDER PORTFOLIO DATA
+========================================================= */
 
 function render(){
 
@@ -1526,68 +2162,97 @@ const d = data();
 
 /* PROFILE */
 
-document.getElementById(
-"heroText"
-).textContent =
+const heroText =
+document.getElementById("heroText");
+
+if(heroText && d.hero){
+
+heroText.textContent =
 d.hero;
 
+}
 
-document.getElementById(
-"aboutText"
-).textContent =
+
+const aboutText =
+document.getElementById("aboutText");
+
+if(aboutText && d.about){
+
+aboutText.textContent =
 d.about;
 
+}
 
-document.getElementById(
-"profile"
-).src =
+
+const profile =
+document.getElementById("profile");
+
+if(profile){
+
+profile.src =
 d.profile || "profile.jpg.PNG";
+
+}
 
 
 /* CONTACT */
 
-document.getElementById(
-"email"
-).href =
+const email =
+document.getElementById("email");
+
+if(email && d.email){
+
+email.href =
 "mailto:" + d.email;
 
+}
 
-document.getElementById(
-"linkedin"
-).href =
+
+const linkedin =
+document.getElementById("linkedin");
+
+if(linkedin && d.linkedin){
+
+linkedin.href =
 d.linkedin;
 
+}
 
-document.getElementById(
-"phone"
-).textContent =
+
+const phone =
+document.getElementById("phone");
+
+if(phone && d.phone){
+
+phone.textContent =
 d.phone;
+
+}
 
 
 /* SELECTED WORK */
 
 const workGrid =
-document.getElementById(
-"workGrid"
-);
+document.getElementById("workGrid");
 
+
+if(workGrid && d.projects){
 
 workGrid.innerHTML =
 d.projects.map((p)=>{
 
-const cardContent = `
+const visual = p.image
 
-<div>
-
-${
-p.image
 ?
+
 `<img
 class="project-img"
 src="${p.image}"
 alt="${p.title} - Kamrul Ahsan Shamim portfolio project"
 >`
+
 :
+
 `<div class="project-img placeholder">
 
 ${
@@ -1606,8 +2271,12 @@ p.title === "Gen Z & Rebranding"
 "AD"
 }
 
-</div>`
-}
+</div>`;
+
+
+const content = `
+
+${visual}
 
 <div class="body">
 
@@ -1630,36 +2299,45 @@ ${p.tags}
 ${
 p.link
 ?
-`<span class="open-project">
+`
+<span class="open-project">
 OPEN PROJECT ↗
-</span>`
+</span>
+`
 :
 ""
 }
 
 </div>
-
-</div>
 `;
 
+
 return p.link
+
 ?
+
 `<a
 href="${p.link}"
 class="card"
 aria-label="Open ${p.title}"
 >
-${cardContent}
+${content}
 </a>`
+
 :
+
 `<article class="card">
-${cardContent}
+${content}
 </article>`;
 
 }).join("");
 
+}
+
 
 /* RESEARCH */
+
+if(d.research){
 
 document.getElementById(
 "researchTitle"
@@ -1684,125 +2362,100 @@ document.getElementById(
 ).textContent =
 d.research.finding;
 
-
-/* PUBLICATIONS */
-
-const publishedList =
-document.getElementById(
-"publishedList"
-);
-
-
-/*
-IMPORTANT:
-We render ONLY the article list here.
-We DO NOT replace articlesGrid.
-This keeps the premium publication box intact.
-*/
-
-publishedList.innerHTML =
-d.articles.map((a,index)=>`
-
-<a
-class="publication-item"
-href="${a[3]}"
-target="_blank"
-rel="noopener noreferrer"
-aria-label="Read ${a[0]} on The Financial Express"
->
-
-<span class="pub-number">
-${String(index + 1).padStart(2,"0")}
-</span>
-
-<span class="pub-info">
-
-<strong>
-${a[0]}
-</strong>
-
-<small>
-${a[1]} · ${a[2]}
-</small>
-
-</span>
-
-<span class="pub-open">
-↗
-</span>
-
-</a>
-
-`).join("");
+}
 
 }
 
 
-/* PUBLICATION TOGGLE */
+/* =========================================================
+   PUBLICATION MODAL
+========================================================= */
 
-function setupPublicationToggle(){
-
-const toggle =
+const publicationModal =
 document.getElementById(
-"publicationsToggle"
+"publicationModal"
 );
 
-const list =
+const openPublications =
 document.getElementById(
-"publishedList"
+"openPublications"
 );
 
-const arrow =
+const closePublications =
 document.getElementById(
-"pubArrow"
+"closePublications"
 );
 
 
-toggle.addEventListener(
+function openPublicationModal(){
+
+publicationModal.classList.add("active");
+
+document.body.classList.add("modal-open");
+
+}
+
+
+function closePublicationModal(){
+
+publicationModal.classList.remove("active");
+
+document.body.classList.remove("modal-open");
+
+}
+
+
+openPublications.addEventListener(
 "click",
-function(){
-
-const isOpen =
-toggle.getAttribute(
-"aria-expanded"
-) === "true";
-
-
-if(isOpen){
-
-toggle.setAttribute(
-"aria-expanded",
-"false"
+openPublicationModal
 );
 
-list.hidden = true;
 
-arrow.textContent = "+";
-
-}else{
-
-toggle.setAttribute(
-"aria-expanded",
-"true"
+closePublications.addEventListener(
+"click",
+closePublicationModal
 );
 
-list.hidden = false;
 
-arrow.textContent = "×";
+/* Close when clicking outside box */
+
+publicationModal.addEventListener(
+"click",
+function(e){
+
+if(e.target === publicationModal){
+
+closePublicationModal();
+
+}
+
+});
+
+
+/* Close with Escape */
+
+document.addEventListener(
+"keydown",
+function(e){
+
+if(
+e.key === "Escape" &&
+publicationModal.classList.contains("active")
+){
+
+closePublicationModal();
 
 }
 
 }
 );
 
-}
 
-
-/* START */
+/* =========================================================
+   INITIALIZE
+========================================================= */
 
 render();
-
-setupPublicationToggle();
 
 </script>
 
