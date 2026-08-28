@@ -455,37 +455,155 @@ transform:translateY(-2px)
 }
 
 
-/* PUBLICATIONS */
+/* PREMIUM PUBLICATIONS */
 
-.articles{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:10px
-}
-
-.article{
-padding:24px;
+.publications-box{
 border:1px solid var(--line);
-border-radius:18px;
-background:var(--panel);
-min-height:210px;
-transition:.2s
+border-radius:24px;
+background:
+radial-gradient(circle at 85% 15%,rgba(215,181,109,.08),transparent 30%),
+linear-gradient(135deg,#121212,#0b0b0b);
+overflow:hidden;
 }
 
-.article:hover{
-border-color:var(--gold);
-transform:translateY(-3px)
+.publications-toggle{
+width:100%;
+border:0;
+background:transparent;
+color:var(--fg);
+padding:30px 32px;
+display:grid;
+grid-template-columns:1fr auto auto;
+align-items:center;
+gap:25px;
+text-align:left;
+cursor:pointer;
+font-family:"DM Sans",sans-serif;
 }
 
-.article small{
-color:var(--gold)
+.pub-brand{
+font-size:11px;
+font-weight:700;
+letter-spacing:.16em;
+color:var(--gold);
 }
 
-.article h3{
-font:600 19px/1.05 "Space Grotesk";
-margin:18px 0 10px
+.pub-count{
+font:600 22px "Space Grotesk";
 }
 
+.pub-arrow{
+width:42px;
+height:42px;
+border:1px solid #ffffff22;
+border-radius:50%;
+display:grid;
+place-items:center;
+font-size:24px;
+color:var(--lime);
+transition:.3s;
+}
+
+.publications-toggle:hover .pub-arrow{
+border-color:var(--lime);
+transform:rotate(45deg);
+}
+
+.published-list{
+display:grid;
+grid-template-columns:1fr 1fr;
+border-top:1px solid var(--line);
+}
+
+.publication-item{
+display:grid;
+grid-template-columns:55px 1fr 30px;
+align-items:center;
+gap:20px;
+padding:26px 30px;
+border-bottom:1px solid var(--line);
+transition:.25s;
+}
+
+.publication-item:nth-child(odd){
+border-right:1px solid var(--line);
+}
+
+.publication-item:hover{
+background:#181818;
+padding-left:36px;
+}
+
+.pub-number{
+font:600 12px "Space Grotesk";
+color:#666;
+}
+
+.pub-info{
+display:flex;
+flex-direction:column;
+gap:7px;
+}
+
+.pub-info strong{
+font:600 21px/1.15 "Space Grotesk";
+color:var(--fg);
+}
+
+.pub-info small{
+font-size:10px;
+letter-spacing:.12em;
+color:var(--gold);
+font-weight:700;
+}
+
+.pub-open{
+font-size:20px;
+color:var(--lime);
+transition:.25s;
+}
+
+.publication-item:hover .pub-open{
+transform:translate(4px,-4px);
+}
+
+@media(max-width:700px){
+
+.publications-toggle{
+grid-template-columns:1fr auto;
+padding:24px;
+}
+
+.pub-count{
+grid-column:1;
+font-size:19px;
+}
+
+.pub-arrow{
+grid-column:2;
+grid-row:1 / span 2;
+}
+
+.published-list{
+grid-template-columns:1fr;
+}
+
+.publication-item,
+.publication-item:nth-child(odd){
+grid-template-columns:40px 1fr 25px;
+border-right:0;
+padding:22px;
+}
+
+.publication-item:hover{
+padding-left:27px;
+}
+
+.pub-info strong{
+font-size:18px;
+}
+
+}
 
 /* TRAVEL */
 
