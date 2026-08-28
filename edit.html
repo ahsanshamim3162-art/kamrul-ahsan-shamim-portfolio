@@ -1,343 +1,332 @@
 <!doctype html>
 <html lang="en">
-
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Edit Portfolio | KAS</title>
+<title>KAS Portfolio Editor</title>
 
 <style>
+*{box-sizing:border-box}
 
-*{
-box-sizing:border-box;
+:root{
+  --bg:#070707;
+  --panel:#111;
+  --panel2:#171717;
+  --text:#f5f1e8;
+  --muted:#999;
+  --lime:#d9ff55;
+  --gold:#d7b56d;
+  --red:#ff6868;
+  --line:#292929;
 }
 
 body{
-margin:0;
-background:#070707;
-color:#f5f1e8;
-font-family:Arial,sans-serif;
-line-height:1.5;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,sans-serif;
 }
 
-.wrap{
-width:min(900px,calc(100% - 30px));
-margin:auto;
+.container{
+  width:min(900px,calc(100% - 28px));
+  margin:auto;
+  padding:30px 0 80px;
 }
 
 header{
-padding:30px 0;
-border-bottom:1px solid #292929;
-margin-bottom:30px;
+  padding:25px 0 35px;
+  border-bottom:1px solid var(--line);
+  margin-bottom:30px;
+}
+
+.eyebrow{
+  color:var(--gold);
+  font-size:11px;
+  letter-spacing:.15em;
+  font-weight:bold;
+  text-transform:uppercase;
 }
 
 h1{
-margin:0 0 8px;
-font-size:32px;
+  font-size:42px;
+  line-height:1;
+  margin:12px 0;
 }
 
-p{
-color:#999;
+h2{
+  font-size:28px;
+  margin:0 0 18px;
+}
+
+h3{
+  margin:0 0 7px;
+  font-size:19px;
+}
+
+.subtitle{
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.section{
+  margin:35px 0;
+}
+
+.toolbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  margin-bottom:15px;
+}
+
+button{
+  border:0;
+  cursor:pointer;
+  font-family:inherit;
+}
+
+.add{
+  background:var(--lime);
+  color:#080808;
+  padding:11px 16px;
+  border-radius:100px;
+  font-weight:bold;
+  font-size:12px;
+}
+
+.save{
+  width:100%;
+  margin-top:35px;
+  padding:17px;
+  border-radius:12px;
+  background:var(--lime);
+  color:#080808;
+  font-weight:bold;
+  font-size:15px;
+}
+
+.card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:20px;
+  margin-bottom:14px;
+}
+
+.card-top{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  align-items:flex-start;
+}
+
+.number{
+  color:var(--gold);
+  font-size:11px;
+  font-weight:bold;
+  margin-bottom:5px;
+}
+
+.actions{
+  display:flex;
+  gap:7px;
+}
+
+.edit{
+  background:#242424;
+  color:white;
+  padding:8px 12px;
+  border-radius:8px;
+  font-size:11px;
+}
+
+.delete{
+  background:#321818;
+  color:#ff8b8b;
+  padding:8px 12px;
+  border-radius:8px;
+  font-size:11px;
+}
+
+.details{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.6;
+  margin-top:10px;
+}
+
+.form{
+  display:none;
+  margin-top:20px;
+  padding-top:20px;
+  border-top:1px solid var(--line);
+}
+
+.form.active{
+  display:block;
 }
 
 label{
-display:block;
-margin:22px 0 8px;
-font-weight:bold;
-font-size:14px;
+  display:block;
+  color:#ccc;
+  font-size:11px;
+  font-weight:bold;
+  margin:14px 0 6px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
 }
 
 input,
 textarea{
-width:100%;
-padding:14px;
-background:#111;
-color:#fff;
-border:1px solid #333;
-border-radius:8px;
-font:inherit;
-}
-
-textarea{
-min-height:120px;
-resize:vertical;
+  width:100%;
+  background:#080808;
+  color:white;
+  border:1px solid #333;
+  border-radius:9px;
+  padding:12px;
+  font-size:14px;
+  font-family:inherit;
+  outline:none;
 }
 
 input:focus,
 textarea:focus{
-outline:none;
-border-color:#d7b56d;
+  border-color:var(--gold);
 }
 
-.section{
-background:#101010;
-border:1px solid #292929;
-border-radius:14px;
-padding:25px;
-margin-bottom:20px;
+textarea{
+  min-height:100px;
+  resize:vertical;
 }
 
-.section h2{
-margin-top:0;
-font-size:21px;
+.form-buttons{
+  display:flex;
+  gap:8px;
+  margin-top:15px;
 }
 
-.project{
-border:1px solid #292929;
-border-radius:10px;
-padding:18px;
-margin-top:15px;
+.form-save{
+  background:var(--lime);
+  color:#080808;
+  padding:10px 15px;
+  border-radius:8px;
+  font-weight:bold;
 }
 
-.project h3{
-margin-top:0;
-color:#d7b56d;
+.cancel{
+  background:#292929;
+  color:white;
+  padding:10px 15px;
+  border-radius:8px;
 }
 
-button,
-.back{
-display:inline-block;
-border:0;
-padding:13px 20px;
-border-radius:100px;
-font-weight:bold;
-cursor:pointer;
-text-decoration:none;
-margin:5px 5px 5px 0;
+.empty{
+  border:1px dashed #333;
+  border-radius:12px;
+  padding:25px;
+  text-align:center;
+  color:#777;
 }
 
-.save{
-background:#d9ff55;
-color:#080808;
-}
-
-.reset{
-background:#222;
-color:#fff;
-border:1px solid #444;
+.notice{
+  background:#15150f;
+  border:1px solid #51472d;
+  color:#cfc09b;
+  border-radius:12px;
+  padding:15px;
+  font-size:12px;
+  line-height:1.6;
 }
 
 .back{
-background:#222;
-color:#fff;
-border:1px solid #444;
+  display:inline-block;
+  color:var(--lime);
+  font-size:12px;
+  margin-bottom:20px;
 }
 
-#message{
-display:none;
-padding:15px;
-margin-bottom:20px;
-border:1px solid #53611f;
-border-radius:8px;
-background:#151a0b;
-color:#d9ff55;
-}
+@media(max-width:600px){
+  h1{font-size:34px}
 
+  .toolbar{
+    align-items:flex-start;
+  }
+
+  .toolbar .add{
+    white-space:nowrap;
+  }
+
+  .card-top{
+    flex-direction:column;
+  }
+
+  .actions{
+    width:100%;
+  }
+
+  .actions button{
+    flex:1;
+  }
+}
 </style>
 </head>
 
-
 <body>
 
-<div class="wrap">
+<div class="container">
+
+<a class="back" href="index.html">← Back to Portfolio</a>
 
 <header>
-
-<h1>Edit Portfolio</h1>
-
-<p>
-Update your portfolio information below and save the changes.
-</p>
-
-<a href="index.html" class="back">
-← BACK TO PORTFOLIO
-</a>
-
+  <div class="eyebrow">KAS / Portfolio Management</div>
+  <h1>EDIT PORTFOLIO</h1>
+  <p class="subtitle">
+    Manage your projects and published articles without editing the website code.
+  </p>
 </header>
 
-
-<div id="message">
-Changes saved successfully. Open the portfolio to see the updates.
+<div class="notice">
+  Changes are saved in this browser. After saving, open your portfolio in the same browser to see the updated content.
 </div>
 
 
-<!-- BASIC INFORMATION -->
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
 
-<div class="section">
+<section class="section">
 
-<h2>01 / Basic Information</h2>
-
-<label>Name</label>
-<input id="name">
-
-<label>Tagline</label>
-<input id="tagline">
-
-<label>Hero Text</label>
-<textarea id="hero"></textarea>
-
-<label>About Text</label>
-<textarea id="about"></textarea>
-
-<label>Email</label>
-<input id="email" type="email">
-
-<label>Phone</label>
-<input id="phone">
-
-<label>LinkedIn URL</label>
-<input id="linkedin">
-
-<label>Profile Image Filename</label>
-<input id="profile">
-
+<div class="toolbar">
+  <h2>Projects</h2>
+  <button class="add" onclick="addProject()">＋ Add Project</button>
 </div>
 
+<div id="projects"></div>
 
-<!-- PROJECT 1 -->
+</section>
 
-<div class="section">
 
-<h2>02 / Selected Work</h2>
+<!-- =====================================================
+     PUBLISHED ARTICLES
+===================================================== -->
 
-<div class="project">
+<section class="section">
 
-<h3>Project 1</h3>
-
-<label>Title</label>
-<input id="p1title">
-
-<label>Category</label>
-<input id="p1category">
-
-<label>Description</label>
-<textarea id="p1desc"></textarea>
-
-<label>Image Filename</label>
-<input id="p1image">
-
-<label>Tags</label>
-<input id="p1tags">
-
-<label>Project Link</label>
-<input id="p1link">
-
+<div class="toolbar">
+  <h2>Published Articles</h2>
+  <button class="add" onclick="addArticle()">＋ Add Article</button>
 </div>
 
+<div id="articles"></div>
 
-<div class="project">
-
-<h3>Project 2</h3>
-
-<label>Title</label>
-<input id="p2title">
-
-<label>Category</label>
-<input id="p2category">
-
-<label>Description</label>
-<textarea id="p2desc"></textarea>
-
-<label>Image Filename</label>
-<input id="p2image">
-
-<label>Tags</label>
-<input id="p2tags">
-
-<label>Project Link</label>
-<input id="p2link">
-
-</div>
+</section>
 
 
-<div class="project">
-
-<h3>Project 3</h3>
-
-<label>Title</label>
-<input id="p3title">
-
-<label>Category</label>
-<input id="p3category">
-
-<label>Description</label>
-<textarea id="p3desc"></textarea>
-
-<label>Image Filename</label>
-<input id="p3image">
-
-<label>Tags</label>
-<input id="p3tags">
-
-<label>Project Link</label>
-<input id="p3link">
-
-</div>
-
-
-<div class="project">
-
-<h3>Project 4</h3>
-
-<label>Title</label>
-<input id="p4title">
-
-<label>Category</label>
-<input id="p4category">
-
-<label>Description</label>
-<textarea id="p4desc"></textarea>
-
-<label>Image Filename</label>
-<input id="p4image">
-
-<label>Tags</label>
-<input id="p4tags">
-
-<label>Project Link</label>
-<input id="p4link">
-
-</div>
-
-</div>
-
-
-<!-- RESEARCH -->
-
-<div class="section">
-
-<h2>03 / Research</h2>
-
-<label>Research Title</label>
-<textarea id="researchTitle"></textarea>
-
-<label>Research Description</label>
-<textarea id="researchDesc"></textarea>
-
-<label>Research Statistics</label>
-<input id="researchStats">
-
-<label>Research Finding</label>
-<textarea id="researchFinding"></textarea>
-
-</div>
-
-
-<!-- SAVE -->
-
-<div class="section">
-
-<button class="save" onclick="savePortfolio()">
-SAVE CHANGES
+<button class="save" onclick="saveAll()">
+SAVE ALL CHANGES
 </button>
-
-<button class="reset" onclick="resetPortfolio()">
-RESET TO ORIGINAL
-</button>
-
-</div>
-
 
 </div>
 
@@ -347,7 +336,7 @@ RESET TO ORIGINAL
 const KEY = "KAS_PORTFOLIO_DATA_V1";
 
 
-const originalData = {
+const fallback = {
 
 name:"Kamrul Ahsan Shamim",
 
@@ -405,16 +394,63 @@ link:"travel.html"
 
 ],
 
+articles:[
+
+{
+title:"Economic Shifts and Branding",
+source:"The Financial Express",
+date:"Nov 30, 2025",
+image:"https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=500&q=80",
+url:"https://today.thefinancialexpress.com.bd/print/economic-shifts-and-branding-1764426219"
+},
+
+{
+title:"Power of Branding in Driving Growth",
+source:"The Financial Express",
+date:"Oct 6, 2025",
+image:"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=80",
+url:"https://today.thefinancialexpress.com.bd/editorial/power-of-branding-in-driving-growth-1759675701?amp=true"
+},
+
+{
+title:"Future of Digital Marketing",
+source:"The Financial Express",
+date:"Published article",
+image:"https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=500&q=80",
+url:"https://today.thefinancialexpress.com.bd/editorial/future-of-digital-marketing-1769523175?amp=true"
+},
+
+{
+title:"Gen Z Consumers and Changing Market",
+source:"The Financial Express",
+date:"Published article",
+image:"https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=500&q=80",
+url:"https://today.thefinancialexpress.com.bd/public/print/gen-z-consumers-and-changing-market-1786804317"
+},
+
+{
+title:"Unlocking Demographic Dividend",
+source:"The Financial Express",
+date:"Sep 16, 2025",
+image:"https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=500&q=80",
+url:"https://today.thefinancialexpress.com.bd/editorial/unlocking-demographic-dividend-1757948162?amp=true"
+},
+
+{
+title:"Can Bangladesh Become a Startup Hub?",
+source:"The Financial Express",
+date:"Sep 14, 2025",
+image:"https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=500&q=80",
+url:"https://today.thefinancialexpress.com.bd/editorial/can-bangladesh-become-a-startup-hub-1757861239?amp=true"
+}
+
+],
+
 research:{
-
 title:"The Credibility of Influencer Marketing and Its Impact on Consumer Purchase Decisions",
-
 desc:"Exploratory quantitative research examining how influencer credibility factors can affect consumer purchase behavior.",
-
 stats:"n = 103 · Cronbach’s Alpha = 0.676 · R² = 0.432",
-
 finding:"Experience and influencer trustworthiness showed significant positive effects on purchase behavior, while perceived credibility and attractiveness were not statistically significant in the regression model."
-
 }
 
 };
@@ -424,200 +460,570 @@ function getData(){
 
 try{
 
-return JSON.parse(
-localStorage.getItem(KEY)
-) || originalData;
+const saved = localStorage.getItem(KEY);
 
-}catch(e){
+if(saved){
 
-return originalData;
+const parsed = JSON.parse(saved);
+
+if(!parsed.articles){
+parsed.articles = fallback.articles;
+}
+
+return parsed;
 
 }
 
-}
+}catch(e){}
 
-
-function setValue(id,value){
-
-const el=document.getElementById(id);
-
-if(el){
-
-el.value=value || "";
-
-}
+return JSON.parse(JSON.stringify(fallback));
 
 }
 
 
-function loadPortfolio(){
-
-const d=getData();
+let portfolio = getData();
 
 
-setValue("name",d.name);
-setValue("tagline",d.tagline);
-setValue("hero",d.hero);
-setValue("about",d.about);
-setValue("email",d.email);
-setValue("phone",d.phone);
-setValue("linkedin",d.linkedin);
-setValue("profile",d.profile);
+/* =====================================================
+   PROJECTS
+===================================================== */
 
+function renderProjects(){
 
-d.projects=d.projects || [];
+const container =
+document.getElementById("projects");
 
+if(!portfolio.projects ||
+portfolio.projects.length === 0){
 
-for(let i=0;i<4;i++){
-
-const p=d.projects[i] || {};
-
-const n=i+1;
-
-setValue("p"+n+"title",p.title);
-setValue("p"+n+"category",p.category);
-setValue("p"+n+"desc",p.desc);
-setValue("p"+n+"image",p.image);
-setValue("p"+n+"tags",p.tags);
-setValue("p"+n+"link",p.link);
-
-}
-
-
-const r=d.research || {};
-
-setValue("researchTitle",r.title);
-setValue("researchDesc",r.desc);
-setValue("researchStats",r.stats);
-setValue("researchFinding",r.finding);
-
-}
-
-
-function value(id){
-
-return document.getElementById(id).value;
-
-}
-
-
-function savePortfolio(){
-
-const projects=[];
-
-
-for(let i=1;i<=4;i++){
-
-projects.push({
-
-title:value("p"+i+"title"),
-
-category:value("p"+i+"category"),
-
-desc:value("p"+i+"desc"),
-
-image:value("p"+i+"image"),
-
-tags:value("p"+i+"tags"),
-
-link:value("p"+i+"link")
-
-});
-
-}
-
-
-const data={
-
-name:value("name"),
-
-tagline:value("tagline"),
-
-hero:value("hero"),
-
-about:value("about"),
-
-email:value("email"),
-
-phone:value("phone"),
-
-linkedin:value("linkedin"),
-
-profile:value("profile"),
-
-projects:projects,
-
-research:{
-
-title:value("researchTitle"),
-
-desc:value("researchDesc"),
-
-stats:value("researchStats"),
-
-finding:value("researchFinding")
-
-}
-
-};
-
-
-localStorage.setItem(
-KEY,
-JSON.stringify(data)
-);
-
-
-const message=document.getElementById("message");
-
-message.style.display="block";
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-}
-
-
-function resetPortfolio(){
-
-if(
-!confirm(
-"Reset all portfolio information to the original content?"
-)
-){
+container.innerHTML =
+`<div class="empty">
+No projects yet. Tap "+ Add Project".
+</div>`;
 
 return;
 
 }
 
-localStorage.setItem(
-KEY,
-JSON.stringify(originalData)
-);
+container.innerHTML =
+portfolio.projects.map((p,i)=>`
 
-loadPortfolio();
+<div class="card">
 
-const message=document.getElementById("message");
+<div class="card-top">
 
-message.textContent=
-"Portfolio has been reset to the original information.";
+<div>
 
-message.style.display="block";
+<div class="number">
+PROJECT ${String(i+1).padStart(2,"0")}
+</div>
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+<h3>${escapeHTML(p.title)}</h3>
+
+<div class="details">
+${escapeHTML(p.category || "")}
+<br>
+${escapeHTML(p.desc || "")}
+</div>
+
+</div>
+
+<div class="actions">
+
+<button
+class="edit"
+onclick="toggleProject(${i})">
+EDIT
+</button>
+
+<button
+class="delete"
+onclick="deleteProject(${i})">
+DELETE
+</button>
+
+</div>
+
+</div>
+
+
+<div
+id="project-form-${i}"
+class="form">
+
+<label>Project Title</label>
+
+<input
+id="p-title-${i}"
+value="${escapeAttr(p.title)}"
+>
+
+
+<label>Category</label>
+
+<input
+id="p-category-${i}"
+value="${escapeAttr(p.category)}"
+>
+
+
+<label>Description</label>
+
+<textarea
+id="p-desc-${i}"
+>${escapeHTML(p.desc)}</textarea>
+
+
+<label>Image File Name</label>
+
+<input
+id="p-image-${i}"
+value="${escapeAttr(p.image || "")}"
+placeholder="example.PNG"
+>
+
+
+<label>Tags</label>
+
+<input
+id="p-tags-${i}"
+value="${escapeAttr(p.tags || "")}"
+>
+
+
+<label>Project Link</label>
+
+<input
+id="p-link-${i}"
+value="${escapeAttr(p.link || "")}"
+placeholder="example.html"
+>
+
+
+<div class="form-buttons">
+
+<button
+class="form-save"
+onclick="saveProject(${i})">
+SAVE PROJECT
+</button>
+
+<button
+class="cancel"
+onclick="toggleProject(${i})">
+CANCEL
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`).join("");
 
 }
 
 
-loadPortfolio();
+function addProject(){
+
+portfolio.projects.push({
+
+title:"New Project",
+
+category:"CATEGORY",
+
+desc:"Write a short description of this project.",
+
+image:"",
+
+tags:"",
+
+link:""
+
+});
+
+renderProjects();
+
+const index =
+portfolio.projects.length - 1;
+
+setTimeout(()=>{
+toggleProject(index);
+},50);
+
+}
+
+
+function toggleProject(i){
+
+const form =
+document.getElementById(
+"project-form-" + i
+);
+
+if(form){
+
+form.classList.toggle("active");
+
+}
+
+}
+
+
+function saveProject(i){
+
+const p =
+portfolio.projects[i];
+
+p.title =
+document.getElementById(
+"p-title-" + i
+).value;
+
+p.category =
+document.getElementById(
+"p-category-" + i
+).value;
+
+p.desc =
+document.getElementById(
+"p-desc-" + i
+).value;
+
+p.image =
+document.getElementById(
+"p-image-" + i
+).value;
+
+p.tags =
+document.getElementById(
+"p-tags-" + i
+).value;
+
+p.link =
+document.getElementById(
+"p-link-" + i
+).value;
+
+renderProjects();
+
+saveLocal();
+
+}
+
+
+function deleteProject(i){
+
+if(
+confirm(
+"Delete this project?"
+)
+){
+
+portfolio.projects.splice(i,1);
+
+renderProjects();
+
+saveLocal();
+
+}
+
+}
+
+
+/* =====================================================
+   ARTICLES
+===================================================== */
+
+function renderArticles(){
+
+const container =
+document.getElementById("articles");
+
+if(!portfolio.articles ||
+portfolio.articles.length === 0){
+
+container.innerHTML =
+`<div class="empty">
+No articles yet. Tap "+ Add Article".
+</div>`;
+
+return;
+
+}
+
+container.innerHTML =
+portfolio.articles.map((a,i)=>`
+
+<div class="card">
+
+<div class="card-top">
+
+<div>
+
+<div class="number">
+ARTICLE ${String(i+1).padStart(2,"0")}
+</div>
+
+<h3>${escapeHTML(a.title)}</h3>
+
+<div class="details">
+${escapeHTML(a.source || "")}
+<br>
+${escapeHTML(a.date || "")}
+</div>
+
+</div>
+
+<div class="actions">
+
+<button
+class="edit"
+onclick="toggleArticle(${i})">
+EDIT
+</button>
+
+<button
+class="delete"
+onclick="deleteArticle(${i})">
+DELETE
+</button>
+
+</div>
+
+</div>
+
+
+<div
+id="article-form-${i}"
+class="form">
+
+<label>Article Title</label>
+
+<input
+id="a-title-${i}"
+value="${escapeAttr(a.title)}"
+>
+
+
+<label>Publication / Source</label>
+
+<input
+id="a-source-${i}"
+value="${escapeAttr(a.source)}"
+>
+
+
+<label>Publication Date</label>
+
+<input
+id="a-date-${i}"
+value="${escapeAttr(a.date)}"
+placeholder="Aug 28, 2026"
+>
+
+
+<label>Article Image URL</label>
+
+<input
+id="a-image-${i}"
+value="${escapeAttr(a.image || "")}"
+placeholder="https://..."
+>
+
+
+<label>Article URL</label>
+
+<input
+id="a-url-${i}"
+value="${escapeAttr(a.url || "")}"
+placeholder="https://..."
+>
+
+
+<div class="form-buttons">
+
+<button
+class="form-save"
+onclick="saveArticle(${i})">
+SAVE ARTICLE
+</button>
+
+<button
+class="cancel"
+onclick="toggleArticle(${i})">
+CANCEL
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+
+function addArticle(){
+
+portfolio.articles.push({
+
+title:"New Published Article",
+
+source:"The Financial Express",
+
+date:"",
+
+image:"",
+
+url:""
+
+});
+
+renderArticles();
+
+const index =
+portfolio.articles.length - 1;
+
+setTimeout(()=>{
+toggleArticle(index);
+},50);
+
+}
+
+
+function toggleArticle(i){
+
+const form =
+document.getElementById(
+"article-form-" + i
+);
+
+if(form){
+
+form.classList.toggle("active");
+
+}
+
+}
+
+
+function saveArticle(i){
+
+const a =
+portfolio.articles[i];
+
+a.title =
+document.getElementById(
+"a-title-" + i
+).value;
+
+a.source =
+document.getElementById(
+"a-source-" + i
+).value;
+
+a.date =
+document.getElementById(
+"a-date-" + i
+).value;
+
+a.image =
+document.getElementById(
+"a-image-" + i
+).value;
+
+a.url =
+document.getElementById(
+"a-url-" + i
+).value;
+
+renderArticles();
+
+saveLocal();
+
+}
+
+
+function deleteArticle(i){
+
+if(
+confirm(
+"Delete this published article?"
+)
+){
+
+portfolio.articles.splice(i,1);
+
+renderArticles();
+
+saveLocal();
+
+}
+
+}
+
+
+/* =====================================================
+   SAVE
+===================================================== */
+
+function saveLocal(){
+
+localStorage.setItem(
+KEY,
+JSON.stringify(portfolio)
+);
+
+}
+
+
+function saveAll(){
+
+saveLocal();
+
+alert(
+"Portfolio changes saved successfully."
+);
+
+}
+
+
+/* =====================================================
+   SECURITY / HTML ESCAPE
+===================================================== */
+
+function escapeHTML(value){
+
+return String(value ?? "")
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
+}
+
+
+function escapeAttr(value){
+
+return escapeHTML(value);
+
+}
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+renderProjects();
+
+renderArticles();
 
 </script>
 
 </body>
-
 </html>
