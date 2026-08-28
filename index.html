@@ -7,25 +7,16 @@
 
 <title>Kamrul Ahsan Shamim | Marketing Professional</title>
 
-<meta name="description"
-content="Kamrul Ahsan Shamim | Marketing, Branding, Digital Marketing, Research and Creative Portfolio.">
-
+<meta name="description" content="Kamrul Ahsan Shamim | Marketing, Branding, Digital Marketing, Research and Creative Portfolio.">
 <meta name="author" content="Kamrul Ahsan Shamim">
 <meta name="robots" content="index,follow">
 
-<link rel="canonical"
-href="https://ahsanshamim3162-art.github.io/kamrul-ahsan-shamim-portfolio/">
+<link rel="canonical" href="https://ahsanshamim3162-art.github.io/kamrul-ahsan-shamim-portfolio/">
 
-<meta property="og:title"
-content="Kamrul Ahsan Shamim | Marketing Professional">
-
-<meta property="og:description"
-content="Marketing, branding, digital marketing, research and creative portfolio.">
-
+<meta property="og:title" content="Kamrul Ahsan Shamim | Marketing Professional">
+<meta property="og:description" content="Marketing, branding, digital marketing, research and creative portfolio.">
 <meta property="og:type" content="website">
-
-<meta property="og:url"
-content="https://ahsanshamim3162-art.github.io/kamrul-ahsan-shamim-portfolio/">
+<meta property="og:url" content="https://ahsanshamim3162-art.github.io/kamrul-ahsan-shamim-portfolio/">
 
 <style>
 
@@ -59,16 +50,12 @@ text-decoration:none;
 color:inherit;
 }
 
-button{
-font-family:inherit;
-}
+button{font-family:inherit}
 
 .wrap{
 width:min(var(--max),calc(100% - 36px));
 margin:auto;
 }
-
-/* NAV */
 
 nav{
 position:fixed;
@@ -113,8 +100,6 @@ border:1px solid #68782b;
 padding:7px 11px;
 border-radius:30px;
 }
-
-/* HERO */
 
 .hero{
 min-height:94vh;
@@ -175,8 +160,6 @@ color:#090909;
 border-color:var(--lime);
 }
 
-/* GENERAL */
-
 section{
 padding:95px 0;
 }
@@ -201,8 +184,6 @@ color:var(--muted);
 max-width:600px;
 }
 
-/* POSITIONING */
-
 .intro{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -217,8 +198,6 @@ letter-spacing:-.05em;
 .statement span{
 color:var(--lime);
 }
-
-/* WORK */
 
 .work-grid{
 display:grid;
@@ -252,6 +231,8 @@ display:grid;
 place-items:center;
 font:600 42px "Space Grotesk";
 color:#777;
+padding:25px;
+text-align:center;
 }
 
 .body{
@@ -281,8 +262,6 @@ color:var(--lime);
 font-size:10px;
 font-weight:700;
 }
-
-/* PUBLICATIONS */
 
 .published{
 display:grid;
@@ -345,14 +324,6 @@ display:flex;
 flex-direction:column;
 justify-content:flex-end;
 }
-
-.pub-visual-number{
-font:600 110px "Space Grotesk";
-color:#242424;
-position:absolute;
-}
-
-/* MODAL */
 
 .modal{
 position:fixed;
@@ -443,8 +414,6 @@ place-items:center;
 color:var(--gold);
 }
 
-/* STRATEGY */
-
 .framework{
 display:grid;
 grid-template-columns:repeat(4,1fr);
@@ -471,8 +440,6 @@ font:600 19px "Space Grotesk";
 color:var(--muted);
 font-size:13px;
 }
-
-/* RESEARCH */
 
 .research{
 background:var(--panel);
@@ -507,9 +474,8 @@ font-size:12px;
 font-weight:700;
 }
 
-/* TRAVEL / SHOP */
-
 .feature{
+display:block;
 border:1px solid var(--line);
 border-radius:24px;
 background:#101010;
@@ -520,8 +486,6 @@ padding:40px;
 color:var(--muted);
 max-width:650px;
 }
-
-/* CONTACT */
 
 .contact{
 background:var(--lime);
@@ -546,8 +510,6 @@ font-size:13px;
 font-weight:700;
 }
 
-/* FOOTER */
-
 footer{
 padding:30px 0 50px;
 color:#777;
@@ -555,8 +517,6 @@ font-size:12px;
 display:flex;
 justify-content:space-between;
 }
-
-/* MOBILE */
 
 @media(max-width:850px){
 
@@ -641,8 +601,6 @@ margin:6px 0;
 
 <body>
 
-<!-- NAV -->
-
 <nav>
 <div class="wrap nav">
 
@@ -665,13 +623,11 @@ margin:6px 0;
 </nav>
 
 
-<!-- HERO -->
-
 <header class="hero wrap">
 
 <div>
 
-<div class="eyebrow">
+<div class="eyebrow" id="tagline">
 Marketing × Branding × Creative Technology
 </div>
 
@@ -705,8 +661,6 @@ alt="Kamrul Ahsan Shamim"
 </header>
 
 
-<!-- POSITIONING -->
-
 <section>
 
 <div class="wrap intro">
@@ -736,8 +690,6 @@ I’m a marketing graduate interested in branding, digital marketing, advertisin
 </section>
 
 
-<!-- WORK -->
-
 <section id="work">
 
 <div class="wrap">
@@ -762,8 +714,6 @@ Creative work connected to marketing thinking, advertising, branding and visual 
 </section>
 
 
-<!-- PUBLICATIONS -->
-
 <section id="articles">
 
 <div class="wrap">
@@ -780,16 +730,13 @@ Creative work connected to marketing thinking, advertising, branding and visual 
 Published work covering branding, entrepreneurship, demographic development and changing consumer markets.
 </p>
 
-<button
-id="openPublications"
-class="pub-trigger"
-type="button">
+<button id="openPublications" class="pub-trigger" type="button">
 
 <span class="pub-icon">▤</span>
 
 <span>
 <span class="pub-title">Published Articles</span><br>
-<span id="articleCount" class="pub-sub">6 articles published</span>
+<span id="articleCount" class="pub-sub">0 articles published</span>
 </span>
 
 <span class="pub-arrow">›</span>
@@ -819,8 +766,6 @@ A collection of published perspectives on branding, digital marketing, entrepren
 </section>
 
 
-<!-- PUBLICATION MODAL -->
-
 <div id="publicationModal" class="modal">
 
 <div class="modal-box">
@@ -829,10 +774,7 @@ A collection of published perspectives on branding, digital marketing, entrepren
 
 <h3>Published Articles</h3>
 
-<button
-id="closePublications"
-class="close"
-type="button">
+<button id="closePublications" class="close" type="button">
 ×
 </button>
 
@@ -844,8 +786,6 @@ type="button">
 
 </div>
 
-
-<!-- STRATEGY -->
 
 <section id="strategy">
 
@@ -889,8 +829,6 @@ type="button">
 </section>
 
 
-<!-- RESEARCH -->
-
 <section id="research">
 
 <div class="wrap">
@@ -925,8 +863,6 @@ VIEW FULL RESEARCH ↗
 
 </section>
 
-
-<!-- TRAVEL -->
 
 <section id="travel">
 
@@ -970,8 +906,6 @@ EXPLORE TRAVEL STORIES ↗
 </section>
 
 
-<!-- SHOP -->
-
 <section>
 
 <div class="wrap">
@@ -997,8 +931,6 @@ OPEN SHOP ↗
 </section>
 
 
-<!-- CONTACT -->
-
 <section id="contact">
 
 <div class="wrap">
@@ -1015,18 +947,11 @@ LET'S CREATE SOMETHING WORTH REMEMBERING.
 Open to opportunities, collaborations, marketing projects, creative work and interesting ideas.
 </p>
 
-<a
-id="email"
-class="btn"
-href="mailto:kamrul.shamim@northsouth.edu">
+<a id="email" class="btn" href="mailto:kamrul.shamim@northsouth.edu">
 EMAIL ME ↗
 </a>
 
-<a
-id="linkedin"
-class="btn"
-href="https://www.linkedin.com/in/kamrul-ahsan-shamim-a7841737a"
-target="_blank">
+<a id="linkedin" class="btn" href="https://www.linkedin.com/in/kamrul-ahsan-shamim-a7841737a" target="_blank">
 LINKEDIN ↗
 </a>
 
@@ -1040,8 +965,6 @@ LINKEDIN ↗
 
 </section>
 
-
-<!-- FOOTER -->
 
 <footer class="wrap">
 
@@ -1058,33 +981,28 @@ Marketing · Branding · Digital Marketing · Research
 
 <script>
 
-/* =========================================================
-   EDITOR CONNECTION
-========================================================= */
-
 const KEY = "KAS_PORTFOLIO_DATA_V1";
 
 const fallback = {
 
-hero:
-"I turn marketing ideas into stories, campaigns and visual experiences that people remember.",
+name:"Kamrul Ahsan Shamim",
 
-about:
-"I’m a marketing graduate interested in branding, digital marketing, advertising, creative strategy and AI-assisted content creation. I enjoy taking a business objective and turning it into a clear message, campaign idea or visual experience.",
+tagline:"Marketing × Branding × Creative Technology",
 
-email:
-"kamrul.shamim@northsouth.edu",
+hero:"I turn marketing ideas into stories, campaigns and visual experiences that people remember.",
 
-phone:
-"01400961461",
+about:"I’m a marketing graduate interested in branding, digital marketing, advertising, creative strategy and AI-assisted content creation. I enjoy taking a business objective and turning it into a clear message, campaign idea or visual experience.",
 
-linkedin:
-"https://www.linkedin.com/in/kamrul-ahsan-shamim-a7841737a",
+email:"kamrul.shamim@northsouth.edu",
 
-profile:
-"profile.jpg.PNG",
+phone:"01400961461",
+
+linkedin:"https://www.linkedin.com/in/kamrul-ahsan-shamim-a7841737a",
+
+profile:"profile.jpg.PNG",
 
 projects:[
+
 {
 title:"Product Advertising Portfolio",
 category:"ADVERTISING · UGC · CREATIVE",
@@ -1093,6 +1011,7 @@ image:"product-advertising-display.PNG",
 tags:"AI-assisted visual · UGC · Ad strategy",
 link:"product-advertising.html"
 },
+
 {
 title:"A/B Testing Visual Concept",
 category:"DIGITAL MARKETING",
@@ -1101,6 +1020,7 @@ image:"",
 tags:"A/B testing · Content · Measurement",
 link:""
 },
+
 {
 title:"Gen Z & Rebranding",
 category:"BRAND STRATEGY",
@@ -1109,6 +1029,7 @@ image:"",
 tags:"Gen Z · Branding · Consumer behavior",
 link:""
 },
+
 {
 title:"Travel Visual Storytelling",
 category:"VISUAL STORY",
@@ -1117,96 +1038,119 @@ image:"",
 tags:"Storytelling · Photography · Content",
 link:"travel.html"
 }
+
 ],
 
 research:{
+
 title:"The Credibility of Influencer Marketing and Its Impact on Consumer Purchase Decisions",
+
 desc:"Exploratory quantitative research examining how influencer credibility factors can affect consumer purchase behavior.",
+
 stats:"n = 103 · Cronbach’s Alpha = 0.676 · R² = 0.432",
+
 finding:"Experience and influencer trustworthiness showed significant positive effects on purchase behavior, while perceived credibility and attractiveness were not statistically significant in the regression model."
+
 },
 
 articles:[
+
 {
 title:"Economic Shifts and Branding",
 date:"Nov 30, 2025",
 image:"https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=500&q=80",
 url:"https://today.thefinancialexpress.com.bd/print/economic-shifts-and-branding-1764426219"
 },
+
 {
 title:"Power of Branding in Driving Growth",
 date:"Oct 6, 2025",
 image:"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=80",
 url:"https://today.thefinancialexpress.com.bd/editorial/power-of-branding-in-driving-growth-1759675701?amp=true"
 },
+
 {
 title:"Future of Digital Marketing",
 date:"Published article",
 image:"https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=500&q=80",
 url:"https://today.thefinancialexpress.com.bd/editorial/future-of-digital-marketing-1769523175?amp=true"
 },
+
 {
 title:"Gen Z Consumers and Changing Market",
 date:"Published article",
 image:"https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=500&q=80",
 url:"https://today.thefinancialexpress.com.bd/public/print/gen-z-consumers-and-changing-market-1786804317"
 },
+
 {
 title:"Unlocking Demographic Dividend",
 date:"Sep 16, 2025",
 image:"https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=500&q=80",
 url:"https://today.thefinancialexpress.com.bd/editorial/unlocking-demographic-dividend-1757948162?amp=true"
 },
+
 {
 title:"Can Bangladesh Become a Startup Hub?",
 date:"Sep 14, 2025",
 image:"https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=500&q=80",
 url:"https://today.thefinancialexpress.com.bd/editorial/can-bangladesh-become-a-startup-hub-1757861239?amp=true"
 }
+
 ]
 
 };
 
 
-/* GET DATA */
-
 function getData(){
 
 try{
 
-const saved =
-localStorage.getItem(KEY);
+const saved=localStorage.getItem(KEY);
 
 if(saved){
 
-const parsed =
-JSON.parse(saved);
+const parsed=JSON.parse(saved);
 
 return {
 ...fallback,
 ...parsed,
-projects:parsed.projects || fallback.projects,
-articles:parsed.articles || fallback.articles,
-research:parsed.research || fallback.research
+projects:Array.isArray(parsed.projects)?parsed.projects:fallback.projects,
+articles:Array.isArray(parsed.articles)?parsed.articles:fallback.articles,
+research:{
+...fallback.research,
+...(parsed.research || {})
+}
 };
 
 }
 
 }catch(error){}
 
-return fallback;
+return JSON.parse(JSON.stringify(fallback));
 
 }
 
 
-/* RENDER */
+function escapeHTML(value){
+
+return String(value ?? "")
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
+}
+
 
 function render(){
 
-const d = getData();
+const d=getData();
 
 
-/* HERO */
+document.getElementById("tagline").textContent =
+d.tagline || fallback.tagline;
 
 document.getElementById("heroText").textContent =
 d.hero || fallback.hero;
@@ -1215,13 +1159,9 @@ document.getElementById("aboutText").textContent =
 d.about || fallback.about;
 
 
-/* PROFILE */
-
 document.getElementById("profile").src =
 d.profile || fallback.profile;
 
-
-/* CONTACT */
 
 if(d.email){
 
@@ -1245,13 +1185,11 @@ d.phone;
 }
 
 
-/* WORK */
-
 const workGrid =
 document.getElementById("workGrid");
 
 const projects =
-d.projects || [];
+Array.isArray(d.projects) ? d.projects : [];
 
 workGrid.innerHTML =
 projects.map(p=>{
@@ -1260,12 +1198,12 @@ const visual =
 p.image
 ?
 `<img class="project-img"
-src="${p.image}"
-alt="${p.title}"
+src="${escapeHTML(p.image)}"
+alt="${escapeHTML(p.title || "Project")}"
 loading="lazy">`
 :
 `<div class="project-img placeholder">
-${p.title}
+${escapeHTML(p.title || "Project")}
 </div>`;
 
 const content = `
@@ -1275,27 +1213,25 @@ ${visual}
 <div class="body">
 
 <div class="eyebrow">
-${p.category || "PROJECT"}
+${escapeHTML(p.category || "PROJECT")}
 </div>
 
 <h3>
-${p.title || "Untitled Project"}
+${escapeHTML(p.title || "Untitled Project")}
 </h3>
 
 <p>
-${p.desc || ""}
+${escapeHTML(p.desc || "")}
 </p>
 
 <div class="tags">
-${p.tags || ""}
+${escapeHTML(p.tags || "")}
 </div>
 
 ${
 p.link
 ?
-`<span class="open-project">
-OPEN PROJECT ↗
-</span>`
+`<span class="open-project">OPEN PROJECT ↗</span>`
 :
 ""
 }
@@ -1305,18 +1241,12 @@ OPEN PROJECT ↗
 
 return p.link
 ?
-`<a class="card" href="${p.link}">
-${content}
-</a>`
+`<a class="card" href="${escapeHTML(p.link)}">${content}</a>`
 :
-`<article class="card">
-${content}
-</article>`;
+`<article class="card">${content}</article>`;
 
 }).join("");
 
-
-/* RESEARCH */
 
 if(d.research){
 
@@ -1335,14 +1265,12 @@ d.research.finding || "";
 }
 
 
-/* ARTICLES */
-
-renderArticles(d.articles || []);
+renderArticles(
+Array.isArray(d.articles) ? d.articles : []
+);
 
 }
 
-
-/* ARTICLES RENDER */
 
 function renderArticles(articles){
 
@@ -1371,25 +1299,25 @@ articles.map(article=>`
 
 <img
 class="pub-thumb"
-src="${article.image || ""}"
-alt="${article.title || "Published article"}"
+src="${escapeHTML(article.image || "")}"
+alt="${escapeHTML(article.title || "Published article")}"
 loading="lazy">
 
 <div>
 
 <h4>
-${article.title || "Published Article"}
+${escapeHTML(article.title || "Published Article")}
 </h4>
 
 <div class="pub-meta">
-The Financial Express · ${article.date || "Published"}
+The Financial Express · ${escapeHTML(article.date || "Published")}
 </div>
 
 </div>
 
 <a
 class="pub-open"
-href="${article.url || "#"}"
+href="${escapeHTML(article.url || "#")}"
 target="_blank"
 rel="noopener">
 ↗
@@ -1401,10 +1329,6 @@ rel="noopener">
 
 }
 
-
-/* =========================================================
-   PUBLICATION MODAL
-========================================================= */
 
 const modal =
 document.getElementById("publicationModal");
@@ -1444,10 +1368,6 @@ modal.classList.remove("active");
 });
 
 
-/* =========================================================
-   AUTO UPDATE
-========================================================= */
-
 window.addEventListener("storage",()=>{
 
 render();
@@ -1455,7 +1375,12 @@ render();
 });
 
 
-/* START */
+window.addEventListener("focus",()=>{
+
+render();
+
+});
+
 
 render();
 
