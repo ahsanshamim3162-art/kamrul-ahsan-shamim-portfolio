@@ -1,28 +1,2708 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KAS Portfolio & Shop Manager</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
-:root{--bg:#070707;--fg:#f5f1e8;--muted:#9a978f;--gold:#d7b56d;--lime:#d9ff55;--line:#262626;--panel:#101010;--max:900px}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:"DM Sans",sans-serif}.wrap{width:min(var(--max),calc(100% - 36px));margin:auto}a{color:inherit;text-decoration:none}nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:#070707ed;z-index:10}.nav{height:70px;display:flex;justify-content:space-between;align-items:center}.links{display:flex;gap:18px;font-size:12px;color:#bbb}.eyebrow{color:var(--gold);font-size:11px;letter-spacing:.17em;font-weight:700;text-transform:uppercase}.editor{padding:70px 0}.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:25px;margin:15px 0}.panel h2{font:600 28px "Space Grotesk";margin-top:0}label{display:block;color:var(--gold);font-size:11px;letter-spacing:.1em;margin:15px 0 6px}input,textarea{width:100%;background:#090909;color:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;font:inherit}textarea{min-height:100px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.item{border:1px solid var(--line);padding:18px;border-radius:14px;margin:12px 0}.btn{display:inline-block;border:1px solid #fff2;padding:12px 17px;border-radius:100px;font-size:12px;font-weight:700;margin:8px 7px 0 0;background:transparent;color:var(--fg)}.primary{background:var(--lime);color:#090909;border-color:var(--lime)}.danger{border-color:#773838;color:#ff9b9b}.status{position:sticky;bottom:15px;background:var(--lime);color:#080808;padding:13px;border-radius:12px;font-weight:700;text-align:center;display:none}.warning{color:#ffcc8a;background:#17120b;border:1px solid #4a3a1e;padding:16px;border-radius:12px;font-size:13px;line-height:1.5}@media(max-width:650px){.row{grid-template-columns:1fr}.links{gap:8px;font-size:10px}}
-</style></head>
-<body>
-<nav><div class="wrap nav"><a href="index.html">KAS / VIEW SITE</a><div class="links"><a href="shop.html">Shop</a><a href="index.html">Portfolio</a></div></div></nav>
-<main class="editor wrap"><div class="eyebrow">KAS / Portfolio + Shop Manager</div><h1 style="font:600 52px 'Space Grotesk';letter-spacing:-.05em">Manage the site.</h1>
-<div class="warning"><strong>Important:</strong> This editor is a front-end prototype. Changes are stored in your current browser only. They do not automatically publish to GitHub or change the public website. For real product publishing, orders, payments and inventory, we will connect the Shop to Shopify after the portfolio is live.</div>
-<div class="panel"><h2>Profile</h2><label>Name</label><input id="name" value="Kamrul Ahsan Shamim"><label>Positioning</label><input id="tagline" value="Marketing × Branding × Creative Technology"><label>Hero message</label><textarea id="hero">I turn marketing ideas into stories, campaigns and visual experiences that people remember.</textarea><label>About</label><textarea id="about">I’m a marketing graduate interested in branding, digital marketing, advertising, creative strategy and AI-assisted content creation.</textarea><div class="row"><div><label>Email</label><input id="email" value="kamrul.shamim@northsouth.edu"></div><div><label>Phone</label><input id="phone" value="01400961461"></div></div><label>LinkedIn</label><input id="linkedin" value="https://www.linkedin.com/in/kamrul-ahsan-shamim-a7841737a"></div>
+<html lang="en">
 
-<div class="panel"><h2>Shop Products</h2><p style="color:var(--muted)">Add product name, price and description here. This is the UI we will later connect to the real store backend.</p><div id="products"></div><button class="btn" onclick="addProduct()">+ ADD PRODUCT</button></div>
-<div><button class="btn primary" onclick="save()">SAVE LOCAL PREVIEW</button><button class="btn danger" onclick="resetAll()">RESET</button></div><div id="status" class="status">Saved in this browser.</div>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>KAS Admin Editor | Kamrul Ahsan Shamim</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+:root{
+--bg:#080808;
+--panel:#111;
+--panel2:#151515;
+--text:#f5f1e8;
+--muted:#92908a;
+--gold:#d7b56d;
+--lime:#d9ff55;
+--line:#292929;
+--danger:#ff6b6b;
+}
+
+body{
+margin:0;
+background:var(--bg);
+color:var(--text);
+font-family:Arial,Helvetica,sans-serif;
+}
+
+button,
+input,
+textarea,
+select{
+font:inherit;
+}
+
+button{
+cursor:pointer;
+}
+
+.topbar{
+position:sticky;
+top:0;
+z-index:50;
+height:70px;
+background:#080808ee;
+backdrop-filter:blur(15px);
+border-bottom:1px solid var(--line);
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 25px;
+}
+
+.logo{
+font-weight:800;
+font-size:22px;
+letter-spacing:-.05em;
+}
+
+.logo span{
+color:var(--gold);
+}
+
+.top-actions{
+display:flex;
+gap:10px;
+}
+
+.btn{
+border:1px solid #3a3a3a;
+background:#151515;
+color:white;
+padding:11px 16px;
+border-radius:8px;
+font-size:12px;
+font-weight:700;
+}
+
+.btn:hover{
+border-color:var(--gold);
+}
+
+.btn.primary{
+background:var(--lime);
+color:#080808;
+border-color:var(--lime);
+}
+
+.btn.danger{
+color:var(--danger);
+}
+
+.layout{
+display:grid;
+grid-template-columns:260px 1fr;
+min-height:calc(100vh - 70px);
+}
+
+.sidebar{
+border-right:1px solid var(--line);
+padding:25px 15px;
+position:sticky;
+top:70px;
+height:calc(100vh - 70px);
+}
+
+.sidebar-title{
+font-size:10px;
+color:#666;
+letter-spacing:.15em;
+margin:0 10px 15px;
+}
+
+.side-btn{
+display:block;
+width:100%;
+border:0;
+background:transparent;
+color:#aaa;
+text-align:left;
+padding:13px 12px;
+border-radius:8px;
+margin-bottom:4px;
+font-size:13px;
+}
+
+.side-btn:hover,
+.side-btn.active{
+background:#171717;
+color:var(--lime);
+}
+
+.main{
+padding:45px;
+max-width:1100px;
+width:100%;
+}
+
+.page{
+display:none;
+}
+
+.page.active{
+display:block;
+}
+
+.page-head{
+margin-bottom:30px;
+}
+
+.eyebrow{
+font-size:10px;
+letter-spacing:.17em;
+color:var(--gold);
+font-weight:800;
+text-transform:uppercase;
+}
+
+h1{
+font-size:42px;
+letter-spacing:-.05em;
+margin:10px 0;
+}
+
+.page-head p{
+color:var(--muted);
+max-width:650px;
+line-height:1.7;
+}
+
+.panel{
+background:var(--panel);
+border:1px solid var(--line);
+border-radius:14px;
+padding:25px;
+margin-bottom:20px;
+}
+
+.panel h2{
+font-size:20px;
+margin:0 0 20px;
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
+}
+
+.field{
+display:flex;
+flex-direction:column;
+gap:7px;
+}
+
+.field.full{
+grid-column:1/-1;
+}
+
+label{
+font-size:11px;
+font-weight:700;
+color:#aaa;
+letter-spacing:.05em;
+}
+
+input,
+textarea,
+select{
+width:100%;
+background:#090909;
+border:1px solid #303030;
+color:var(--text);
+border-radius:7px;
+padding:12px;
+outline:none;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+border-color:var(--gold);
+}
+
+textarea{
+min-height:120px;
+resize:vertical;
+line-height:1.6;
+}
+
+.save-row{
+display:flex;
+justify-content:flex-end;
+gap:10px;
+margin-top:20px;
+}
+
+.status{
+font-size:12px;
+color:var(--lime);
+display:none;
+align-items:center;
+}
+
+.status.show{
+display:flex;
+}
+
+.upload-box{
+border:1px dashed #444;
+border-radius:10px;
+padding:18px;
+background:#0c0c0c;
+}
+
+.preview{
+margin-top:12px;
+max-width:220px;
+max-height:180px;
+border-radius:8px;
+border:1px solid #333;
+display:none;
+object-fit:cover;
+}
+
+.list{
+display:grid;
+gap:12px;
+}
+
+.item{
+border:1px solid var(--line);
+background:#0c0c0c;
+border-radius:10px;
+padding:18px;
+display:flex;
+justify-content:space-between;
+gap:20px;
+align-items:center;
+}
+
+.item-main{
+min-width:0;
+}
+
+.item-title{
+font-weight:700;
+margin-bottom:5px;
+}
+
+.item-meta{
+font-size:11px;
+color:var(--muted);
+}
+
+.item-actions{
+display:flex;
+gap:7px;
+flex-shrink:0;
+}
+
+.small-btn{
+padding:8px 11px;
+border-radius:6px;
+border:1px solid #333;
+background:#161616;
+color:white;
+font-size:11px;
+font-weight:700;
+}
+
+.small-btn:hover{
+border-color:var(--gold);
+}
+
+.small-btn.delete{
+color:var(--danger);
+}
+
+.empty{
+padding:25px;
+border:1px dashed #333;
+border-radius:10px;
+color:#666;
+text-align:center;
+font-size:13px;
+}
+
+.case-editor{
+margin-top:20px;
+display:none;
+}
+
+.case-editor.show{
+display:block;
+}
+
+.case-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.case-header h3{
+margin:0;
+font-size:20px;
+}
+
+.image-list{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+margin-top:15px;
+}
+
+.image-card{
+position:relative;
+height:150px;
+border:1px solid #333;
+border-radius:8px;
+overflow:hidden;
+background:#090909;
+}
+
+.image-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.remove-image{
+position:absolute;
+right:7px;
+top:7px;
+width:27px;
+height:27px;
+border-radius:50%;
+border:0;
+background:#000d;
+color:white;
+}
+
+.help{
+font-size:11px;
+color:#666;
+margin-top:6px;
+line-height:1.5;
+}
+
+hr{
+border:0;
+border-top:1px solid var(--line);
+margin:25px 0;
+}
+
+@media(max-width:850px){
+
+.layout{
+grid-template-columns:1fr;
+}
+
+.sidebar{
+position:static;
+height:auto;
+border-right:0;
+border-bottom:1px solid var(--line);
+display:flex;
+overflow-x:auto;
+gap:5px;
+padding:10px;
+}
+
+.sidebar-title{
+display:none;
+}
+
+.side-btn{
+white-space:nowrap;
+width:auto;
+margin:0;
+}
+
+.main{
+padding:25px 18px;
+}
+
+.form-grid{
+grid-template-columns:1fr;
+}
+
+.field.full{
+grid-column:auto;
+}
+
+.image-list{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+@media(max-width:520px){
+
+.topbar{
+padding:0 15px;
+}
+
+.top-actions .btn:first-child{
+display:none;
+}
+
+h1{
+font-size:34px;
+}
+
+.panel{
+padding:18px;
+}
+
+.image-list{
+grid-template-columns:1fr;
+}
+
+.item{
+display:block;
+}
+
+.item-actions{
+margin-top:12px;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header class="topbar">
+
+<div class="logo">
+KAS <span>EDITOR</span>
+</div>
+
+<div class="top-actions">
+
+<a
+class="btn"
+href="index.html"
+target="_blank">
+VIEW PORTFOLIO ↗
+</a>
+
+<button
+class="btn primary"
+onclick="saveEverything()">
+SAVE CHANGES
+</button>
+
+</div>
+
+</header>
+
+
+<div class="layout">
+
+
+<aside class="sidebar">
+
+<div class="sidebar-title">
+CONTENT MANAGEMENT
+</div>
+
+<button
+class="side-btn active"
+data-page="profilePage">
+01 / Profile
+</button>
+
+<button
+class="side-btn"
+data-page="workPage">
+02 / Selected Work
+</button>
+
+<button
+class="side-btn"
+data-page="casePage">
+03 / Case Studies
+</button>
+
+<button
+class="side-btn"
+data-page="publicationPage">
+04 / Publications
+</button>
+
+<button
+class="side-btn"
+data-page="researchPage">
+05 / Research
+</button>
+
+<button
+class="side-btn"
+data-page="travelPage">
+06 / Travel
+</button>
+
+</aside>
+
+
+<main class="main">
+
+
+<!-- =====================================================
+PROFILE
+===================================================== -->
+
+<section
+id="profilePage"
+class="page active">
+
+<div class="page-head">
+
+<div class="eyebrow">
+01 / Profile
+</div>
+
+<h1>Profile Editor</h1>
+
+<p>
+Manage the main information displayed across your portfolio.
+</p>
+
+</div>
+
+
+<div class="panel">
+
+<div class="form-grid">
+
+<div class="field full">
+
+<label>HERO STATEMENT</label>
+
+<textarea id="hero"></textarea>
+
+</div>
+
+
+<div class="field full">
+
+<label>ABOUT</label>
+
+<textarea id="about"></textarea>
+
+</div>
+
+
+<div class="field">
+
+<label>EMAIL</label>
+
+<input id="email">
+
+</div>
+
+
+<div class="field">
+
+<label>PHONE</label>
+
+<input id="phone">
+
+</div>
+
+
+<div class="field full">
+
+<label>LINKEDIN URL</label>
+
+<input id="linkedin">
+
+</div>
+
+
+<div class="field full">
+
+<label>PROFILE IMAGE</label>
+
+<div class="upload-box">
+
+<input
+type="file"
+id="profileUpload"
+accept="image/*">
+
+<img
+id="profilePreview"
+class="preview">
+
+<div class="help">
+Upload a new profile photo. The image will be stored with your portfolio content.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="save-row">
+
+<span
+id="profileStatus"
+class="status">
+✓ Saved
+</span>
+
+<button
+class="btn primary"
+onclick="saveProfile()">
+SAVE PROFILE
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+SELECTED WORK
+===================================================== -->
+
+<section
+id="workPage"
+class="page">
+
+<div class="page-head">
+
+<div class="eyebrow">
+02 / Selected Work
+</div>
+
+<h1>Selected Work</h1>
+
+<p>
+Add visual projects that appear in your portfolio's work section.
+</p>
+
+</div>
+
+
+<div class="panel">
+
+<h2>Add / Edit Project</h2>
+
+<div class="form-grid">
+
+<div class="field">
+
+<label>PROJECT TITLE</label>
+
+<input id="projectTitle">
+
+</div>
+
+
+<div class="field">
+
+<label>CATEGORY</label>
+
+<input id="projectCategory">
+
+</div>
+
+
+<div class="field full">
+
+<label>DESCRIPTION</label>
+
+<textarea id="projectDescription"></textarea>
+
+</div>
+
+
+<div class="field">
+
+<label>TAGS</label>
+
+<input id="projectTags">
+
+</div>
+
+
+<div class="field">
+
+<label>PROJECT LINK</label>
+
+<input
+id="projectLink"
+placeholder="example: product-advertising.html">
+
+</div>
+
+
+<div class="field full">
+
+<label>PROJECT IMAGE</label>
+
+<input
+type="file"
+id="projectImage"
+accept="image/*">
+
+<img
+id="projectPreview"
+class="preview">
+
+</div>
+
+</div>
+
+
+<div class="save-row">
+
+<button
+class="btn"
+onclick="clearProject()">
+CLEAR
+</button>
+
+<button
+class="btn primary"
+onclick="addProject()">
+ADD PROJECT
+</button>
+
+</div>
+
+</div>
+
+
+<div class="panel">
+
+<h2>Current Projects</h2>
+
+<div
+id="projectList"
+class="list">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+CASE STUDIES
+===================================================== -->
+
+<section
+id="casePage"
+class="page">
+
+<div class="page-head">
+
+<div class="eyebrow">
+03 / Case Studies
+</div>
+
+<h1>Case Studies</h1>
+
+<p>
+Create deeper marketing stories showing how you think, not only what you designed.
+</p>
+
+</div>
+
+
+<div class="panel">
+
+<h2>Case Study Library</h2>
+
+<div
+id="caseList"
+class="list">
+</div>
+
+<button
+class="btn primary"
+style="margin-top:15px"
+onclick="newCaseStudy()">
++ ADD CASE STUDY
+</button>
+
+</div>
+
+
+<div
+id="caseEditor"
+class="case-editor">
+
+<div class="panel">
+
+<div class="case-header">
+
+<h3 id="caseEditorTitle">
+New Case Study
+</h3>
+
+<button
+class="small-btn"
+onclick="closeCaseEditor()">
+CLOSE
+</button>
+
+</div>
+
+
+<div class="form-grid">
+
+
+<div class="field">
+
+<label>CASE STUDY TITLE</label>
+
+<input id="caseTitle">
+
+</div>
+
+
+<div class="field">
+
+<label>BRAND / PROJECT NAME</label>
+
+<input id="caseBrand">
+
+</div>
+
+
+<div class="field">
+
+<label>PROJECT TYPE</label>
+
+<input
+id="caseType"
+placeholder="Brand Strategy · Advertising · UGC">
+
+</div>
+
+
+<div class="field">
+
+<label>MY ROLE</label>
+
+<input
+id="caseRole"
+placeholder="Strategy · Creative · Marketing">
+
+</div>
+
+
+<div class="field full">
+
+<label>SHORT INTRODUCTION</label>
+
+<textarea id="caseIntro"></textarea>
+
+</div>
+
+
+<div class="field full">
+
+<label>THE CHALLENGE</label>
+
+<textarea id="caseChallenge"></textarea>
+
+</div>
+
+
+<div class="field full">
+
+<label>THE OBJECTIVE</label>
+
+<textarea id="caseObjective"></textarea>
+
+</div>
+
+
+<div class="field full">
+
+<label>RESEARCH / CONSUMER INSIGHT</label>
+
+<textarea id="caseInsight"></textarea>
+
+</div>
+
+
+<div class="field full">
+
+<label>STRATEGY</label>
+
+<textarea id="caseStrategy"></textarea>
+
+</div>
+
+
+<div class="field full">
+
+<label>BIG IDEA</label>
+
+<textarea id="caseIdea"></textarea>
+
+</div>
+
+
+<div class="field full">
+
+<label>CREATIVE DIRECTION</label>
+
+<textarea id="caseCreative"></textarea>
+
+</div>
+
+
+<div class="field full">
+
+<label>EXECUTION</label>
+
+<textarea id="caseExecution"></textarea>
+
+</div>
+
+
+<div class="field full">
+
+<label>RESULTS / LEARNING</label>
+
+<textarea id="caseResults"></textarea>
+
+</div>
+
+
+<div class="field full">
+
+<label>TOOLS USED</label>
+
+<input
+id="caseTools"
+placeholder="Canva · AI tools · Photoshop · Research">
+
+</div>
+
+
+<div class="field full">
+
+<label>PROJECT STATUS</label>
+
+<select id="caseStatus">
+
+<option value="Hypothetical concept">
+Hypothetical concept
+</option>
+
+<option value="Personal project">
+Personal project
+</option>
+
+<option value="Academic project">
+Academic project
+</option>
+
+<option value="Client project">
+Client project
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field full">
+
+<label>COVER IMAGE</label>
+
+<input
+type="file"
+id="caseCover"
+accept="image/*">
+
+<img
+id="caseCoverPreview"
+class="preview">
+
+</div>
+
+
+<div class="field full">
+
+<label>CASE STUDY VISUALS</label>
+
+<input
+type="file"
+id="caseImages"
+accept="image/*"
+multiple>
+
+<div
+id="caseImageList"
+class="image-list">
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="save-row">
+
+<button
+class="btn"
+onclick="closeCaseEditor()">
+CANCEL
+</button>
+
+<button
+class="btn primary"
+onclick="saveCaseStudy()">
+SAVE CASE STUDY
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+PUBLICATIONS
+===================================================== -->
+
+<section
+id="publicationPage"
+class="page">
+
+<div class="page-head">
+
+<div class="eyebrow">
+04 / Publications
+</div>
+
+<h1>Published Thinking</h1>
+
+<p>
+Add your published articles and link visitors directly to the publication.
+</p>
+
+</div>
+
+
+<div class="panel">
+
+<h2>Add Publication</h2>
+
+<div class="form-grid">
+
+<div class="field full">
+
+<label>ARTICLE TITLE</label>
+
+<input id="articleTitle">
+
+</div>
+
+
+<div class="field">
+
+<label>PUBLICATION</label>
+
+<input
+id="articleSource"
+value="The Financial Express">
+
+</div>
+
+
+<div class="field">
+
+<label>DATE</label>
+
+<input
+id="articleDate"
+placeholder="October 6, 2025">
+
+</div>
+
+
+<div class="field full">
+
+<label>ARTICLE URL</label>
+
+<input id="articleUrl">
+
+</div>
+
+
+<div class="field full">
+
+<label>ARTICLE THUMBNAIL</label>
+
+<input
+type="file"
+id="articleImage"
+accept="image/*">
+
+<img
+id="articlePreview"
+class="preview">
+
+</div>
+
+</div>
+
+
+<div class="save-row">
+
+<button
+class="btn"
+onclick="clearArticle()">
+CLEAR
+</button>
+
+<button
+class="btn primary"
+onclick="addArticle()">
+ADD ARTICLE
+</button>
+
+</div>
+
+</div>
+
+
+<div class="panel">
+
+<h2>Published Articles</h2>
+
+<div
+id="articleList"
+class="list">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+RESEARCH
+===================================================== -->
+
+<section
+id="researchPage"
+class="page">
+
+<div class="page-head">
+
+<div class="eyebrow">
+05 / Research
+</div>
+
+<h1>Research Editor</h1>
+
+<p>
+Manage the research project displayed on your portfolio.
+</p>
+
+</div>
+
+
+<div class="panel">
+
+<div class="form-grid">
+
+<div class="field full">
+
+<label>RESEARCH TITLE</label>
+
+<input id="researchTitle">
+
+</div>
+
+
+<div class="field full">
+
+<label>DESCRIPTION</label>
+
+<textarea id="researchDesc"></textarea>
+
+</div>
+
+
+<div class="field full">
+
+<label>RESEARCH STATISTICS</label>
+
+<input id="researchStats">
+
+</div>
+
+
+<div class="field full">
+
+<label>KEY FINDING</label>
+
+<textarea id="researchFinding"></textarea>
+
+</div>
+
+</div>
+
+
+<div class="save-row">
+
+<span
+id="researchStatus"
+class="status">
+✓ Saved
+</span>
+
+<button
+class="btn primary"
+onclick="saveResearch()">
+SAVE RESEARCH
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+TRAVEL
+===================================================== -->
+
+<section
+id="travelPage"
+class="page">
+
+<div class="page-head">
+
+<div class="eyebrow">
+06 / Travel
+</div>
+
+<h1>Travel / Creative</h1>
+
+<p>
+Manage the creative and travel storytelling area of your portfolio.
+</p>
+
+</div>
+
+
+<div class="panel">
+
+<div class="form-grid">
+
+<div class="field full">
+
+<label>TITLE</label>
+
+<input id="travelTitle">
+
+</div>
+
+
+<div class="field full">
+
+<label>DESCRIPTION</label>
+
+<textarea id="travelDescription"></textarea>
+
+</div>
+
+
+<div class="field">
+
+<label>TRAVEL PAGE LINK</label>
+
+<input
+id="travelLink"
+value="travel.html">
+
+</div>
+
+</div>
+
+
+<div class="save-row">
+
+<button
+class="btn primary"
+onclick="saveTravel()">
+SAVE TRAVEL
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
 </main>
+
+</div>
+
+
 <script>
-const KEY="KAS_SHOP_DATA_V1";
-const fallback={products:[{name:"Product 01",price:"৳0",desc:"Add your first product."},{name:"Product 02",price:"৳0",desc:"Add your second product."},{name:"Product 03",price:"৳0",desc:"Add your third product."}]};
-let d=JSON.parse(localStorage.getItem(KEY)||JSON.stringify(fallback));
-function esc(s){return String(s||"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;")}
-function render(){document.getElementById("products").innerHTML=d.products.map((p,i)=>`<div class="item"><label>Product name</label><input data-i="${i}" data-k="name" value="${esc(p.name)}"><label>Price</label><input data-i="${i}" data-k="price" value="${esc(p.price)}"><label>Description</label><textarea data-i="${i}" data-k="desc">${esc(p.desc)}</textarea><button class="btn danger" onclick="d.products.splice(${i},1);render()">REMOVE</button></div>`).join("")}
-function addProduct(){d.products.push({name:"New Product",price:"৳0",desc:"Product description"});render()}
-function collect(){document.querySelectorAll("[data-i]").forEach(x=>d.products[x.dataset.i][x.dataset.k]=x.value)}
-function save(){collect();localStorage.setItem(KEY,JSON.stringify(d));document.getElementById("status").style.display="block";setTimeout(()=>document.getElementById("status").style.display="none",2200)}
-function resetAll(){localStorage.removeItem(KEY);location.reload()}render();
+
+/* =====================================================
+DATA
+===================================================== */
+
+const KEY = "KAS_PORTFOLIO_DATA_V2";
+
+
+const defaultData = {
+
+hero:
+"I turn marketing ideas into stories, campaigns and visual experiences that people remember.",
+
+about:
+"I’m a marketing graduate interested in branding, digital marketing, advertising, creative strategy and AI-assisted content creation. I enjoy taking a business objective and turning it into a clear message, campaign idea or visual experience.",
+
+email:
+"kamrul.shamim@northsouth.edu",
+
+phone:
+"01400961461",
+
+linkedin:
+"https://www.linkedin.com/in/kamrul-ahsan-shamim-a7841737a",
+
+profile:
+"profile.jpg.PNG",
+
+
+projects:[
+{
+title:"Product Advertising Portfolio",
+category:"ADVERTISING · UGC · CREATIVE",
+description:"A collection of product advertising concepts, UGC campaigns, advertising posters, AI-assisted visuals and creative campaign executions.",
+tags:"AI-assisted visual · UGC · Ad strategy",
+link:"product-advertising.html",
+image:"product-advertising-display.PNG"
+}
+],
+
+
+caseStudies:[],
+
+
+articles:[
+
+{
+title:"Economic Shifts and Branding",
+source:"The Financial Express",
+date:"November 30, 2025",
+url:"https://today.thefinancialexpress.com.bd/print/economic-shifts-and-branding-1764426219",
+image:""
+},
+
+{
+title:"Power of Branding in Driving Growth",
+source:"The Financial Express",
+date:"October 6, 2025",
+url:"https://today.thefinancialexpress.com.bd/editorial/power-of-branding-in-driving-growth-1759675701?amp=true",
+image:""
+},
+
+{
+title:"Unlocking Demographic Dividend",
+source:"The Financial Express",
+date:"September 16, 2025",
+url:"https://today.thefinancialexpress.com.bd/editorial/unlocking-demographic-dividend-1757948162?amp=true",
+image:""
+},
+
+{
+title:"Can Bangladesh Become a Startup Hub?",
+source:"The Financial Express",
+date:"September 14, 2025",
+url:"https://today.thefinancialexpress.com.bd/editorial/can-bangladesh-become-a-startup-hub-1757861239?amp=true",
+image:""
+}
+
+],
+
+
+research:{
+
+title:"The Credibility of Influencer Marketing and Its Impact on Consumer Purchase Decisions",
+
+desc:"Exploratory quantitative research examining how influencer credibility factors can affect consumer purchase behavior.",
+
+stats:"n = 103 · Cronbach’s Alpha = 0.676 · R² = 0.432",
+
+finding:"Experience and influencer trustworthiness showed significant positive effects on purchase behavior, while perceived credibility and attractiveness were not statistically significant in the regression model."
+
+},
+
+
+travel:{
+
+title:"Journeys through my lens.",
+
+description:"Explore travel photography, video stories, complete journeys, travel diaries and cinematic visual experiments.",
+
+link:"travel.html"
+
+}
+
+};
+
+
+function getData(){
+
+try{
+
+const saved =
+localStorage.getItem(KEY);
+
+if(saved){
+
+return JSON.parse(saved);
+
+}
+
+}catch(error){
+
+console.error(error);
+
+}
+
+return structuredClone(defaultData);
+
+}
+
+
+let portfolio = getData();
+
+let editingCaseIndex = -1;
+
+let currentCaseImages = [];
+
+
+/* =====================================================
+SAVE
+===================================================== */
+
+function saveEverything(){
+
+localStorage.setItem(
+KEY,
+JSON.stringify(portfolio)
+);
+
+alert("KAS portfolio content saved successfully.");
+
+}
+
+
+/* =====================================================
+NAVIGATION
+===================================================== */
+
+document.querySelectorAll(".side-btn").forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+document.querySelectorAll(".side-btn")
+.forEach(b=>b.classList.remove("active"));
+
+document.querySelectorAll(".page")
+.forEach(p=>p.classList.remove("active"));
+
+button.classList.add("active");
+
+document
+.getElementById(button.dataset.page)
+.classList.add("active");
+
+});
+
+});
+
+
+/* =====================================================
+IMAGE READER
+===================================================== */
+
+function readImage(file,callback){
+
+if(!file){
+
+return;
+
+}
+
+const reader =
+new FileReader();
+
+reader.onload =
+function(){
+
+callback(reader.result);
+
+};
+
+reader.readAsDataURL(file);
+
+}
+
+
+/* =====================================================
+PROFILE
+===================================================== */
+
+function loadProfile(){
+
+document.getElementById("hero").value =
+portfolio.hero || "";
+
+document.getElementById("about").value =
+portfolio.about || "";
+
+document.getElementById("email").value =
+portfolio.email || "";
+
+document.getElementById("phone").value =
+portfolio.phone || "";
+
+document.getElementById("linkedin").value =
+portfolio.linkedin || "";
+
+if(
+portfolio.profile &&
+portfolio.profile.startsWith("data:image")
+){
+
+const preview =
+document.getElementById("profilePreview");
+
+preview.src =
+portfolio.profile;
+
+preview.style.display =
+"block";
+
+}
+
+}
+
+
+document
+.getElementById("profileUpload")
+.addEventListener("change",function(){
+
+readImage(
+this.files[0],
+function(image){
+
+portfolio.profile =
+image;
+
+const preview =
+document.getElementById("profilePreview");
+
+preview.src =
+image;
+
+preview.style.display =
+"block";
+
+}
+);
+
+});
+
+
+function saveProfile(){
+
+portfolio.hero =
+document.getElementById("hero").value;
+
+portfolio.about =
+document.getElementById("about").value;
+
+portfolio.email =
+document.getElementById("email").value;
+
+portfolio.phone =
+document.getElementById("phone").value;
+
+portfolio.linkedin =
+document.getElementById("linkedin").value;
+
+localStorage.setItem(
+KEY,
+JSON.stringify(portfolio)
+);
+
+showStatus("profileStatus");
+
+}
+
+
+function showStatus(id){
+
+const element =
+document.getElementById(id);
+
+element.classList.add("show");
+
+setTimeout(
+()=>{
+element.classList.remove("show");
+},
+1800
+);
+
+}
+
+
+/* =====================================================
+PROJECTS
+===================================================== */
+
+let editingProjectIndex = -1;
+
+
+document
+.getElementById("projectImage")
+.addEventListener("change",function(){
+
+readImage(
+this.files[0],
+function(image){
+
+document
+.getElementById("projectPreview")
+.src = image;
+
+document
+.getElementById("projectPreview")
+.style.display = "block";
+
+document
+.getElementById("projectPreview")
+.dataset.image = image;
+
+}
+);
+
+});
+
+
+function addProject(){
+
+const project = {
+
+title:
+document.getElementById("projectTitle").value,
+
+category:
+document.getElementById("projectCategory").value,
+
+description:
+document.getElementById("projectDescription").value,
+
+tags:
+document.getElementById("projectTags").value,
+
+link:
+document.getElementById("projectLink").value,
+
+image:
+document
+.getElementById("projectPreview")
+.dataset.image || ""
+
+};
+
+
+if(!project.title){
+
+alert("Please enter a project title.");
+
+return;
+
+}
+
+
+if(
+editingProjectIndex >= 0
+){
+
+portfolio.projects[
+editingProjectIndex
+] = project;
+
+editingProjectIndex = -1;
+
+}else{
+
+portfolio.projects.push(project);
+
+}
+
+
+saveEverything();
+
+clearProject();
+
+renderProjects();
+
+}
+
+
+function editProject(index){
+
+const p =
+portfolio.projects[index];
+
+document.getElementById("projectTitle").value =
+p.title || "";
+
+document.getElementById("projectCategory").value =
+p.category || "";
+
+document.getElementById("projectDescription").value =
+p.description || "";
+
+document.getElementById("projectTags").value =
+p.tags || "";
+
+document.getElementById("projectLink").value =
+p.link || "";
+
+const preview =
+document.getElementById("projectPreview");
+
+if(p.image){
+
+preview.src =
+p.image;
+
+preview.dataset.image =
+p.image;
+
+preview.style.display =
+"block";
+
+}
+
+editingProjectIndex =
+index;
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+function deleteProject(index){
+
+if(
+confirm("Delete this project?")
+){
+
+portfolio.projects.splice(index,1);
+
+saveEverything();
+
+renderProjects();
+
+}
+
+}
+
+
+function clearProject(){
+
+editingProjectIndex = -1;
+
+document.getElementById("projectTitle").value = "";
+
+document.getElementById("projectCategory").value = "";
+
+document.getElementById("projectDescription").value = "";
+
+document.getElementById("projectTags").value = "";
+
+document.getElementById("projectLink").value = "";
+
+document.getElementById("projectImage").value = "";
+
+const preview =
+document.getElementById("projectPreview");
+
+preview.src = "";
+
+preview.dataset.image = "";
+
+preview.style.display = "none";
+
+}
+
+
+function renderProjects(){
+
+const list =
+document.getElementById("projectList");
+
+if(!portfolio.projects.length){
+
+list.innerHTML =
+`<div class="empty">No projects added yet.</div>`;
+
+return;
+
+}
+
+
+list.innerHTML =
+portfolio.projects.map((p,index)=>`
+
+<div class="item">
+
+<div class="item-main">
+
+<div class="item-title">
+${escapeHTML(p.title)}
+</div>
+
+<div class="item-meta">
+${escapeHTML(p.category || "")}
+</div>
+
+</div>
+
+<div class="item-actions">
+
+<button
+class="small-btn"
+onclick="editProject(${index})">
+EDIT
+</button>
+
+<button
+class="small-btn delete"
+onclick="deleteProject(${index})">
+DELETE
+</button>
+
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+
+/* =====================================================
+CASE STUDIES
+===================================================== */
+
+function newCaseStudy(){
+
+editingCaseIndex = -1;
+
+currentCaseImages = [];
+
+clearCaseFields();
+
+document.getElementById(
+"caseEditorTitle"
+).textContent =
+"New Case Study";
+
+document
+.getElementById("caseEditor")
+.classList.add("show");
+
+}
+
+
+function editCaseStudy(index){
+
+const c =
+portfolio.caseStudies[index];
+
+editingCaseIndex =
+index;
+
+document.getElementById("caseTitle").value =
+c.title || "";
+
+document.getElementById("caseBrand").value =
+c.brand || "";
+
+document.getElementById("caseType").value =
+c.type || "";
+
+document.getElementById("caseRole").value =
+c.role || "";
+
+document.getElementById("caseIntro").value =
+c.intro || "";
+
+document.getElementById("caseChallenge").value =
+c.challenge || "";
+
+document.getElementById("caseObjective").value =
+c.objective || "";
+
+document.getElementById("caseInsight").value =
+c.insight || "";
+
+document.getElementById("caseStrategy").value =
+c.strategy || "";
+
+document.getElementById("caseIdea").value =
+c.idea || "";
+
+document.getElementById("caseCreative").value =
+c.creative || "";
+
+document.getElementById("caseExecution").value =
+c.execution || "";
+
+document.getElementById("caseResults").value =
+c.results || "";
+
+document.getElementById("caseTools").value =
+c.tools || "";
+
+document.getElementById("caseStatus").value =
+c.status || "Hypothetical concept";
+
+currentCaseImages =
+c.images ? [...c.images] : [];
+
+const cover =
+document.getElementById("caseCoverPreview");
+
+if(c.cover){
+
+cover.src =
+c.cover;
+
+cover.dataset.image =
+c.cover;
+
+cover.style.display =
+"block";
+
+}else{
+
+cover.src = "";
+
+cover.dataset.image = "";
+
+cover.style.display = "none";
+
+}
+
+renderCaseImages();
+
+document.getElementById(
+"caseEditorTitle"
+).textContent =
+"Edit Case Study";
+
+document
+.getElementById("caseEditor")
+.classList.add("show");
+
+}
+
+
+function clearCaseFields(){
+
+[
+"caseTitle",
+"caseBrand",
+"caseType",
+"caseRole",
+"caseIntro",
+"caseChallenge",
+"caseObjective",
+"caseInsight",
+"caseStrategy",
+"caseIdea",
+"caseCreative",
+"caseExecution",
+"caseResults",
+"caseTools"
+].forEach(id=>{
+
+document.getElementById(id).value = "";
+
+});
+
+document.getElementById("caseStatus").value =
+"Hypothetical concept";
+
+document.getElementById("caseCover").value = "";
+
+const preview =
+document.getElementById("caseCoverPreview");
+
+preview.src = "";
+
+preview.dataset.image = "";
+
+preview.style.display = "none";
+
+}
+
+
+function closeCaseEditor(){
+
+document
+.getElementById("caseEditor")
+.classList.remove("show");
+
+}
+
+
+document
+.getElementById("caseCover")
+.addEventListener("change",function(){
+
+readImage(
+this.files[0],
+function(image){
+
+const preview =
+document.getElementById("caseCoverPreview");
+
+preview.src =
+image;
+
+preview.dataset.image =
+image;
+
+preview.style.display =
+"block";
+
+}
+);
+
+});
+
+
+document
+.getElementById("caseImages")
+.addEventListener("change",function(){
+
+Array.from(this.files).forEach(file=>{
+
+readImage(
+file,
+function(image){
+
+currentCaseImages.push(image);
+
+renderCaseImages();
+
+}
+);
+
+});
+
+});
+
+
+function renderCaseImages(){
+
+const list =
+document.getElementById("caseImageList");
+
+list.innerHTML =
+currentCaseImages.map((image,index)=>`
+
+<div class="image-card">
+
+<img src="${image}">
+
+<button
+class="remove-image"
+onclick="removeCaseImage(${index})">
+×
+</button>
+
+</div>
+
+`).join("");
+
+}
+
+
+function removeCaseImage(index){
+
+currentCaseImages.splice(index,1);
+
+renderCaseImages();
+
+}
+
+
+function saveCaseStudy(){
+
+const caseStudy = {
+
+title:
+document.getElementById("caseTitle").value,
+
+brand:
+document.getElementById("caseBrand").value,
+
+type:
+document.getElementById("caseType").value,
+
+role:
+document.getElementById("caseRole").value,
+
+intro:
+document.getElementById("caseIntro").value,
+
+challenge:
+document.getElementById("caseChallenge").value,
+
+objective:
+document.getElementById("caseObjective").value,
+
+insight:
+document.getElementById("caseInsight").value,
+
+strategy:
+document.getElementById("caseStrategy").value,
+
+idea:
+document.getElementById("caseIdea").value,
+
+creative:
+document.getElementById("caseCreative").value,
+
+execution:
+document.getElementById("caseExecution").value,
+
+results:
+document.getElementById("caseResults").value,
+
+tools:
+document.getElementById("caseTools").value,
+
+status:
+document.getElementById("caseStatus").value,
+
+cover:
+document
+.getElementById("caseCoverPreview")
+.dataset.image || "",
+
+images:
+currentCaseImages
+
+};
+
+
+if(!caseStudy.title){
+
+alert("Please enter a case study title.");
+
+return;
+
+}
+
+
+if(editingCaseIndex >= 0){
+
+portfolio.caseStudies[
+editingCaseIndex
+] = caseStudy;
+
+}else{
+
+portfolio.caseStudies.push(caseStudy);
+
+}
+
+
+saveEverything();
+
+renderCaseStudies();
+
+closeCaseEditor();
+
+}
+
+
+function deleteCaseStudy(index){
+
+if(
+confirm("Delete this case study?")
+){
+
+portfolio.caseStudies.splice(index,1);
+
+saveEverything();
+
+renderCaseStudies();
+
+}
+
+}
+
+
+function renderCaseStudies(){
+
+const list =
+document.getElementById("caseList");
+
+if(!portfolio.caseStudies.length){
+
+list.innerHTML =
+`<div class="empty">
+No case studies yet. Click "+ ADD CASE STUDY" to create your first one.
+</div>`;
+
+return;
+
+}
+
+
+list.innerHTML =
+portfolio.caseStudies.map((c,index)=>`
+
+<div class="item">
+
+<div class="item-main">
+
+<div class="item-title">
+${escapeHTML(c.title)}
+</div>
+
+<div class="item-meta">
+${escapeHTML(c.brand || "")}
+${c.type ? " · " + escapeHTML(c.type) : ""}
+</div>
+
+</div>
+
+<div class="item-actions">
+
+<button
+class="small-btn"
+onclick="editCaseStudy(${index})">
+EDIT
+</button>
+
+<button
+class="small-btn delete"
+onclick="deleteCaseStudy(${index})">
+DELETE
+</button>
+
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+
+/* =====================================================
+PUBLICATIONS
+===================================================== */
+
+let editingArticleIndex = -1;
+
+
+document
+.getElementById("articleImage")
+.addEventListener("change",function(){
+
+readImage(
+this.files[0],
+function(image){
+
+const preview =
+document.getElementById("articlePreview");
+
+preview.src =
+image;
+
+preview.dataset.image =
+image;
+
+preview.style.display =
+"block";
+
+}
+);
+
+});
+
+
+function addArticle(){
+
+const article = {
+
+title:
+document.getElementById("articleTitle").value,
+
+source:
+document.getElementById("articleSource").value,
+
+date:
+document.getElementById("articleDate").value,
+
+url:
+document.getElementById("articleUrl").value,
+
+image:
+document
+.getElementById("articlePreview")
+.dataset.image || ""
+
+};
+
+
+if(!article.title){
+
+alert("Please enter an article title.");
+
+return;
+
+}
+
+
+if(editingArticleIndex >= 0){
+
+portfolio.articles[
+editingArticleIndex
+] = article;
+
+editingArticleIndex = -1;
+
+}else{
+
+portfolio.articles.push(article);
+
+}
+
+
+saveEverything();
+
+clearArticle();
+
+renderArticles();
+
+}
+
+
+function editArticle(index){
+
+const a =
+portfolio.articles[index];
+
+document.getElementById("articleTitle").value =
+a.title || "";
+
+document.getElementById("articleSource").value =
+a.source || "";
+
+document.getElementById("articleDate").value =
+a.date || "";
+
+document.getElementById("articleUrl").value =
+a.url || "";
+
+const preview =
+document.getElementById("articlePreview");
+
+if(a.image){
+
+preview.src =
+a.image;
+
+preview.dataset.image =
+a.image;
+
+preview.style.display =
+"block";
+
+}
+
+editingArticleIndex =
+index;
+
+}
+
+
+function deleteArticle(index){
+
+if(
+confirm("Delete this article?")
+){
+
+portfolio.articles.splice(index,1);
+
+saveEverything();
+
+renderArticles();
+
+}
+
+}
+
+
+function clearArticle(){
+
+editingArticleIndex = -1;
+
+document.getElementById("articleTitle").value = "";
+
+document.getElementById("articleSource").value =
+"The Financial Express";
+
+document.getElementById("articleDate").value = "";
+
+document.getElementById("articleUrl").value = "";
+
+document.getElementById("articleImage").value = "";
+
+const preview =
+document.getElementById("articlePreview");
+
+preview.src = "";
+
+preview.dataset.image = "";
+
+preview.style.display = "none";
+
+}
+
+
+function renderArticles(){
+
+const list =
+document.getElementById("articleList");
+
+if(!portfolio.articles.length){
+
+list.innerHTML =
+`<div class="empty">No articles added yet.</div>`;
+
+return;
+
+}
+
+
+list.innerHTML =
+portfolio.articles.map((a,index)=>`
+
+<div class="item">
+
+<div class="item-main">
+
+<div class="item-title">
+${escapeHTML(a.title)}
+</div>
+
+<div class="item-meta">
+${escapeHTML(a.source || "")}
+${a.date ? " · " + escapeHTML(a.date) : ""}
+</div>
+
+</div>
+
+<div class="item-actions">
+
+<button
+class="small-btn"
+onclick="editArticle(${index})">
+EDIT
+</button>
+
+<button
+class="small-btn delete"
+onclick="deleteArticle(${index})">
+DELETE
+</button>
+
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+
+/* =====================================================
+RESEARCH
+===================================================== */
+
+function loadResearch(){
+
+document.getElementById("researchTitle").value =
+portfolio.research.title || "";
+
+document.getElementById("researchDesc").value =
+portfolio.research.desc || "";
+
+document.getElementById("researchStats").value =
+portfolio.research.stats || "";
+
+document.getElementById("researchFinding").value =
+portfolio.research.finding || "";
+
+}
+
+
+function saveResearch(){
+
+portfolio.research = {
+
+title:
+document.getElementById("researchTitle").value,
+
+desc:
+document.getElementById("researchDesc").value,
+
+stats:
+document.getElementById("researchStats").value,
+
+finding:
+document.getElementById("researchFinding").value
+
+};
+
+localStorage.setItem(
+KEY,
+JSON.stringify(portfolio)
+);
+
+showStatus("researchStatus");
+
+}
+
+
+/* =====================================================
+TRAVEL
+===================================================== */
+
+function loadTravel(){
+
+document.getElementById("travelTitle").value =
+portfolio.travel.title || "";
+
+document.getElementById("travelDescription").value =
+portfolio.travel.description || "";
+
+document.getElementById("travelLink").value =
+portfolio.travel.link || "";
+
+}
+
+
+function saveTravel(){
+
+portfolio.travel = {
+
+title:
+document.getElementById("travelTitle").value,
+
+description:
+document.getElementById("travelDescription").value,
+
+link:
+document.getElementById("travelLink").value
+
+};
+
+saveEverything();
+
+}
+
+
+/* =====================================================
+ESCAPE HTML
+===================================================== */
+
+function escapeHTML(value){
+
+return String(value || "")
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
+}
+
+
+/* =====================================================
+INITIALIZE
+===================================================== */
+
+loadProfile();
+
+renderProjects();
+
+renderCaseStudies();
+
+renderArticles();
+
+loadResearch();
+
+loadTravel();
+
 </script>
-</body></html>
+
+
+</body>
+
+</html>
