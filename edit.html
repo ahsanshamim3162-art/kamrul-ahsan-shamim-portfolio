@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -7,241 +8,138 @@
 <title>KAS Portfolio Editor</title>
 
 <style>
-*{box-sizing:border-box}
+
+*{
+box-sizing:border-box;
+}
 
 body{
 margin:0;
-background:#070707;
+background:#080808;
 color:#f5f1e8;
 font-family:Arial,sans-serif;
+line-height:1.5;
 }
 
 .container{
-width:min(900px,calc(100% - 28px));
+width:min(900px,calc(100% - 30px));
 margin:auto;
-padding:30px 0 80px;
+padding:35px 0 80px;
+}
+
+h1,h2,h3{
+font-family:Arial,sans-serif;
 }
 
 h1{
-font-size:38px;
-margin:10px 0;
+font-size:42px;
+margin-bottom:8px;
 }
 
 h2{
-font-size:27px;
-margin:0;
+margin-top:45px;
+padding-bottom:12px;
+border-bottom:1px solid #333;
 }
 
-h3{
-margin:0 0 8px;
-font-size:18px;
-}
-
-.eyebrow{
-color:#d7b56d;
-font-size:11px;
-font-weight:bold;
-letter-spacing:.15em;
-text-transform:uppercase;
-}
-
-.muted{
+.subtitle{
 color:#999;
-line-height:1.6;
+margin-bottom:35px;
 }
 
-header{
-border-bottom:1px solid #292929;
-padding:20px 0 30px;
-margin-bottom:30px;
+label{
+display:block;
+font-size:13px;
+font-weight:bold;
+color:#d7b56d;
+margin:18px 0 7px;
 }
 
-.section{
-margin:40px 0;
+input,
+textarea{
+width:100%;
+padding:13px;
+border-radius:8px;
+border:1px solid #333;
+background:#111;
+color:#fff;
+font:inherit;
 }
 
-.toolbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:15px;
-margin-bottom:16px;
+textarea{
+min-height:110px;
+resize:vertical;
 }
 
 .card{
 background:#111;
 border:1px solid #292929;
-border-radius:15px;
-padding:20px;
-margin-bottom:14px;
+border-radius:14px;
+padding:22px;
+margin:18px 0;
 }
 
-.cardtop{
-display:flex;
-justify-content:space-between;
-gap:15px;
-}
-
-.number{
-color:#d7b56d;
-font-size:10px;
-font-weight:bold;
-margin-bottom:5px;
-}
-
-.details{
-color:#999;
-font-size:13px;
-line-height:1.6;
-}
-
-.actions{
-display:flex;
-gap:7px;
+.card h3{
+margin-top:0;
 }
 
 button{
-font-family:inherit;
-cursor:pointer;
 border:0;
+border-radius:30px;
+padding:12px 18px;
+font-weight:bold;
+cursor:pointer;
+margin:8px 6px 8px 0;
+}
+
+.save{
+background:#d9ff55;
+color:#080808;
 }
 
 .add{
-background:#d9ff55;
+background:#d7b56d;
 color:#080808;
-padding:11px 15px;
-border-radius:100px;
-font-size:12px;
-font-weight:bold;
 }
 
-.edit{
-background:#292929;
-color:white;
-padding:9px 13px;
-border-radius:8px;
-font-size:11px;
+.remove{
+background:#3a1818;
+color:#ff9999;
 }
 
-.delete{
-background:#351919;
-color:#ff7777;
-padding:9px 13px;
-border-radius:8px;
-font-size:11px;
+.secondary{
+background:#222;
+color:#fff;
 }
 
-.form{
-display:none;
-border-top:1px solid #292929;
-margin-top:18px;
-padding-top:18px;
+.top-actions{
+position:sticky;
+top:0;
+z-index:20;
+background:#080808ee;
+backdrop-filter:blur(12px);
+padding:15px 0;
+border-bottom:1px solid #222;
 }
 
-.form.active{
-display:block;
-}
-
-label{
-display:block;
-font-size:10px;
-font-weight:bold;
-letter-spacing:.08em;
-color:#bbb;
-margin:14px 0 6px;
-text-transform:uppercase;
-}
-
-input,textarea{
-width:100%;
-background:#080808;
-border:1px solid #333;
-border-radius:9px;
-color:white;
-padding:12px;
-font-family:inherit;
-font-size:14px;
-outline:none;
-}
-
-textarea{
-min-height:100px;
-resize:vertical;
-}
-
-input:focus,textarea:focus{
-border-color:#d7b56d;
-}
-
-.formbuttons{
-display:flex;
-gap:8px;
-margin-top:15px;
-}
-
-.saveitem{
-background:#d9ff55;
-color:#080808;
-padding:10px 15px;
-border-radius:8px;
-font-weight:bold;
-}
-
-.cancel{
-background:#292929;
-color:white;
-padding:10px 15px;
-border-radius:8px;
-}
-
-.saveall{
-width:100%;
-background:#d9ff55;
-color:#080808;
-padding:17px;
-border-radius:12px;
-font-weight:bold;
-font-size:15px;
-margin-top:20px;
-}
-
-.empty{
-border:1px dashed #333;
-padding:25px;
-border-radius:12px;
-text-align:center;
-color:#777;
-}
-
-.back{
+.status{
 display:inline-block;
-color:#d9ff55;
+color:#9dff55;
+font-size:13px;
+margin-left:8px;
+}
+
+.small{
+color:#888;
 font-size:12px;
-margin-bottom:20px;
 }
 
-@media(max-width:600px){
-
-.cardtop{
-flex-direction:column;
+hr{
+border:0;
+border-top:1px solid #292929;
+margin:30px 0;
 }
 
-.actions{
-width:100%;
-}
-
-.actions button{
-flex:1;
-}
-
-.toolbar{
-align-items:flex-start;
-}
-
-h1{
-font-size:32px;
-}
-}
 </style>
 </head>
 
@@ -249,59 +147,116 @@ font-size:32px;
 
 <div class="container">
 
-<a href="index.html" class="back">← Back to Portfolio</a>
+<div class="top-actions">
 
-<header>
-<div class="eyebrow">KAS / Portfolio Management</div>
+<button class="save" onclick="savePortfolio()">
+SAVE CHANGES
+</button>
 
-<h1>EDIT PORTFOLIO</h1>
+<button class="secondary" onclick="window.location.href='index.html'">
+VIEW PORTFOLIO
+</button>
 
-<p class="muted">
-Add and manage projects and published articles.
+<button class="secondary" onclick="resetPortfolio()">
+RESET
+</button>
+
+<span id="status" class="status"></span>
+
+</div>
+
+
+<h1>Edit Portfolio</h1>
+
+<p class="subtitle">
+Update your portfolio without editing code.
 </p>
-</header>
+
+
+<!-- BASIC INFORMATION -->
+
+<h2>01 / Basic Information</h2>
+
+<label>Name</label>
+<input id="name">
+
+<label>Tagline</label>
+<input id="tagline">
+
+<label>Hero Text</label>
+<textarea id="hero"></textarea>
+
+<label>About Text</label>
+<textarea id="about"></textarea>
+
+<label>Email</label>
+<input id="email">
+
+<label>Phone</label>
+<input id="phone">
+
+<label>LinkedIn URL</label>
+<input id="linkedin">
+
+<label>Profile Image Filename</label>
+<input id="profile">
+
+<p class="small">
+Example: profile.jpg.PNG
+</p>
 
 
 <!-- PROJECTS -->
 
-<section class="section">
-
-<div class="toolbar">
-
-<h2>Projects</h2>
-
-<button class="add" onclick="addProject()">
-＋ Add Project
-</button>
-
-</div>
+<h2>02 / Selected Work</h2>
 
 <div id="projects"></div>
 
-</section>
+<button class="add" onclick="addProject()">
++ ADD PROJECT
+</button>
+
+
+<!-- RESEARCH -->
+
+<h2>03 / Research</h2>
+
+<div class="card">
+
+<label>Research Title</label>
+<input id="researchTitle">
+
+<label>Description</label>
+<textarea id="researchDesc"></textarea>
+
+<label>Statistics</label>
+<input id="researchStats">
+
+<label>Finding</label>
+<textarea id="researchFinding"></textarea>
+
+</div>
 
 
 <!-- ARTICLES -->
 
-<section class="section">
-
-<div class="toolbar">
-
-<h2>Published Articles</h2>
-
-<button class="add" onclick="addArticle()">
-＋ Add Article
-</button>
-
-</div>
+<h2>04 / Published Articles</h2>
 
 <div id="articles"></div>
 
-</section>
+<button class="add" onclick="addArticle()">
++ ADD PUBLISHED ARTICLE
+</button>
 
 
-<button class="saveall" onclick="saveAll()">
+<hr>
+
+<button class="save" onclick="savePortfolio()">
 SAVE ALL CHANGES
+</button>
+
+<button class="secondary" onclick="window.location.href='index.html'">
+BACK TO PORTFOLIO
 </button>
 
 </div>
@@ -309,16 +264,18 @@ SAVE ALL CHANGES
 
 <script>
 
-const KEY="KAS_PORTFOLIO_DATA_V1";
+const KEY = "KAS_PORTFOLIO_DATA_V1";
 
 
-const defaultData={
+const originalData = {
 
 name:"Kamrul Ahsan Shamim",
 
+tagline:"Marketing × Branding × Creative Technology",
+
 hero:"I turn marketing ideas into stories, campaigns and visual experiences that people remember.",
 
-about:"I’m a marketing graduate interested in branding, digital marketing, advertising, creative strategy and AI-assisted content creation.",
+about:"I’m a marketing graduate interested in branding, digital marketing, advertising, creative strategy and AI-assisted content creation. I enjoy taking a business objective and turning it into a clear message, campaign idea or visual experience.",
 
 email:"kamrul.shamim@northsouth.edu",
 
@@ -327,7 +284,6 @@ phone:"01400961461",
 linkedin:"https://www.linkedin.com/in/kamrul-ahsan-shamim-a7841737a",
 
 profile:"profile.jpg.PNG",
-
 
 projects:[
 
@@ -369,12 +325,22 @@ link:"travel.html"
 
 ],
 
+research:{
+
+title:"The Credibility of Influencer Marketing and Its Impact on Consumer Purchase Decisions",
+
+desc:"Exploratory quantitative research examining how influencer credibility factors can affect consumer purchase behavior.",
+
+stats:"n = 103 · Cronbach’s Alpha = 0.676 · R² = 0.432",
+
+finding:"Experience and influencer trustworthiness showed significant positive effects on purchase behavior, while perceived credibility and attractiveness were not statistically significant in the regression model."
+
+},
 
 articles:[
 
 {
 title:"Economic Shifts and Branding",
-source:"The Financial Express",
 date:"Nov 30, 2025",
 image:"https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=500&q=80",
 url:"https://today.thefinancialexpress.com.bd/print/economic-shifts-and-branding-1764426219"
@@ -382,7 +348,6 @@ url:"https://today.thefinancialexpress.com.bd/print/economic-shifts-and-branding
 
 {
 title:"Power of Branding in Driving Growth",
-source:"The Financial Express",
 date:"Oct 6, 2025",
 image:"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=80",
 url:"https://today.thefinancialexpress.com.bd/editorial/power-of-branding-in-driving-growth-1759675701?amp=true"
@@ -390,7 +355,6 @@ url:"https://today.thefinancialexpress.com.bd/editorial/power-of-branding-in-dri
 
 {
 title:"Future of Digital Marketing",
-source:"The Financial Express",
 date:"Published article",
 image:"https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=500&q=80",
 url:"https://today.thefinancialexpress.com.bd/editorial/future-of-digital-marketing-1769523175?amp=true"
@@ -398,7 +362,6 @@ url:"https://today.thefinancialexpress.com.bd/editorial/future-of-digital-market
 
 {
 title:"Gen Z Consumers and Changing Market",
-source:"The Financial Express",
 date:"Published article",
 image:"https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=500&q=80",
 url:"https://today.thefinancialexpress.com.bd/public/print/gen-z-consumers-and-changing-market-1786804317"
@@ -406,7 +369,6 @@ url:"https://today.thefinancialexpress.com.bd/public/print/gen-z-consumers-and-c
 
 {
 title:"Unlocking Demographic Dividend",
-source:"The Financial Express",
 date:"Sep 16, 2025",
 image:"https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=500&q=80",
 url:"https://today.thefinancialexpress.com.bd/editorial/unlocking-demographic-dividend-1757948162?amp=true"
@@ -414,7 +376,6 @@ url:"https://today.thefinancialexpress.com.bd/editorial/unlocking-demographic-di
 
 {
 title:"Can Bangladesh Become a Startup Hub?",
-source:"The Financial Express",
 date:"Sep 14, 2025",
 image:"https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=500&q=80",
 url:"https://today.thefinancialexpress.com.bd/editorial/can-bangladesh-become-a-startup-hub-1757861239?amp=true"
@@ -425,49 +386,502 @@ url:"https://today.thefinancialexpress.com.bd/editorial/can-bangladesh-become-a-
 };
 
 
+/* LOAD */
+
 function loadData(){
 
 try{
 
-const saved=localStorage.getItem(KEY);
+const saved =
+localStorage.getItem(KEY);
 
 if(saved){
 
-const data=JSON.parse(saved);
-
-if(!data.projects)
-data.projects=[];
-
-if(!data.articles)
-data.articles=[];
-
-return data;
+return mergeData(
+originalData,
+JSON.parse(saved)
+);
 
 }
 
 }catch(e){}
 
-return JSON.parse(JSON.stringify(defaultData));
+return JSON.parse(
+JSON.stringify(originalData)
+);
 
 }
 
 
-let data=loadData();
+/* MERGE */
+
+function mergeData(base,saved){
+
+return {
+
+...base,
+...saved,
+
+projects:
+saved.projects || base.projects,
+
+articles:
+saved.articles || base.articles,
+
+research:
+{
+...base.research,
+...(saved.research || {})
+}
+
+};
+
+}
 
 
-function saveData(){
+let data = loadData();
+
+
+/* BASIC FIELDS */
+
+function loadBasic(){
+
+document.getElementById("name").value =
+data.name || "";
+
+document.getElementById("tagline").value =
+data.tagline || "";
+
+document.getElementById("hero").value =
+data.hero || "";
+
+document.getElementById("about").value =
+data.about || "";
+
+document.getElementById("email").value =
+data.email || "";
+
+document.getElementById("phone").value =
+data.phone || "";
+
+document.getElementById("linkedin").value =
+data.linkedin || "";
+
+document.getElementById("profile").value =
+data.profile || "";
+
+}
+
+
+/* PROJECTS */
+
+function renderProjects(){
+
+const container =
+document.getElementById("projects");
+
+container.innerHTML = "";
+
+data.projects.forEach((project,index)=>{
+
+const card =
+document.createElement("div");
+
+card.className = "card";
+
+card.innerHTML = `
+
+<h3>
+Project ${index + 1}
+</h3>
+
+<label>Project Title</label>
+
+<input
+class="project-title"
+value="${escapeHTML(project.title || "")}"
+>
+
+<label>Category</label>
+
+<input
+class="project-category"
+value="${escapeHTML(project.category || "")}"
+>
+
+<label>Description</label>
+
+<textarea
+class="project-desc"
+>${escapeHTML(project.desc || "")}</textarea>
+
+<label>Image Filename</label>
+
+<input
+class="project-image"
+value="${escapeHTML(project.image || "")}"
+>
+
+<label>Tags</label>
+
+<input
+class="project-tags"
+value="${escapeHTML(project.tags || "")}"
+>
+
+<label>Project Link</label>
+
+<input
+class="project-link"
+value="${escapeHTML(project.link || "")}"
+>
+
+<button
+class="remove"
+onclick="removeProject(${index})">
+REMOVE PROJECT
+</button>
+
+`;
+
+container.appendChild(card);
+
+});
+
+}
+
+
+/* ADD PROJECT */
+
+function addProject(){
+
+data.projects.push({
+
+title:"New Project",
+
+category:"CATEGORY",
+
+desc:"Project description",
+
+image:"",
+
+tags:"",
+
+link:""
+
+});
+
+renderProjects();
+
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+
+}
+
+
+/* REMOVE PROJECT */
+
+function removeProject(index){
+
+if(!confirm("Remove this project?")) return;
+
+data.projects.splice(index,1);
+
+renderProjects();
+
+}
+
+
+/* ARTICLES */
+
+function renderArticles(){
+
+const container =
+document.getElementById("articles");
+
+container.innerHTML = "";
+
+data.articles.forEach((article,index)=>{
+
+const card =
+document.createElement("div");
+
+card.className = "card";
+
+card.innerHTML = `
+
+<h3>
+Article ${index + 1}
+</h3>
+
+<label>Article Title</label>
+
+<input
+class="article-title"
+value="${escapeHTML(article.title || "")}"
+>
+
+<label>Publication Date</label>
+
+<input
+class="article-date"
+value="${escapeHTML(article.date || "")}"
+>
+
+<label>Article Image URL</label>
+
+<input
+class="article-image"
+value="${escapeHTML(article.image || "")}"
+>
+
+<label>Article URL</label>
+
+<input
+class="article-url"
+value="${escapeHTML(article.url || "")}"
+>
+
+<button
+class="remove"
+onclick="removeArticle(${index})">
+REMOVE ARTICLE
+</button>
+
+`;
+
+container.appendChild(card);
+
+});
+
+}
+
+
+/* ADD ARTICLE */
+
+function addArticle(){
+
+data.articles.push({
+
+title:"New Published Article",
+
+date:"",
+
+image:"",
+
+url:""
+
+});
+
+renderArticles();
+
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+
+}
+
+
+/* REMOVE ARTICLE */
+
+function removeArticle(index){
+
+if(!confirm("Remove this article?")) return;
+
+data.articles.splice(index,1);
+
+renderArticles();
+
+}
+
+
+/* COLLECT FORM DATA */
+
+function collectData(){
+
+data.name =
+document.getElementById("name").value;
+
+data.tagline =
+document.getElementById("tagline").value;
+
+data.hero =
+document.getElementById("hero").value;
+
+data.about =
+document.getElementById("about").value;
+
+data.email =
+document.getElementById("email").value;
+
+data.phone =
+document.getElementById("phone").value;
+
+data.linkedin =
+document.getElementById("linkedin").value;
+
+data.profile =
+document.getElementById("profile").value;
+
+
+/* PROJECTS */
+
+const projectCards =
+document.querySelectorAll("#projects .card");
+
+data.projects =
+Array.from(projectCards).map(card=>({
+
+title:
+card.querySelector(".project-title").value,
+
+category:
+card.querySelector(".project-category").value,
+
+desc:
+card.querySelector(".project-desc").value,
+
+image:
+card.querySelector(".project-image").value,
+
+tags:
+card.querySelector(".project-tags").value,
+
+link:
+card.querySelector(".project-link").value
+
+}));
+
+
+/* RESEARCH */
+
+data.research = {
+
+title:
+document.getElementById("researchTitle").value,
+
+desc:
+document.getElementById("researchDesc").value,
+
+stats:
+document.getElementById("researchStats").value,
+
+finding:
+document.getElementById("researchFinding").value
+
+};
+
+
+/* ARTICLES */
+
+const articleCards =
+document.querySelectorAll("#articles .card");
+
+data.articles =
+Array.from(articleCards).map(card=>({
+
+title:
+card.querySelector(".article-title").value,
+
+date:
+card.querySelector(".article-date").value,
+
+image:
+card.querySelector(".article-image").value,
+
+url:
+card.querySelector(".article-url").value
+
+}));
+
+}
+
+
+/* SAVE */
+
+function savePortfolio(){
+
+collectData();
 
 localStorage.setItem(
 KEY,
 JSON.stringify(data)
 );
 
+const status =
+document.getElementById("status");
+
+status.textContent =
+"✓ Saved";
+
+setTimeout(()=>{
+
+status.textContent = "";
+
+},3000);
+
 }
 
 
-function esc(value){
+/* RESET */
 
-return String(value||"")
+function resetPortfolio(){
+
+if(!confirm(
+"Reset portfolio to the original content?"
+)) return;
+
+data =
+JSON.parse(
+JSON.stringify(originalData)
+);
+
+localStorage.setItem(
+KEY,
+JSON.stringify(data)
+);
+
+loadBasic();
+
+renderProjects();
+
+loadResearch();
+
+renderArticles();
+
+document.getElementById("status").textContent =
+"✓ Reset";
+
+}
+
+
+/* RESEARCH */
+
+function loadResearch(){
+
+document.getElementById("researchTitle").value =
+data.research.title || "";
+
+document.getElementById("researchDesc").value =
+data.research.desc || "";
+
+document.getElementById("researchStats").value =
+data.research.stats || "";
+
+document.getElementById("researchFinding").value =
+data.research.finding || "";
+
+}
+
+
+/* ESCAPE HTML */
+
+function escapeHTML(value){
+
+return String(value)
 .replace(/&/g,"&amp;")
 .replace(/</g,"&lt;")
 .replace(/>/g,"&gt;")
@@ -477,422 +891,11 @@ return String(value||"")
 }
 
 
-/* PROJECTS */
+/* INITIALIZE */
 
-function renderProjects(){
+loadBasic();
 
-const box=document.getElementById("projects");
-
-if(data.projects.length===0){
-
-box.innerHTML=
-'<div class="empty">No projects. Tap ＋ Add Project.</div>';
-
-return;
-
-}
-
-
-box.innerHTML=data.projects.map((p,i)=>`
-
-<div class="card">
-
-<div class="cardtop">
-
-<div>
-
-<div class="number">
-PROJECT ${String(i+1).padStart(2,"0")}
-</div>
-
-<h3>${esc(p.title)}</h3>
-
-<div class="details">
-
-${esc(p.category)}
-
-<br>
-
-${esc(p.desc)}
-
-</div>
-
-</div>
-
-
-<div class="actions">
-
-<button
-class="edit"
-onclick="editProject(${i})">
-EDIT
-</button>
-
-<button
-class="delete"
-onclick="deleteProject(${i})">
-DELETE
-</button>
-
-</div>
-
-</div>
-
-
-<div
-id="projectForm${i}"
-class="form">
-
-<label>Project Title</label>
-
-<input
-id="ptitle${i}"
-value="${esc(p.title)}">
-
-
-<label>Category</label>
-
-<input
-id="pcategory${i}"
-value="${esc(p.category)}">
-
-
-<label>Description</label>
-
-<textarea
-id="pdesc${i}">${esc(p.desc)}</textarea>
-
-
-<label>Image File Name</label>
-
-<input
-id="pimage${i}"
-value="${esc(p.image)}"
-placeholder="example.PNG">
-
-
-<label>Tags</label>
-
-<input
-id="ptags${i}"
-value="${esc(p.tags)}">
-
-
-<label>Project Link</label>
-
-<input
-id="plink${i}"
-value="${esc(p.link)}"
-placeholder="example.html">
-
-
-<div class="formbuttons">
-
-<button
-class="saveitem"
-onclick="saveProject(${i})">
-SAVE PROJECT
-</button>
-
-<button
-class="cancel"
-onclick="editProject(${i})">
-CANCEL
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-`).join("");
-
-}
-
-
-function addProject(){
-
-data.projects.push({
-
-title:"New Project",
-category:"CATEGORY",
-desc:"",
-image:"",
-tags:"",
-link:""
-
-});
-
-renderProjects();
-
-editProject(data.projects.length-1);
-
-}
-
-
-function editProject(i){
-
-const form=document.getElementById(
-"projectForm"+i
-);
-
-if(form)
-form.classList.toggle("active");
-
-}
-
-
-function saveProject(i){
-
-const p=data.projects[i];
-
-p.title=document.getElementById("ptitle"+i).value;
-
-p.category=document.getElementById("pcategory"+i).value;
-
-p.desc=document.getElementById("pdesc"+i).value;
-
-p.image=document.getElementById("pimage"+i).value;
-
-p.tags=document.getElementById("ptags"+i).value;
-
-p.link=document.getElementById("plink"+i).value;
-
-saveData();
-
-renderProjects();
-
-alert("Project saved.");
-
-}
-
-
-function deleteProject(i){
-
-if(confirm("Delete this project?")){
-
-data.projects.splice(i,1);
-
-saveData();
-
-renderProjects();
-
-}
-
-}
-
-
-/* ARTICLES */
-
-function renderArticles(){
-
-const box=document.getElementById("articles");
-
-if(data.articles.length===0){
-
-box.innerHTML=
-'<div class="empty">No articles. Tap ＋ Add Article.</div>';
-
-return;
-
-}
-
-
-box.innerHTML=data.articles.map((a,i)=>`
-
-<div class="card">
-
-<div class="cardtop">
-
-<div>
-
-<div class="number">
-ARTICLE ${String(i+1).padStart(2,"0")}
-</div>
-
-<h3>${esc(a.title)}</h3>
-
-<div class="details">
-
-${esc(a.source)}
-
-<br>
-
-${esc(a.date)}
-
-</div>
-
-</div>
-
-
-<div class="actions">
-
-<button
-class="edit"
-onclick="editArticle(${i})">
-EDIT
-</button>
-
-<button
-class="delete"
-onclick="deleteArticle(${i})">
-DELETE
-</button>
-
-</div>
-
-</div>
-
-
-<div
-id="articleForm${i}"
-class="form">
-
-<label>Article Title</label>
-
-<input
-id="atitle${i}"
-value="${esc(a.title)}">
-
-
-<label>Publication / Source</label>
-
-<input
-id="asource${i}"
-value="${esc(a.source)}">
-
-
-<label>Publication Date</label>
-
-<input
-id="adate${i}"
-value="${esc(a.date)}"
-placeholder="Aug 28, 2026">
-
-
-<label>Article Image URL</label>
-
-<input
-id="aimage${i}"
-value="${esc(a.image)}"
-placeholder="https://...">
-
-
-<label>Article URL</label>
-
-<input
-id="aurl${i}"
-value="${esc(a.url)}"
-placeholder="https://...">
-
-
-<div class="formbuttons">
-
-<button
-class="saveitem"
-onclick="saveArticle(${i})">
-SAVE ARTICLE
-</button>
-
-<button
-class="cancel"
-onclick="editArticle(${i})">
-CANCEL
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-`).join("");
-
-}
-
-
-function addArticle(){
-
-data.articles.push({
-
-title:"New Published Article",
-source:"The Financial Express",
-date:"",
-image:"",
-url:""
-
-});
-
-renderArticles();
-
-editArticle(data.articles.length-1);
-
-}
-
-
-function editArticle(i){
-
-const form=document.getElementById(
-"articleForm"+i
-);
-
-if(form)
-form.classList.toggle("active");
-
-}
-
-
-function saveArticle(i){
-
-const a=data.articles[i];
-
-a.title=document.getElementById("atitle"+i).value;
-
-a.source=document.getElementById("asource"+i).value;
-
-a.date=document.getElementById("adate"+i).value;
-
-a.image=document.getElementById("aimage"+i).value;
-
-a.url=document.getElementById("aurl"+i).value;
-
-saveData();
-
-renderArticles();
-
-alert("Article saved.");
-
-}
-
-
-function deleteArticle(i){
-
-if(confirm("Delete this article?")){
-
-data.articles.splice(i,1);
-
-saveData();
-
-renderArticles();
-
-}
-
-}
-
-
-function saveAll(){
-
-saveData();
-
-alert(
-"All portfolio changes have been saved."
-);
-
-}
-
-
-/* START */
+loadResearch();
 
 renderProjects();
 
