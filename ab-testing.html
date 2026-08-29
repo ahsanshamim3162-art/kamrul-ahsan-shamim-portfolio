@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>A/B Testing Visual Concept | Kamrul Ahsan Shamim</title>
+
+<meta name="description" content="A/B Testing marketing analysis and visual concept by Kamrul Ahsan Shamim.">
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root{
+--bg:#070707;
+--fg:#f5f1e8;
+--muted:#99968f;
+--gold:#d7b56d;
+--lime:#d9ff55;
+--line:#292929;
+--panel:#101010;
+--max:1180px;
+}
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+background:var(--bg);
+color:var(--fg);
+font-family:"DM Sans",sans-serif;
+line-height:1.6;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+.wrap{
+width:min(var(--max),calc(100% - 36px));
+margin:auto;
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:100;
+background:#070707ed;
+backdrop-filter:blur(18px);
+border-bottom:1px solid #fff1;
+}
+
+.nav{
+height:70px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+width:82px;
+height:52px;
+object-fit:contain;
+}
+
+.back{
+font-size:12px;
+font-weight:700;
+color:var(--lime);
+}
+
+.hero{
+padding:145px 0 70px;
+}
+
+.eyebrow{
+color:var(--gold);
+font-size:11px;
+letter-spacing:.17em;
+font-weight:700;
+text-transform:uppercase;
+}
+
+.hero h1{
+font:700 clamp(50px,8vw,105px)/.88 "Space Grotesk";
+letter-spacing:-.07em;
+margin:18px 0 25px;
+max-width:950px;
+}
+
+.hero h1 span{
+color:var(--gold);
+}
+
+.hero-intro{
+max-width:760px;
+font-size:18px;
+color:var(--muted);
+line-height:1.75;
+}
+
+.hero-image{
+margin-top:55px;
+width:100%;
+border:1px solid var(--line);
+border-radius:24px;
+overflow:hidden;
+background:#101010;
+}
+
+.hero-image img{
+display:block;
+width:100%;
+height:auto;
+max-height:720px;
+object-fit:cover;
+}
+
+section{
+padding:85px 0;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.card{
+background:var(--panel);
+border:1px solid var(--line);
+border-radius:22px;
+padding:30px;
+}
+
+.card h2{
+font:600 35px/1 "Space Grotesk";
+letter-spacing:-.05em;
+margin:10px 0 18px;
+}
+
+.card p{
+color:var(--muted);
+font-size:15px;
+}
+
+.number{
+font:600 13px "Space Grotesk";
+color:var(--lime);
+}
+
+.framework{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+border:1px solid var(--line);
+border-radius:22px;
+overflow:hidden;
+margin-top:35px;
+}
+
+.step{
+padding:28px;
+background:var(--panel);
+border-right:1px solid var(--line);
+}
+
+.step:last-child{
+border-right:0;
+}
+
+.step-number{
+color:var(--gold);
+font-size:11px;
+font-weight:700;
+letter-spacing:.12em;
+}
+
+.step h3{
+font:600 21px "Space Grotesk";
+margin:12px 0 8px;
+}
+
+.step p{
+font-size:13px;
+color:var(--muted);
+}
+
+.insight{
+border-left:3px solid var(--lime);
+padding:20px 25px;
+background:#101010;
+border-radius:0 15px 15px 0;
+margin-top:30px;
+}
+
+.insight strong{
+font:600 20px "Space Grotesk";
+}
+
+.insight p{
+margin-bottom:0;
+color:var(--muted);
+}
+
+.linkedin-section{
+padding:90px 0;
+}
+
+.linkedin-card{
+background:var(--lime);
+color:#080808;
+border-radius:25px;
+padding:45px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:30px;
+}
+
+.linkedin-card h2{
+font:600 clamp(32px,5vw,55px)/.95 "Space Grotesk";
+letter-spacing:-.06em;
+margin:8px 0 12px;
+max-width:700px;
+}
+
+.linkedin-card p{
+max-width:650px;
+font-size:14px;
+}
+
+.linkedin-button{
+display:inline-block;
+background:#080808;
+color:white;
+padding:15px 22px;
+border-radius:100px;
+font-size:12px;
+font-weight:700;
+white-space:nowrap;
+}
+
+.footer-actions{
+padding:20px 0 70px;
+display:flex;
+justify-content:space-between;
+gap:15px;
+}
+
+.btn{
+display:inline-block;
+border:1px solid #333;
+padding:12px 18px;
+border-radius:100px;
+font-size:12px;
+font-weight:700;
+}
+
+.btn.primary{
+background:var(--lime);
+color:#080808;
+border-color:var(--lime);
+}
+
+footer{
+padding:30px 0 50px;
+border-top:1px solid var(--line);
+color:#777;
+font-size:12px;
+display:flex;
+justify-content:space-between;
+}
+
+@media(max-width:850px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.framework{
+grid-template-columns:1fr 1fr;
+}
+
+.step:nth-child(2){
+border-right:0;
+}
+
+.step{
+border-bottom:1px solid var(--line);
+}
+
+.linkedin-card{
+display:block;
+}
+
+.linkedin-button{
+margin-top:20px;
+display:inline-block;
+}
+
+}
+
+@media(max-width:520px){
+
+.hero{
+padding-top:120px;
+}
+
+.hero h1{
+font-size:55px;
+}
+
+.framework{
+grid-template-columns:1fr;
+}
+
+.step{
+border-right:0;
+}
+
+.linkedin-card{
+padding:32px 25px;
+}
+
+.footer-actions{
+display:block;
+}
+
+.footer-actions .btn{
+display:block;
+text-align:center;
+margin-bottom:10px;
+}
+
+footer{
+display:block;
+}
+
+footer span{
+display:block;
+margin:7px 0;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="wrap nav">
+
+<a href="index.html">
+<img
+class="logo"
+src="logo.png.PNG"
+alt="KAS logo">
+</a>
+
+<a class="back" href="index.html">
+← BACK TO PORTFOLIO
+</a>
+
+</div>
+
+</nav>
+
+
+<main>
+
+
+<header class="hero wrap">
+
+<div class="eyebrow">
+DIGITAL MARKETING · A/B TESTING · ANALYTICS
+</div>
+
+<h1>
+Test.<br>
+<span>Compare.</span><br>
+Learn.
+</h1>
+
+<p class="hero-intro">
+A marketing concept exploring how A/B testing can help marketers compare creative variations, understand audience response and make better decisions based on evidence rather than assumptions.
+</p>
+
+
+<div class="hero-image">
+
+<img
+src="ab-test.PNG"
+alt="A/B Testing Marketing Concept"
+>
+
+</div>
+
+</header>
+
+
+
+<section>
+
+<div class="wrap">
+
+<div class="grid">
+
+
+<div class="card">
+
+<div class="number">
+01 / THE IDEA
+</div>
+
+<h2>
+Don't guess. Test.
+</h2>
+
+<p>
+A/B testing is a structured way of comparing two versions of a marketing asset to understand which performs better with an audience.
+</p>
+
+<p>
+Instead of relying only on personal preference, marketers can test variables such as headlines, visuals, calls-to-action, layouts or messaging.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="number">
+02 / WHY IT MATTERS
+</div>
+
+<h2>
+Creative decisions need evidence.
+</h2>
+
+<p>
+Good creative work attracts attention, but effective marketing also needs measurable learning.
+</p>
+
+<p>
+A/B testing creates a feedback loop where marketers can test an idea, measure audience behavior, learn from the result and improve the next execution.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<div class="wrap">
+
+<div class="eyebrow">
+03 / TESTING FRAMEWORK
+</div>
+
+<h2 style="font:600 clamp(38px,5vw,68px)/.95 'Space Grotesk';letter-spacing:-.06em;margin:12px 0;">
+Test → Learn → Scale.
+</h2>
+
+<p style="color:var(--muted);max-width:700px;">
+A simple framework for turning creative experimentation into marketing learning.
+</p>
+
+
+<div class="framework">
+
+<div class="step">
+
+<div class="step-number">
+01 / HYPOTHESIS
+</div>
+
+<h3>
+What do we believe?
+</h3>
+
+<p>
+Define the assumption or marketing question before running the test.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+02 / TEST
+</div>
+
+<h3>
+Create variations.
+</h3>
+
+<p>
+Change one meaningful variable while keeping the comparison clear.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+03 / MEASURE
+</div>
+
+<h3>
+Watch the response.
+</h3>
+
+<p>
+Compare relevant performance indicators and observe audience behavior.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+04 / LEARN
+</div>
+
+<h3>
+Improve the next move.
+</h3>
+
+<p>
+Use the learning to refine the creative, message or campaign direction.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="insight">
+
+<strong>
+The goal isn't simply to find a winner.
+</strong>
+
+<p>
+The real value of A/B testing is learning what resonates with the audience and using that learning to make stronger future marketing decisions.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<div class="wrap">
+
+<div class="grid">
+
+
+<div class="card">
+
+<div class="number">
+04 / MARKETING APPLICATION
+</div>
+
+<h2>
+Where can A/B testing help?
+</h2>
+
+<p>
+• Social media creatives</p>
+
+<p>
+• Advertising headlines</p>
+
+<p>
+• Call-to-action messaging</p>
+
+<p>
+• Landing page layouts</p>
+
+<p>
+• Email subject lines</p>
+
+<p>
+• Product communication</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="number">
+05 / MY APPROACH
+</div>
+
+<h2>
+Creative + Measurement.
+</h2>
+
+<p>
+My interest in A/B testing comes from connecting creative marketing with analytical thinking.
+</p>
+
+<p>
+The creative creates the hypothesis. The audience response provides the learning. The next creative becomes smarter because of that learning.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="linkedin-section">
+
+<div class="wrap">
+
+<div class="linkedin-card">
+
+<div>
+
+<div class="eyebrow" style="color:#080808;">
+06 / LINKEDIN POST
+</div>
+
+<h2>
+See the original A/B testing post.
+</h2>
+
+<p>
+Read the complete LinkedIn post where I explored A/B testing, digital marketing and marketing strategy.
+</p>
+
+</div>
+
+
+<a
+class="linkedin-button"
+href="https://www.linkedin.com/posts/kamrul-ahsan-shamim_digitalmarketing-abtesting-marketingstrategy-activity-7403264864393076736-nBgw?utm_medium=ios_app&rcm=ACoAAF2tljwBgAwbhpecqLrOqcNFqIO2IQaflIY&utm_source=social_share_send&utm_campaign=copy_link"
+target="_blank"
+rel="noopener">
+VIEW LINKEDIN POST ↗
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<div class="wrap footer-actions">
+
+<a
+class="btn"
+href="index.html">
+← BACK TO PORTFOLIO
+</a>
+
+<a
+class="btn primary"
+href="https://www.linkedin.com/posts/kamrul-ahsan-shamim_digitalmarketing-abtesting-marketingstrategy-activity-7403264864393076736-nBgw?utm_medium=ios_app&rcm=ACoAAF2tljwBgAwbhpecqLrOqcNFqIO2IQaflIY&utm_source=social_share_send&utm_campaign=copy_link"
+target="_blank"
+rel="noopener">
+READ ON LINKEDIN ↗
+</a>
+
+</div>
+
+
+</main>
+
+
+<footer class="wrap">
+
+<span>
+© 2026 Kamrul Ahsan Shamim · KAS
+</span>
+
+<span>
+Marketing · Branding · Digital Marketing · Research
+</span>
+
+</footer>
+
+
+</body>
+</html>
