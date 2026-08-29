@@ -993,27 +993,19 @@ Design, content, advertising and campaign assets.
 <div class="research">
 
 <h3 id="researchTitle">
-
 The Credibility of Influencer Marketing and Its Impact on Consumer Purchase Decisions
-
 </h3>
 
 <p id="researchDesc">
-
 Exploratory quantitative research examining how influencer credibility factors can affect consumer purchase behavior.
-
 </p>
 
 <div id="researchStats" class="stats">
-
 n = 103 · Cronbach’s Alpha = 0.676 · R² = 0.432
-
 </div>
 
 <p id="researchFinding">
-
 Experience and influencer trustworthiness showed significant positive effects on purchase behavior, while perceived credibility and attractiveness were not statistically significant in the regression model.
-
 </p>
 
 <a
@@ -1049,9 +1041,7 @@ Visual stories from the road.
 </div>
 
 <p>
-
 Travel, observation and visual storytelling that shape a broader creative perspective.
-
 </p>
 
 </div>
@@ -1071,9 +1061,7 @@ Journeys through my lens.
 </h2>
 
 <p>
-
 Explore travel photography, video stories, complete journeys, travel diaries and cinematic visual experiments.
-
 </p>
 
 <span class="open-project">
@@ -1134,9 +1122,7 @@ LET'S CREATE SOMETHING WORTH REMEMBERING.
 </h2>
 
 <p>
-
 Open to opportunities, collaborations, marketing projects, creative work and interesting ideas.
-
 </p>
 
 <a
@@ -1152,6 +1138,7 @@ id="linkedin"
 class="btn"
 href="https://www.linkedin.com/in/kamrul-ahsan-shamim-a7841737a"
 target="_blank"
+rel="noopener"
 >
 LINKEDIN ↗
 </a>
@@ -1206,7 +1193,6 @@ profile:"profile.jpg.PNG",
 
 projects:[
 
-
 /* PRODUCT ADVERTISING */
 
 {
@@ -1236,7 +1222,7 @@ category:"DIGITAL MARKETING · EXPERIMENTATION",
 
 desc:"A practical marketing perspective on A/B testing, data-driven decision making, conversion optimization and why marketers should test before scaling.",
 
-image:"ab-test.PNG",
+image:"ab-testing.PNG",
 
 tags:"A/B testing · Data-driven marketing · Conversion",
 
@@ -1299,7 +1285,6 @@ finding:"Experience and influencer trustworthiness showed significant positive e
 
 
 articles:[
-
 
 {
 
@@ -1529,7 +1514,14 @@ class="project-img"
 src="${escapeHTML(p.image)}"
 alt="${escapeHTML(p.title || "Project")}"
 loading="lazy"
->`
+onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"
+>
+<div
+class="project-img placeholder"
+style="display:none;"
+>
+${escapeHTML(p.title || "Project")}
+</div>`
 
 :
 
@@ -1678,7 +1670,6 @@ articles.length +
 if(!articles.length){
 
 list.innerHTML =
-
 "<p style='padding:30px;color:#999'>No published articles yet.</p>";
 
 return;
